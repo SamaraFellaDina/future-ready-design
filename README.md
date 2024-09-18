@@ -9,6 +9,12 @@ Future Ready Design helpt bedrijven impact te maken met op maat gemaakte digital
 AccessDash is een nieuwe tool die bedrijven moet gaan helpen in het digitaal toegankelijk maken van hun website. Het moet daarnaast bedrijven gaan helpen om deze toegankelijkheid te bewaken middels automatische scans.
 
 ## Design challenge
+
+Het doorontwikkelen van AccessDash. 
+
+### Features
+
+#### Detailpage
 Ontwikkel een detail pagina van een automatische toegankelijkheid scan voor de AccessDash web applicatie. Op deze pagina zijn meerdere inzichten in te zien. Zoals de totaalscore van de toegankelijkheid van de pagina en de verschillende soorten errors op de pagina.
 
 ## Resources
