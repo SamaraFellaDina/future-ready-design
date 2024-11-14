@@ -28,7 +28,6 @@
 </header>
 
 <style>
-
   header {
     position: fixed;
     background-color: var(--color-background-section);
@@ -52,9 +51,8 @@
     transform: translateX(-80%);
   }
 
-  input:checked ~ label
-  {
-    transform: translateX(-225px);
+  input:checked ~ label {
+    transform: translateX(-225px) scaleX(-1);
   }
 
   input:checked ~ header > a {
@@ -117,14 +115,16 @@
   @media screen and (max-width: 1600px) {
     header {
       transform: translateX(-80%);
+      overflow-y: hidden;
     }
 
     label {
-      transform: translateX(-225px);
+      transform: translateX(-225px) scaleX(-1);
     }
 
     input:checked ~ header {
       transform: translateX(0);
+      overflow-y: auto;
     }
 
     input:checked ~ label {
@@ -140,5 +140,19 @@
       opacity: 1;
       pointer-events: all;
     }
+  }
+
+  @media screen and (max-width: 700px) {
+    input:not(:checked) ~ header {
+      background-color: transparent;
+      box-shadow: none;
+    }
+    input:not(:checked) ~ label {
+      box-shadow: var(--box-shadow);
+      background: #FFFFFF80;
+      padding: 6px 8px;
+      border-radius: 50%;
+    }
+
   }
 </style>
