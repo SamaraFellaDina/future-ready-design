@@ -3,8 +3,11 @@
   export let company;
 </script>
 
+<input type="checkbox" name="sidebar" id="sidebar"/>
+<label for="sidebar">
+  <Icon name = "sidebar" />
+</label>
 <header>
-  <input type="checkbox" name="sidebar" id="sidebar" /><label for="sidebar"><Icon name = "sidebar" /></label>
   <a href ="/" ><Icon name = "accessdash-logo" /></a>
   <nav>
     <h2><Icon name = "dashboard" /><span>Dashboard</span></h2>
@@ -36,27 +39,36 @@
     gap: 50px;
     box-shadow: var(--box-shadow);
     transition: 0.5s;
+    z-index: 1;
+    width: 280px;
+    overflow-y: auto;
   }
 
   input {
     display: none;
   }
 
-  header:has(input:checked) {
+  input:checked ~ header {
     transform: translateX(-80%);
   }
 
-  header:has(input:checked) > a {
+  input:checked ~ label
+  {
+    transform: translateX(-225px);
+  }
+
+  input:checked ~ header > a {
     opacity: 0;
     pointer-events: none;
   }
 
-
   label {
-    position: absolute;
+    position: fixed;
     top: 20px;
-    right: 15px;
     cursor: pointer;
+    z-index: 2;
+    left: 240px;
+    transition: 0.5s;
   }
 
   nav {
@@ -107,7 +119,15 @@
       transform: translateX(-80%);
     }
 
-    header:has(input:checked) {
+    label {
+      transform: translateX(-225px);
+    }
+
+    input:checked ~ header {
+      transform: translateX(0);
+    }
+
+    input:checked ~ label {
       transform: translateX(0);
     }
 
@@ -116,7 +136,7 @@
       pointer-events: none;
     }
 
-    header:has(input:checked) > a {
+    input:checked ~ header > a {
       opacity: 1;
       pointer-events: all;
     }
