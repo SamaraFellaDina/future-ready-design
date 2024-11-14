@@ -1,9 +1,11 @@
 <script>
   import { Header } from '$lib';
-    import Footer from '../lib/Footer.svelte';
+  import Footer from '../lib/Footer.svelte';
+  export let data;
+  export let company = data.sites;
 </script>
 
-<Header />
+<Header {company}/>
 
 <main class="wrapper">
   <slot />
