@@ -44,7 +44,8 @@
   }
 
   input {
-    display: none;
+    position: absolute;
+    left: -100vw;
   }
 
   input:checked ~ header {
@@ -112,7 +113,7 @@
     color: var(--color-blue);
   }
 
-  @media screen and (max-width: 1600px) {
+  @media screen and (max-width: 1700px) {
     header {
       transform: translateX(-80%);
       overflow-y: hidden;
@@ -147,12 +148,12 @@
       background-color: transparent;
       box-shadow: none;
     }
+
     input:not(:checked) ~ label {
       box-shadow: var(--box-shadow);
       background: #FFFFFF80;
       padding: 6px 8px;
       border-radius: 50%;
     }
-
   }
 </style>
