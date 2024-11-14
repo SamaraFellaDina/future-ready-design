@@ -1,10 +1,11 @@
 <script>
   import Icon from "./Icon.svelte";
   export let company;
-  </script>
+</script>
 
 <header>
-  <Icon name = "accessdash-logo" />
+  <input type="checkbox" name="sidebar" id="sidebar" /><label for="sidebar"><Icon name = "sidebar" /></label>
+  <a href ="/" ><Icon name = "accessdash-logo" /></a>
   <nav>
     <h2><Icon name = "dashboard" /><span>Dashboard</span></h2>
     <a class="active" href='/dashboard'>Dashboard</a>
@@ -24,6 +25,7 @@
 </header>
 
 <style>
+
   header {
     position: fixed;
     background-color: var(--color-background-section);
@@ -33,6 +35,28 @@
     flex-direction: column;
     gap: 50px;
     box-shadow: var(--box-shadow);
+    transition: 0.5s;
+  }
+
+  input {
+    display: none;
+  }
+
+  header:has(input:checked) {
+    transform: translateX(-80%);
+  }
+
+  header:has(input:checked) > a {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+
+  label {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    cursor: pointer;
   }
 
   nav {
@@ -54,18 +78,47 @@
     color: var(--color-blue);
   }
 
-  a {
+  nav a {
     font-size: 1.15em;
     color: var(--color-regular-text);
     text-decoration: none;
     transition: 0.3s;
   }
 
-  a:hover {
+  nav a:hover {
     color: var(--color-blue);
+  }
+
+  header > a {
+    transition: 0.3s;
+    margin-top: 30px;
+  }
+
+  header > a:hover {
+    opacity: 0.5;
   }
 
   .active {
     color: var(--color-blue);
+  }
+
+  @media screen and (max-width: 1600px) {
+    header {
+      transform: translateX(-80%);
+    }
+
+    header:has(input:checked) {
+      transform: translateX(0);
+    }
+
+    header > a {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    header:has(input:checked) > a {
+      opacity: 1;
+      pointer-events: all;
+    }
   }
 </style>
