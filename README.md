@@ -74,6 +74,9 @@ Hier vind je de bronnen van de tools die we hebben gebruikt.
 ![image](https://github.com/user-attachments/assets/f55ed6b2-1d62-4999-9d23-7e4fb1f00cf3)
 
 * [Future Ready Design](https://www.futureready.design/)
+
+# Component Building Block
+Figmalink: https://www.figma.com/design/NVzhkcNWPcgC7VQ7D0RfYS/TeamCanvas?node-id=189-3&node-type=frame&t=FnPO0SVoC7ZjUAj0-0
   
 # Licentie
 MIT License
