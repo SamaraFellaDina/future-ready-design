@@ -17,6 +17,7 @@ AccessDash is een nieuwe tool die bedrijven moet gaan helpen in het digitaal toe
 * [Installatie](https://github.com/SamaraFellaDina/lose-your-head-the-client-case?tab=readme-ov-file#Installatie)
 * [Bronnen](https://github.com/SamaraFellaDina/lose-your-head-the-client-case?tab=readme-ov-file#Bronnen)
 * [Licentie](https://github.com/SamaraFellaDina/lose-your-head-the-client-case?tab=readme-ov-file#Licentie)
+* [Component Building Block](https://github.com/SamaraFellaDina/future-ready-design?tab=readme-ov-file#component-building-block)
 
 
 # Beschrijving
@@ -77,6 +78,7 @@ Hier vind je de bronnen van de tools die we hebben gebruikt.
 
 # Component Building Block
 Figma link: https://www.figma.com/design/NVzhkcNWPcgC7VQ7D0RfYS/TeamCanvas?node-id=189-3&node-type=frame&t=FnPO0SVoC7ZjUAj0-0
+
 
 # Licentie
 MIT License
