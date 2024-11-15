@@ -76,8 +76,11 @@ Hier vind je de bronnen van de tools die we hebben gebruikt.
 
 * [Future Ready Design](https://www.futureready.design/)
 
+
 # Component Building Block
 * [Figma ontwerpen](https://www.figma.com/design/NVzhkcNWPcgC7VQ7D0RfYS/TeamCanvas?node-id=189-3&node-type=frame&t=FnPO0SVoC7ZjUAj0-0)
+* [Header code ontwerp](https://github.com/SamaraFellaDina/future-ready-design/tree/kaan-nav-component)
+
 
 
 # Licentie
