@@ -7,7 +7,7 @@
 * ...
 
 # Wat moeten andere checken aan deze pull-request?
-Welke criteria moeten worden gecheckt aan deze `pull-request`?
+Welke onderdelen moeten worden gecheckt aan deze `pull-request`? Moet worden gekeken naar code, mappen of andere onderdelen?
 * [ ] ...
 
 # Volgende stappen
