@@ -3,7 +3,7 @@
   export let company;
 </script>
 
-<input type="checkbox" name="sidebar" id="sidebar" aria-controls="sidebar" aria-label="navigatiemenu"/>
+<input type="checkbox" name="sidebar" id="sidebar" aria-label="toggle navigatiemenu"/>
 <label for="sidebar">
   <Icon name = "sidebar" />
 </label>
@@ -95,7 +95,7 @@
     pointer-events: none;
   }
 
-  input:focus ~ label {
+  input:focus-visible ~ label {
     border: 3px solid black;
     border-radius: 5px;
   }
