@@ -3,12 +3,12 @@
   export let company;
 </script>
 
-<input type="checkbox" name="sidebar" id="sidebar"/>
+<input type="checkbox" name="sidebar" id="sidebar" aria-controls="sidebar" aria-label="navigatiemenu"/>
 <label for="sidebar">
   <Icon name = "sidebar" />
 </label>
 <header>
-  <a href ="/" ><Icon name = "accessdash-logo" /></a>
+  <a href ="/"><Icon name = "accessdash-logo" /></a>
   <nav>
     <h2><Icon name = "dashboard" /><span>Dashboard</span></h2>
     <a class="active" href='/dashboard'>Dashboard</a>
@@ -43,33 +43,6 @@
     overflow-y: auto;
   }
 
-  input {
-    position: absolute;
-    left: -100vw;
-  }
-
-  input:checked ~ header {
-    transform: translateX(-80%);
-  }
-
-  input:checked ~ label {
-    transform: translateX(-225px) scaleX(-1);
-  }
-
-  input:checked ~ header > a {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  label {
-    position: fixed;
-    top: 20px;
-    cursor: pointer;
-    z-index: 2;
-    left: 240px;
-    transition: 0.5s;
-  }
-
   nav {
     display: flex;
     justify-content: space-between;
@@ -100,6 +73,42 @@
     color: var(--color-blue);
   }
 
+  .active {
+    color: var(--color-blue);
+  }
+
+  input {
+    position: absolute;
+    left: -100vw;
+  }
+
+  input:checked ~ header {
+    transform: translateX(-80%);
+  }
+
+  input:checked ~ label {
+    transform: translateX(-225px) scaleX(-1);
+  }
+
+  input:checked ~ header > a {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  input:focus ~ label {
+    border: 3px solid black;
+    border-radius: 5px;
+  }
+
+  label {
+    position: fixed;
+    top: 20px;
+    cursor: pointer;
+    z-index: 2;
+    left: 240px;
+    transition: 0.5s;
+  }
+
   header > a {
     transition: 0.3s;
     margin-top: 30px;
@@ -107,10 +116,6 @@
 
   header > a:hover {
     opacity: 0.5;
-  }
-
-  .active {
-    color: var(--color-blue);
   }
 
   @media screen and (max-width: 1700px) {
