@@ -1,6 +1,5 @@
 <script>
-  import { Header } from '$lib';
-    import Footer from '../lib/Footer.svelte';
+  import { Header, Footer } from '$lib';
 </script>
 
 <Header />

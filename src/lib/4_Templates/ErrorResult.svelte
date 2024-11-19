@@ -1,7 +1,7 @@
 <script>
 
-  import Icon from "./Icon.svelte";
-  export let result = data.scans;
+import { Icon } from "../index.js";
+export let result = data.scans;
 </script>
 
 <ul>

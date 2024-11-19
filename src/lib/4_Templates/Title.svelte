@@ -1,5 +1,5 @@
 <script>
-  import Icon from "./Icon.svelte";
+  import { Icon } from "../index.js";
   export let company = data.sites;
   // export let resultsheet = data.scans;
 </script>
