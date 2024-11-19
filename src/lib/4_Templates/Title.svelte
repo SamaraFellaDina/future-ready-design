@@ -1,16 +1,14 @@
 <script>
   import { MonthlyNavigation } from "../index.js";
   export let company = data.sites;
-  // export let resultsheet = data.scans;
 </script>
 
 <section>
   <div>
     <h1>{company[0].title}/home</h1>
     <p>Automatische Scan</p>
-    <MonthlyNavigation />
   </div>
-
+  <MonthlyNavigation />
 </section>
 
 <style>

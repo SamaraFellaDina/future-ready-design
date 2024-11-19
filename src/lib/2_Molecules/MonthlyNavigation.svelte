@@ -4,7 +4,7 @@
 
 <nav>
   <button><Icon name="arrow-left" /></button>
-   <span>Aug.</span>
+   <p>Aug.</p>
   <button><Icon name="arrow-right" /></button>
 </nav>
 
@@ -16,7 +16,7 @@
   }
 
   button,
-  span {
+  p {
     --average-gap: 10px 20px;
     background-color: var(--color-background-section);
     border-radius: var(--section-border-radius);
