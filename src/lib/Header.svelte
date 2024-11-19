@@ -3,32 +3,35 @@
   export let company;
 </script>
 
-<input type="checkbox" name="sidebar" id="sidebar" aria-label="toggle navigatiemenu"/>
-<label for="sidebar">
-  <Icon name = "sidebar" />
-</label>
+
 <header>
-  <a href ="/"><Icon name = "accessdash-logo" /></a>
-  <nav>
-    <h2><Icon name = "dashboard" /><span>Dashboard</span></h2>
-    <a class="active" href='/dashboard'>Dashboard</a>
-    <a href='/info'>Info</a>
-    <a href='/voortgang'>Voortgang</a>
-    <a href='/scan'>Scan</a>
-  </nav>
-  <nav>
-    <h2><Icon name = "page-links" /><span>{company[0].title}</span></h2>
-    <a class="active" href='/{company[0].title}/home'>/home</a>
-    <a href='/{company[0].title}/over-ons'>/over-ons</a>
-    <a href='/{company[0].title}/contact'>/contact</a>
-    <a href='/{company[0].title}/missie'>/missie</a>
-    <a href='/{company[0].title}/blog'>/blog</a>
-    <a href='/{company[0].title}/blog-detail'>/blog-detail</a>
-  </nav>
+  <input type="checkbox" name="sidebar" id="sidebar" aria-label="toggle navigatiemenu"/>
+  <label for="sidebar">
+    <Icon name = "sidebar" />
+  </label>
+  <div>
+    <a href ="/"><Icon name = "accessdash-logo" /></a>
+    <nav>
+      <h2><Icon name = "dashboard" /><span>Dashboard</span></h2>
+      <a class="active" href='/dashboard'>Dashboard</a>
+      <a href='/info'>Info</a>
+      <a href='/voortgang'>Voortgang</a>
+      <a href='/scan'>Scan</a>
+    </nav>
+    <nav>
+      <h2><Icon name = "page-links" /><span>{company[0].title}</span></h2>
+      <a class="active" href='/{company[0].title}/home'>/home</a>
+      <a href='/{company[0].title}/over-ons'>/over-ons</a>
+      <a href='/{company[0].title}/contact'>/contact</a>
+      <a href='/{company[0].title}/missie'>/missie</a>
+      <a href='/{company[0].title}/blog'>/blog</a>
+      <a href='/{company[0].title}/blog-detail'>/blog-detail</a>
+    </nav>
+  </div>
 </header>
 
 <style>
-  header {
+  div {
     position: fixed;
     background-color: var(--color-background-section);
     height: 100%;
@@ -82,7 +85,7 @@
     left: -100vw;
   }
 
-  input:checked ~ header {
+  input:checked ~ div {
     transform: translateX(-80%);
   }
 
@@ -90,7 +93,7 @@
     transform: translateX(-225px) scaleX(-1);
   }
 
-  input:checked ~ header > a {
+  input:checked ~ div > a {
     opacity: 0;
     pointer-events: none;
   }
@@ -109,17 +112,17 @@
     transition: 0.5s;
   }
 
-  header > a {
+  div > a {
     transition: 0.3s;
     margin-top: 30px;
   }
 
-  header > a:hover {
+  div > a:hover {
     opacity: 0.5;
   }
 
   @media screen and (max-width: 1700px) {
-    header {
+    div {
       transform: translateX(-80%);
       overflow-y: hidden;
     }
@@ -128,7 +131,7 @@
       transform: translateX(-225px) scaleX(-1);
     }
 
-    input:checked ~ header {
+    input:checked ~ div {
       transform: translateX(0);
       overflow-y: auto;
     }
@@ -137,19 +140,19 @@
       transform: translateX(0);
     }
 
-    header > a {
+    div > a {
       opacity: 0;
       pointer-events: none;
     }
 
-    input:checked ~ header > a {
+    input:checked ~ div > a {
       opacity: 1;
       pointer-events: all;
     }
   }
 
   @media screen and (max-width: 700px) {
-    input:not(:checked) ~ header {
+    input:not(:checked) ~ div {
       background-color: transparent;
       box-shadow: none;
     }
