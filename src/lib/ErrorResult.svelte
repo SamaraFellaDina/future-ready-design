@@ -39,6 +39,8 @@
   {/each}
 </ul>
 
+
+
 <style>
   ul {
     grid-area: 2 / 2 / 4 / 3;
@@ -92,5 +94,9 @@
 
   li div p {
     font-size: var(--size);
+  }
+
+  .amount {
+    fill: green;
   }
 </style>

@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import Chart from "chart.js/auto";
-  import Icon from "./Icon.svelte";
+  import { Icon } from "./index.js";
 
   export let resultsheet = data.scans;
   let chart;
