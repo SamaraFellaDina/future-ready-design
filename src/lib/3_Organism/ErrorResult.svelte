@@ -90,6 +90,10 @@
     align-items: center;
   }
 
+  li div:nth-child(1){
+    align-items: flex-start;
+  }
+
   li div p {
     font-size: var(--size);
   }
