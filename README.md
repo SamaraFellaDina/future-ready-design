@@ -16,6 +16,7 @@ AccessDash is een nieuwe tool die bedrijven moet gaan helpen in het digitaal toe
 * [Huisstijl](https://github.com/SamaraFellaDina/lose-your-head-the-client-case?tab=readme-ov-file#Huisstijl)
 * [Installatie](https://github.com/SamaraFellaDina/lose-your-head-the-client-case?tab=readme-ov-file#Installatie)
 * [Bronnen](https://github.com/SamaraFellaDina/lose-your-head-the-client-case?tab=readme-ov-file#Bronnen)
+* [Component Building Block](https://github.com/SamaraFellaDina/future-ready-design?tab=readme-ov-file#component-building-block)
 * [Licentie](https://github.com/SamaraFellaDina/lose-your-head-the-client-case?tab=readme-ov-file#Licentie)
 
 
@@ -75,9 +76,12 @@ Hier vind je de bronnen van de tools die we hebben gebruikt.
 
 * [Future Ready Design](https://www.futureready.design/)
 
+
 # Component Building Block
-Figmalink: https://www.figma.com/design/NVzhkcNWPcgC7VQ7D0RfYS/TeamCanvas?node-id=189-3&node-type=frame&t=FnPO0SVoC7ZjUAj0-0
-  
+* [Figma ontwerpen](https://www.figma.com/design/NVzhkcNWPcgC7VQ7D0RfYS/TeamCanvas?node-id=189-3&node-type=frame&t=FnPO0SVoC7ZjUAj0-0)
+* [Header code ontwerp](https://github.com/SamaraFellaDina/future-ready-design/tree/kaan-nav-component)
+
+
 # Licentie
 MIT License
 Copyright (c) 2023 AD Frontend Design & Development (FDND)
