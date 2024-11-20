@@ -1,8 +1,11 @@
 <script>
   import { Header, Footer } from '$lib';
+  export let data;
+  export let company = data.sites;
+
 </script>
 
-<Header />
+<Header {company}/>
 
 <main class="wrapper">
   <slot />
@@ -23,7 +26,7 @@
     gap: 20px;  
     height: 90%;
     margin: 20px auto;
-    padding: 0 10px;
+    padding: 30px 10px;
   }
 
   @media only screen and (max-width: 1600px) {
@@ -34,6 +37,12 @@
     main {
       display: flex;
       flex-direction: column;
+    }
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 1040px) {
+    main {
+      padding-left: 70px;
     }
   }
 </style>

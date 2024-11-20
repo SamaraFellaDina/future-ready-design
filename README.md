@@ -82,7 +82,6 @@ Hier vind je de bronnen van de tools die we hebben gebruikt.
 * [Header code ontwerp](https://github.com/SamaraFellaDina/future-ready-design/tree/kaan-nav-component)
 
 
-
 # Licentie
 MIT License
 Copyright (c) 2023 AD Frontend Design & Development (FDND)
