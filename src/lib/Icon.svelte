@@ -61,18 +61,19 @@
   </svg>
 
   {:else if name == "good"}
-  <svg width="24" height="24" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M500,131c-203.8,0-369,165.2-369,369s165.2,369,369,369,369-165.21,369-369-165.21-369-369-369ZM437.92,707.75l-185.29-185.29,70.71-70.71,114.58,114.58,238.73-238.73,70.71,70.71-309.44,309.44Z"/>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+    <path fill="#118c0b" d="M500,131c-203.8,0-369,165.2-369,369s165.2,369,369,369,369-165.21,369-369-165.21-369-369-369ZM437.92,707.75l-185.29-185.29,70.71-70.71,114.58,114.58,238.73-238.73,70.71,70.71-309.44,309.44Z"/>
   </svg>
-
+  
+  
   {:else if name == "warning"}
-  <svg width="24" height="24" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
     <path d="M12.884 2.532c-.346-.654-1.422-.654-1.768 0l-9 17A.999.999 0 0 0 3 21h18a.998.998 0 0 0 .883-1.467L12.884 2.532zM13 18h-2v-2h2v2zm-2-4V9h2l.001 5H11z"></path>
   </svg>
-
+  
+  
   {:else if name == "critical-warning"}
-  <svg width="24" height="24" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #FF0202; transform: ; msFilter:;">
     <path d="M16.707 2.293A.996.996 0 0 0 16 2H8a.996.996 0 0 0-.707.293l-5 5A.996.996 0 0 0 2 8v8c0 .266.105.52.293.707l5 5A.996.996 0 0 0 8 22h8c.266 0 .52-.105.707-.293l5-5A.996.996 0 0 0 22 16V8a.996.996 0 0 0-.293-.707l-5-5zM13 17h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
   </svg>
-
 {/if}
