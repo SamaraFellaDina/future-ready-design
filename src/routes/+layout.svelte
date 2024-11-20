@@ -1,8 +1,8 @@
 <script>
-  import { Header } from '$lib';
-  import Footer from '../lib/Footer.svelte';
+  import { Header, Footer } from '$lib';
   export let data;
   export let company = data.sites;
+
 </script>
 
 <Header {company}/>

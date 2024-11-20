@@ -1,6 +1,5 @@
 <script>
-  import Icon from "./Icon.svelte";
-
+  import { Icon } from "../index.js";
   export let result = data.scans;
 
   // Define the mapping for icons
