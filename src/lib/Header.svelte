@@ -8,6 +8,7 @@
   <input type="checkbox" name="sidebar" id="sidebar" aria-label="toggle navigatiemenu"/>
   <label for="sidebar">
     <Icon name = "sidebar" />
+    <span>Menu</span>
   </label>
   <div>
     <a href ="/"><Icon name = "accessdash-logo" /></a>
@@ -110,6 +111,10 @@
     z-index: 2;
     left: 240px;
     transition: 0.5s;
+  }
+
+  label > span {
+    display: none;
   }
 
   div > a {
