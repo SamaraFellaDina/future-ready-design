@@ -1,8 +1,20 @@
 <script>
   import { Icon } from "../index.js";
+
   export let result = data.scans;
 
-  // Define the mapping for icons
+
+  const getIconName = (amount) => {
+    if (amount >= 0 && amount <= 20) {
+      return "good"; 
+    } else if (amount >= 21 && amount <= 40) {
+      return "warning"; 
+    } else if (amount >= 41) {
+      return "critical-warning";
+    }
+    return "good"; 
+  };
+
   const icons = [
     "ondekte-fouten",
     "contrast-fouten",
@@ -15,10 +27,13 @@
 <ul>
   {#each result.result as { title, amount }, index}
     <li>
-      <h2>{title}</h2>
       <div>
+        <h2>{title}</h2>
+        <Icon name={getIconName(amount)} /> 
+      </div>
+      <div class="amount">
         <p>{amount}</p>
-        <Icon name={icons[index]} /> <!-- Dynamically assign icon based on index -->
+        <Icon name={icons[index]} /> 
       </div>
     </li>
   {/each}
@@ -31,6 +46,7 @@
     flex-direction: column;
     row-gap: var(--average-gap);
   }
+
   @media only screen and (max-width: 1600px) {
     ul {
       display: grid;
@@ -39,6 +55,7 @@
       gap: 20px;
     }
   }
+
   @media only screen and (max-width: 700px) {
     ul {
       display: block;
@@ -53,6 +70,7 @@
     list-style: none;
     padding: var(--average-padding);
   }
+
   @media only screen and (max-width: 1600px) {
     li {
       height: 100%;
