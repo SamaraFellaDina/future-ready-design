@@ -4,8 +4,10 @@
 </script>
 
 <section>
+  <div>
     <h2>{result.title}</h2>
     <p>{result.description}</p>
+  </div>
     <DonutChart {result}/>
 </section>
 
