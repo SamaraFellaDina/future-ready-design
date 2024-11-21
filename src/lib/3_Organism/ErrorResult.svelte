@@ -47,6 +47,15 @@
     row-gap: var(--average-gap);
   }
 
+  li {
+    height: 20%;
+    background-color: var(--color-background-section);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    list-style: none;
+    padding: var(--average-gap);
+  }
+
   @media only screen and (max-width: 1600px) {
     ul {
       display: grid;
@@ -58,17 +67,12 @@
 
   @media only screen and (max-width: 700px) {
     ul {
-      display: block;
+      grid-template-columns: 1fr 1fr;
     }
-  }
 
-  li {
-    height: 20%;
-    background-color: var(--color-background-section);
-    border-radius: 8px;
-    box-shadow: var(--box-shadow);
-    list-style: none;
-    padding: var(--average-padding);
+    li{
+      padding: 10px;
+    }
   }
 
   @media only screen and (max-width: 1600px) {
@@ -81,6 +85,7 @@
   li h2 {
     padding-bottom: 0.5em;
     font-size: 20px;
+    font-weight: 100;
   }
 
   li div {
@@ -97,4 +102,10 @@
   li div p {
     font-size: var(--size);
   }
+
+  @container (min-width: 300px) {
+  li {
+    padding: 1rem;
+  }
+}
 </style>
