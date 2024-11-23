@@ -24,6 +24,13 @@
   --color-background-section:#FFFFFF;
   --color-shadow: #C8C8C8;
 
+  --color-status-good:rgba(0, 128, 0, 0.44);
+  --color-status-fine:rgba(255, 166, 0, 0.326);
+  --color-status-bad:#ff00004a;
+  --color-status-good-border:green;
+  --color-status-fine-border:orange;
+  --color-status-bad-border:red;
+
   --average-gap: 20px;
   --average-padding: 30px;
 

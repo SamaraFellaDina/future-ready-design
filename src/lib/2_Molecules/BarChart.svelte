@@ -14,8 +14,43 @@
     const rootStyles = getComputedStyle(document.documentElement);
     const colorBlue = rootStyles.getPropertyValue("--color-blue");
     const colorLightBlue = rootStyles.getPropertyValue("--color-lightblue");
+
     const fontFamily = rootStyles.getPropertyValue("--font-family");
     const colorBlack = rootStyles.getPropertyValue("--color-black");
+
+    const colorStatusGood = rootStyles.getPropertyValue("--color-status-good");
+    const colorStatusGoodBorder = rootStyles.getPropertyValue("--color-status-good-border");
+
+    const colorStatusFine = rootStyles.getPropertyValue("--color-status-fine");
+    const colorStatusFineBorder = rootStyles.getPropertyValue("--color-status-fine-border");
+
+    const colorStatusBad = rootStyles.getPropertyValue("--color-status-bad");
+    const colorStatusBadBorder = rootStyles.getPropertyValue("--color-status-bad-border");
+
+
+    const colorStatusCheck = (data) => {
+      return data.map(value => {
+        if (value >=20) {
+          return colorStatusBad;
+        } else if (value >=10) {
+          return colorStatusFine;
+        } else {
+          return colorStatusGood
+        }
+      })
+    }
+
+    const colorStatusCheckBorder = (data) => {
+      return data.map(value => {
+        if (value >=20) {
+          return colorStatusBadBorder;
+        } else if (value >=10) {
+          return colorStatusFineBorder;
+        } else {
+          return colorStatusGoodBorder
+        }
+      })
+    }
 
     const data = {
       labels: errorTitles,
@@ -23,8 +58,8 @@
         {
           label: "Fouten",
           data: errorAmounts,
-          borderColor: colorBlue,
-          backgroundColor: colorLightBlue,
+          borderColor: colorStatusCheckBorder(errorAmounts),
+          backgroundColor: colorStatusCheck(errorAmounts),
           borderWidth: 3,
         },
       ],
