@@ -1,5 +1,5 @@
 <script>
-  import {Chart} from '../index.js'
+  import { Chart } from '../index.js'
   export let result = data.scans;
 
 
@@ -10,6 +10,7 @@
   let chartLabels = errorTitles;
   let chartData = errorAmounts;
   let chartLabel = '# of Votes';
+  let DefineAxis = 'x';
   let chartBorderColor = chartData.map(value => {
     if (value >= 20) {
       return 'red'; 
@@ -36,6 +37,9 @@
   {chartLabels} 
   {chartData} 
   {chartLabel} 
+  {DefineAxis}
   {chartBorderColor}
   {chartBackgroundColor}
 />
+
+

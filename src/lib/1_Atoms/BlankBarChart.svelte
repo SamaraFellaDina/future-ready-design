@@ -1,5 +1,4 @@
 <script>
-
   import { onMount } from "svelte";
   import Chart from "chart.js/auto";
 
@@ -11,6 +10,7 @@
   export let chartLabel = ''; 
   export let chartBorderColor = '';
   export let chartBackgroundColor = '';
+  export let DefineAxis = ''
   
   onMount(() => {
     const rootStyles = getComputedStyle(document.documentElement);
@@ -34,6 +34,7 @@
 
 
     const options = {
+      indexAxis: DefineAxis,
       scales: {
         y: {
           beginAtZero: true,

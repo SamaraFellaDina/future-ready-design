@@ -1,6 +1,6 @@
 // place files you want to import through the `$lib` alias in this folder.
 export { default as Icon } from './1_Atoms/Icon.svelte'
-export { default as Chart } from './1_Atoms/Chart.svelte'
+export { default as Chart } from './1_Atoms/BlankBarChart.svelte'
 
 export { default as BarChart } from './2_Molecules/BarChart.svelte'
 export { default as DonutChart } from './2_Molecules/DonutChart.svelte'
