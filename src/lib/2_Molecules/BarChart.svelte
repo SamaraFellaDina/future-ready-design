@@ -23,11 +23,11 @@
 
   let chartBackgroundColor = chartData.map(value => {
     if (value >= 20) {
-      return '#ff00004a'; // Tomato red for high values
+      return '#ff00004a'; 
     } else if (value >= 10) {
-      return '#ffa60053'; // Gold for medium values
+      return '#ffa60053'; 
     } else {
-      return '#00800070'; // Lime green for low values
+      return '#00800070'; 
     }
   });
 
