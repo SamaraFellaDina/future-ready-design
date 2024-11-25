@@ -1,38 +1,68 @@
 <script>
   import { Icon } from "../index.js";
+  import { page } from '$app/stores';
+  import { SkipLink } from "../index.js";
   export let company;
+  let name = company[0].title.toLowerCase();
+  let currentPage = $page.url.pathname;
+
+  const primaryLinks = [
+    { href: '/dashboard', label: 'Dashboard' },
+    { href: '/info', label: 'Info' },
+    { href: '/voortgang', label: 'Voortgang' },
+    { href: '/scan', label: 'Scan' }
+  ];
+
+  const secondaryLinks = [
+    { href: `/${name}/home`, label: '/home' },
+    { href: `/${name}/over-ons`, label: '/over-ons' },
+    { href: `/${name}/contact`, label: '/contact' },
+    { href: `/${name}/missie`, label: '/missie' },
+    { href: `/${name}/blog`, label: '/blog' },
+    { href: `/${name}/blog-detail`, label: '/blog-detail' }
+  ];
 </script>
 
-
+<SkipLink />
 <header>
   <input type="checkbox" name="sidebar" id="sidebar" aria-label="toggle navigatiemenu"/>
   <label for="sidebar">
     <Icon name = "sidebar" />
     <span>Menu</span>
   </label>
-  <div>
+  <nav>
     <a href ="/"><Icon name = "accessdash-logo" /></a>
-    <nav>
-      <h2><Icon name = "dashboard" /><span>Dashboard</span></h2>
-      <a class="active" href='/dashboard'>Dashboard</a>
-      <a href='/info'>Info</a>
-      <a href='/voortgang'>Voortgang</a>
-      <a href='/scan'>Scan</a>
-    </nav>
-    <nav>
-      <h2><Icon name = "page-links" /><span>{company[0].title}</span></h2>
-      <a class="active" href='/{company[0].title}/home'>/home</a>
-      <a href='/{company[0].title}/over-ons'>/over-ons</a>
-      <a href='/{company[0].title}/contact'>/contact</a>
-      <a href='/{company[0].title}/missie'>/missie</a>
-      <a href='/{company[0].title}/blog'>/blog</a>
-      <a href='/{company[0].title}/blog-detail'>/blog-detail</a>
-    </nav>
-  </div>
+    <ul>
+      <li>
+        <Icon name="dashboard" />
+        <span>Dashboard</span>
+      </li>
+      {#each primaryLinks as links}
+        <li>
+          <a class:active={currentPage === links.href} href={links.href}>
+            {links.label}
+          </a>
+        </li>
+      {/each}
+    </ul>
+    <ul>
+      <li>
+        <Icon name="page-links" />
+        <span>{name}</span>
+      </li>
+      {#each secondaryLinks as links}
+        <li>
+          <a class:active={currentPage === links.href} href={links.href}>
+            {links.label}
+          </a>
+        </li>
+      {/each}
+    </ul>
+  </nav>
 </header>
 
 <style>
-  div {
+  nav {
     position: fixed;
     background-color: var(--color-background-section);
     height: 100%;
@@ -47,33 +77,39 @@
     overflow-y: auto;
   }
 
-  nav {
+  ul {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     gap: 15px;
   }
 
-  h2 {
+  li {
+    list-style: none;
+  }
+
+  li:first-child {
     padding-bottom: 10px;
     display: flex;
     gap: 10px;
     align-items: center;
     font-size: 1.5em;
+    font-weight: 700;
+    text-transform: capitalize;
   }
 
   span {
     color: var(--color-blue);
   }
 
-  nav a {
-    font-size: 1.15em;
+  li a {
+    font-size: var(--font-size);
     color: var(--color-regular-text);
     text-decoration: none;
     transition: 0.3s;
   }
 
-  nav a:hover {
+  li a:hover {
     color: var(--color-blue);
   }
 
@@ -86,7 +122,7 @@
     left: -100vw;
   }
 
-  input:checked ~ div {
+  input:checked ~ nav {
     transform: translateX(-80%);
   }
 
@@ -94,7 +130,7 @@
     transform: translateX(-225px) scaleX(-1);
   }
 
-  input:checked ~ div a {
+  input:checked ~ nav a {
     opacity: 0;
     pointer-events: none;
   }
@@ -117,17 +153,17 @@
     display: none;
   }
 
-  div > a {
+  nav > a {
     transition: 0.3s;
     margin-top: 30px;
   }
 
-  div > a:hover {
+  nav > a:hover {
     opacity: 0.5;
   }
 
   @media screen and (max-width: 1700px) {
-    div {
+    nav {
       transform: translateX(-80%);
       overflow-y: hidden;
     }
@@ -136,7 +172,7 @@
       transform: translateX(-225px) scaleX(-1);
     }
 
-    input:checked ~ div {
+    input:checked ~ nav {
       transform: translateX(0);
       overflow-y: auto;
     }
@@ -145,19 +181,19 @@
       transform: translateX(0);
     }
 
-    div a {
+    nav a {
       opacity: 0;
       pointer-events: none;
     }
 
-    input:checked ~ div a {
+    input:checked ~ nav a {
       opacity: 1;
       pointer-events: all;
     }
   }
 
   @media screen and (max-width: 700px) {
-    input:not(:checked) ~ div {
+    input:not(:checked) ~ nav {
       background-color: transparent;
       box-shadow: none;
     }

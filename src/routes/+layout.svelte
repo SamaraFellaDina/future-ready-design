@@ -7,7 +7,7 @@
 
 <Header {company}/>
 
-<main class="wrapper">
+<main id="main-content" class="wrapper">
   <slot />
 </main>
 
