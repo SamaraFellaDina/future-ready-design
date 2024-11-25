@@ -102,10 +102,4 @@
   li div p {
     font-size: var(--size);
   }
-
-  @container (min-width: 300px) {
-  li {
-    padding: 1rem;
-  }
-}
 </style>
