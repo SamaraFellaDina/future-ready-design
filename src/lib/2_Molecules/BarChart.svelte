@@ -1,139 +1,45 @@
 <script>
+  import { Chart } from '../index.js'
   export let result = data.scans;
 
-  import { onMount } from "svelte";
-  import Chart from "chart.js/auto";
 
-  let chart;
   let results = result.result.slice(1);
-
   let errorTitles = results.map((item) => item.title);
   let errorAmounts = results.map((item) => item.amount);
 
-  onMount(() => {
-    const rootStyles = getComputedStyle(document.documentElement);
-    const colorBlue = rootStyles.getPropertyValue("--color-blue");
-    const colorLightBlue = rootStyles.getPropertyValue("--color-lightblue");
-    const fontFamily = rootStyles.getPropertyValue("--font-family");
-    const colorBlack = rootStyles.getPropertyValue("--color-black");
-
-    const data = {
-      labels: errorTitles,
-      datasets: [
-        {
-          label: "Fouten",
-          data: errorAmounts,
-          borderColor: colorBlue,
-          backgroundColor: colorLightBlue,
-          borderWidth: 3,
-        },
-      ],
-    };
-
-    const options = {
-      scales: {
-        y: {
-          beginAtZero: true,
-          title: {
-            display: false,
-            text: "Aantal",
-          },
-          grid: {
-            display: false,
-          },
-          ticks: {
-            font: {
-              family: fontFamily,
-              size: 16,
-            },
-          }
-        },
-        x: {
-          title: {
-            display: false,
-            text: "Type fouten",
-          },
-          grid: {
-            display: false,
-          },
-          ticks: {
-            font: {
-              family: fontFamily,
-              size: 16,
-            },
-          }
-        },
-      },
-      plugins: {
-        legend: {
-          display: false,
-        },
-        datalabels: {
-          color: colorBlack,
-          anchor: "center",
-          align: "center",
-          font: {
-            family: fontFamily,
-            weight: "bold",
-            size: 18,
-          },
-          formatter: (value) => value,
-        },
-        tooltip: {
-          enabled: true, // Enable tooltips
-          titleAlign: "center",
-          bodyAlign: "center",
-          backgroundColor: "#FFFFFF",
-          borderWidth: 2,
-          borderColor: colorBlue,
-          padding: 10,
-          displayColors: false,
-          titleFont: {
-            size: 18,
-            weight: "bold",
-            family: fontFamily,
-          },
-          titleColor: colorBlue,
-          bodyFont: {
-            size: 16,
-            weight: "normal",
-            family: fontFamily,
-          },
-          bodyColor: colorBlue,
-        },
-      },
-      responsive: true,
-      maintainAspectRatio: false,
-      onHover: (event, elements) => {
-        const canvas = event.native.target;
-        if (elements.length) {
-          canvas.style.cursor = "pointer";
-        } else {
-          canvas.style.cursor = "default";
-        }
-      },
-    };
-
-    const ctx = document.getElementById("bar-chart").getContext("2d");
-    chart = new Chart(ctx, {
-      type: "bar",
-      data: data,
-      options: options,
-    });
+  let chartLabels = errorTitles;
+  let chartData = errorAmounts;
+  let chartLabel = '# of Votes';
+  let DefineAxis = 'x';
+  let chartBorderColor = chartData.map(value => {
+    if (value >= 20) {
+      return 'red'; 
+    } else if (value >= 10) {
+      return 'orange'; 
+    } else {
+      return 'green'; 
+    }
   });
+
+  let chartBackgroundColor = chartData.map(value => {
+    if (value >= 20) {
+      return '#ff00004a'; 
+    } else if (value >= 10) {
+      return '#ffa60053'; 
+    } else {
+      return '#00800070'; 
+    }
+  });
+
 </script>
 
-<canvas id="bar-chart" aria-label="Soorten fouten grafiek">
-  <ul>
-    {#each results as item}
-      <li>{item.title}: {item.amount}</li>
-    {/each}
-  </ul>
-</canvas>
+<Chart 
+  {chartLabels} 
+  {chartData} 
+  {chartLabel} 
+  {DefineAxis}
+  {chartBorderColor}
+  {chartBackgroundColor}
+/>
 
-<style>
-    canvas {
-    max-width: 100%;
-    height: 300px;
-  }
-</style>
+
