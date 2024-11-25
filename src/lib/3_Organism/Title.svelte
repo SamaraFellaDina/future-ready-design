@@ -16,7 +16,7 @@
   section {
     padding-top: var(--average-padding);
     grid-area: 1 / 1 / 2 / 3;
-    display: flex;
+    display: flex;;
     justify-content: space-between;
     @media screen and (max-width: 500px) {
       flex-direction: column;
