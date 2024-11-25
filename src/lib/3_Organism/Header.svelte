@@ -94,7 +94,7 @@
     transform: translateX(-225px) scaleX(-1);
   }
 
-  input:checked ~ div > a {
+  input:checked ~ div a {
     opacity: 0;
     pointer-events: none;
   }
@@ -145,12 +145,12 @@
       transform: translateX(0);
     }
 
-    div > a {
+    div a {
       opacity: 0;
       pointer-events: none;
     }
 
-    input:checked ~ div > a {
+    input:checked ~ div a {
       opacity: 1;
       pointer-events: all;
     }
