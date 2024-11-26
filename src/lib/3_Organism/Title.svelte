@@ -1,6 +1,8 @@
 <script>
   import { MonthlyNavigation } from "../index.js";
-  export let company = data.sites;
+  export let company;
+  export let nextMonth;
+  export let previousMonth;
 </script>
 
 <section>
@@ -8,21 +10,15 @@
     <h1>{company[0].title}/home</h1>
     <p>Automatische Scan</p>
   </div>
-  <MonthlyNavigation />
+  <MonthlyNavigation onNextMonth={nextMonth} onPreviousMonth={previousMonth} />
 </section>
 
 <style>
-
   section {
     padding-top: var(--average-padding);
     grid-area: 1 / 1 / 2 / 3;
-    display: flex;;
+    display: flex;
     justify-content: space-between;
-    @media screen and (max-width: 500px) {
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-    }
   }
 
   section div {
@@ -34,4 +30,11 @@
     font-size: 2em;
   }
 
+  @media screen and (max-width: 500px) {
+    section {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  }
 </style>
