@@ -2,7 +2,6 @@
   import { onMount } from "svelte";
   import Chart from "chart.js/auto";
 
-
   let chart;
 
   export let chartLabels = [];   
@@ -15,7 +14,6 @@
   onMount(() => {
     const rootStyles = getComputedStyle(document.documentElement);
     const colorBlue = rootStyles.getPropertyValue("--color-blue");
-    const colorLightBlue = rootStyles.getPropertyValue("--color-lightblue");
     const fontFamily = rootStyles.getPropertyValue("--font-family");
     const colorBlack = rootStyles.getPropertyValue("--color-black");
 
