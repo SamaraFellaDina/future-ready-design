@@ -14,6 +14,7 @@
 
 :root {
   --font-family: 'Outfit', arial, sans-serif;
+  --font-weight-thin: 100;
 
   --color-blue: #0275FF;
   --color-lightblue: #D5E8FF;
