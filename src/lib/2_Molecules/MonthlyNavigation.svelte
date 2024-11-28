@@ -1,15 +1,17 @@
 <script>
   import { Icon } from "../index.js";
+  export let onNextMonth;     
+  export let onPreviousMonth; 
 </script>
 
 <nav>
-  <button><Icon name="arrow-left" /></button>
-   <p>Aug.</p>
-  <button><Icon name="arrow-right" /></button>
+  <button on:click={onPreviousMonth}><Icon name="arrow-left" /></button>
+  <p>Aug.</p> 
+  <button on:click={onNextMonth}><Icon name="arrow-right" /></button>
 </nav>
 
 <style>
-    nav { 
+  nav {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -23,5 +25,4 @@
     box-shadow: var(--box-shadow);
     padding: var(--average-gap);
   }
-
 </style>
