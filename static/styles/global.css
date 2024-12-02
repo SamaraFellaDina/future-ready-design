@@ -38,6 +38,10 @@
   --box-shadow: 0px 0px 9px -2px var(--color-shadow);
   --section-border-radius: 8px;  
   
+  --color-background-section: black;
+  --color-regular-text: white;
+  --color-background: #2c2c2c;
+  --color-shadow: black;
 }
 
 @media screen and (max-width: 500px) {
@@ -57,6 +61,7 @@
 
 body {
   background-color: var(--color-background);
+  overflow-x: hidden;
 }
 
 h1,
@@ -104,3 +109,4 @@ button {
   border: none;
   cursor: pointer;
 }
+

@@ -1,5 +1,5 @@
 <script>
-  import { Title, AccessibillityGraph, AutomaticScan, ErrorResult, TypeGraph } from '$lib';
+  import { Title, AccessibillityGraph, AutomaticScan, ErrorResult, TypeGraph, RetroLineArt } from '$lib';
   export let data = data;
   export let company = data.sites;
   export let resultsheet = data.scans;
@@ -28,3 +28,4 @@
 <ErrorResult {result} />
 <TypeGraph {result} />
 <AccessibillityGraph {resultsheet} />
+<RetroLineArt />
