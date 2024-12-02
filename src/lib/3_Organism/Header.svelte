@@ -58,10 +58,6 @@
         </li>
       {/each}
     </ul>
-    <div class="spinner-box">
-      <div class="blue-orbit leo">
-      </div>
-    </div>
   </nav>
 </header>
 
@@ -210,36 +206,4 @@
     }
   }
 
-
-  .spinner-box {
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-}
-
-  .leo {
-	position: absolute;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 50%;
-}
-
-.blue-orbit {
-	width: 165px;
-	height: 165px;
-  border: 1px solid red;
-  animation: spin3D 3s linear .2s infinite;
-}
-
-@keyframes spin3D {
-  from {
-    transform: rotate3d(.5,.5,.5, 360deg);
-  }
-  to{
-    transform: rotate3d(0deg);
-  }
-}
 </style>
