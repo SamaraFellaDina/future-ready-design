@@ -3,7 +3,7 @@
   import { DonutChart } from '../index.js';
 </script>
 
-<section>
+<section class="float">
   <div>
     <h2>{result.title}</h2>
     <p>{result.description}</p>

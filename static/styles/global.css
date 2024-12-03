@@ -17,7 +17,7 @@
   --font-weight-thin: 100;
 
   --color-blue: #0939F8;
-  --color-lightblue: #D5E8FF;
+  --color-lightblue: #0939f851;
   --color-black: #f1ffc6;
 
   --color-regular-text: var(--color-black);
@@ -103,4 +103,21 @@ button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+
+@keyframes float {
+	0% {
+		transform: translate(0px, 0px);
+	}
+	50% {
+		transform: translate(0px, -20px);
+	}
+	100% {
+		transform: translate(0px, 0px);
+	}
+}
+
+.float {
+  animation: float 10s infinite ease-in-out;
 }
