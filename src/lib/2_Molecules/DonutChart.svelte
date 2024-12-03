@@ -7,7 +7,7 @@
   let percentage = result.score;
 
   onMount(() => {
-    let doughnutColor = percentage < 50 ? '#c30010' : percentage < 80 ? '#faa800' : '#228b22';
+    let doughnutColor = percentage < 50 ? '#FF0084' : percentage < 80 ? '#E75A00' : '#A5C536';
     let doughnutColorAlt = doughnutColor + "33";
 
     const data = {

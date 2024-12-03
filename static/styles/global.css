@@ -16,21 +16,21 @@
   --font-family: 'Outfit', arial, sans-serif;
   --font-weight-thin: 100;
 
-  --color-blue: #0275FF;
+  --color-blue: #0939F8;
   --color-lightblue: #D5E8FF;
-  --color-black: #5D666A;
+  --color-black: #f1ffc6;
 
   --color-regular-text: var(--color-black);
-  --color-background:#F0F0F0;
-  --color-background-section:#FFFFFF;
-  --color-shadow: #C8C8C8;
+  --color-background:#141414;
+  --color-background-section:#252525;
+  --color-shadow: #878787ad;
 
-  --color-status-good:#00800070;
-  --color-status-fine:#ffa60053;
-  --color-status-bad:#ff00004a;
-  --color-status-good-border:green;
-  --color-status-fine-border:orange;
-  --color-status-bad-border:red;
+  --color-status-good-border:#a5c536;
+  --color-status-fine-border:#E75A00;
+  --color-status-bad-border:#FF0084;
+  --color-status-good: rgba(var(--color-status-good-border), 0.2);
+  --color-status-fine: rgba(var(--color-status-fine-border), 0.2);
+  --color-status-bad:rgba(var(--color-status-bad-border), 0.2);
 
   --average-gap: 20px;
   --average-padding: 30px;
