@@ -135,7 +135,7 @@
   });
 </script>
 
-<section>
+<section class="float-animation">
   <div>
     <h2>Toegankelijkheid</h2>
     <nav>

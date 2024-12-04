@@ -3,7 +3,7 @@
   export let result = data.scans;
 </script>
 
-<section>
+<section class="float-animation">
   <h2>Soorten foutmeldingen</h2>
   <figure>
     <BarChart {result}/>

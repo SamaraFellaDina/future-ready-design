@@ -25,9 +25,9 @@
 
 </script>
 
-<ul>
+<ul class="float-animation">
   {#each result.result as { title, amount }, index}
-    <li>
+    <li class="float-animation">
       <div>
         <h2>{title}</h2>
         <Icon name={getIconName(amount)} /> 

@@ -5,7 +5,7 @@
   export let previousMonth;
 </script>
 
-<section>
+<section class="float-animation">
   <div>
     <h1>{company[0].title}/home</h1>
     <p>Automatische Scan</p>
