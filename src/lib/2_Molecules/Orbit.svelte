@@ -9,9 +9,8 @@
     <div class="big-orbit2 leo2">
     </div>
     <div class="planet leo">
-      <Wave />
-      <div class="water-wave"></div>
     </div>
+    <Wave />
   </div>
 
 <style>
@@ -42,13 +41,12 @@
 }
 
 .planet{
-  background-color: var(--color-status-fine-border);
+  /* background-color: var(--color-status-fine-border); */
   width: 100px;
   height: 100px;
-  animation: unset;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   border: 2px solid indigo;
-  
+  animation: float 3s linear infinite;
 }
 
 .planet::before {
@@ -104,16 +102,6 @@
   border-radius: 50%;
 }
 
-.water-wave{
-  background-color: indigo;
-  height: 50%;
-  width: 100%;
-  position: absolute;
-  top: 53%;
-  border-radius: 0 0 50% 50%;
-}
-
-
 @supports (animation-timeline: scroll(y)) {
  
   .big-orbit, .big-orbit2 {
@@ -167,5 +155,17 @@
 	{
 		background-position: 0 0;
 	}
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(10px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
 }
 </style>

@@ -1,3 +1,4 @@
+<div class="wave-container">
 <svg viewBox="0 0 290 30">
   <path
     class="wave"
@@ -9,7 +10,16 @@
   </path>
 </svg>
 
+<div class="water-wave"></div>
+</div>
+
 <style>
+
+  .wave-container{
+    position: absolute;
+    bottom: 40%;
+  }
+
   svg {
    
     width: 200px;
@@ -21,6 +31,15 @@
     stroke-dasharray: 0 0 0 0; 
     width: 200px;
   }
+
+  .water-wave{
+  background-color: indigo;
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  top: 68%;
+}
+
 
   /* @supports (animation-timeline: scroll(y)) {
     .wave{
