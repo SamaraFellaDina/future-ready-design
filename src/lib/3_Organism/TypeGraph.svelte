@@ -18,9 +18,23 @@
     box-shadow: var(--box-shadow);
     padding: var(--average-padding);
     grid-area: 3 / 1 / 4 / 2;
+    animation: fadein 2s forwards;
+    animation-delay: 4s;
+    opacity: 0;
   }
 
   h2 {
     margin-bottom: 50px;
+  }
+
+  @keyframes fadein{
+    from{
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0px);
+    }
   }
 </style>

@@ -1,5 +1,6 @@
 <script>
   import { Icon } from "../index.js";
+  import { onMount } from "svelte";
 
   export let result = data.scans;
 
@@ -22,6 +23,15 @@
   "missing-alt-texts",
   "aria-label-errors",
 ];
+
+  onMount(() => {
+    // Select all list items
+    const blocks = document.querySelectorAll("li");
+    // Loop through each element and set an animation delay
+    blocks.forEach((li, index) => {
+      li.style.animationDelay = `${index * 0.2}s`;
+    });
+  });
 
 </script>
 
@@ -57,6 +67,9 @@
     box-shadow: var(--box-shadow);
     list-style: none;
     padding: var(--average-gap);
+    animation: fadein 2s forwards;
+    animation-delay: 8s;
+    opacity: 0;
   }
 
   li h2 {
@@ -101,6 +114,17 @@
 
     li{
       padding: 10px;
+    }
+  }
+
+  @keyframes fadein{
+    from{
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0px);
     }
   }
 

@@ -19,6 +19,8 @@
     grid-area: 1 / 1 / 2 / 3;
     display: flex;
     justify-content: space-between;
+    animation: fadein 2s forwards;
+    opacity: 0;
   }
 
   section div {
@@ -35,6 +37,15 @@
       flex-direction: column;
       align-items: center;
       gap: 30px;
+    }
+  }
+
+  @keyframes fadein{
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
     }
   }
 </style>
