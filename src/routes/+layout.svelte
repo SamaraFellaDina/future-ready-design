@@ -1,5 +1,5 @@
 <script>
-  import { Header, Footer } from '$lib';
+  import { Header, Footer, Acid } from '$lib';
   export let data;
   export let company = data.sites;
 
@@ -7,36 +7,46 @@
 
 <Header {company}/>
 
-<main id="main-content" class="wrapper">
+<Acid />
+<main>
   <slot />
 </main>
 
 <Footer />
 
 <style>
-  .wrapper {
-    margin: auto;
-    max-width: 1100px;
-  }
-
   main {
     display: grid;
     grid-template-columns: 2.2fr 0.8fr; 
     grid-template-rows: 0.2fr 0.8fr 1fr 1.2fr;   
     gap: 20px;  
     height: 90%;
-    margin: 20px auto;
     padding: 30px 10px;
+    margin: auto;
+    max-width: 1100px;
   }
 
+
+
+main {
+  position: relative; 
+  z-index: 1; 
+  display: grid;
+  grid-template-columns: 2.2fr 0.8fr; 
+  grid-template-rows: 0.2fr 0.8fr 1fr 1.2fr;   
+  gap: 20px;  
+  height: 90%;
+  padding: 30px 10px;
+  margin: auto;
+  max-width: 1100px;
+}
   @media only screen and (max-width: 1600px) {
-    .wrapper{
-      max-width: 900px;
-      }
 
     main {
       display: flex;
       flex-direction: column;
+      max-width: 900px;
+
     }
   }
 
