@@ -38,6 +38,7 @@ main {
   padding: 30px 10px;
   margin: auto;
   max-width: 1100px;
+  padding-block-end: 15em;
 }
   @media only screen and (max-width: 1600px) {
 
