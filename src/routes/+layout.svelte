@@ -6,7 +6,6 @@
 </script>
 
 <Header {company}/>
-
 <Acid />
 <main>
   <slot />
