@@ -167,7 +167,18 @@
     box-shadow: var(--box-shadow);
     padding: var(--average-padding);
     grid-area: 4 / 1 / 5 / 3;
+    animation: fadein 2s forwards;
+    animation-delay: 6s;
+    opacity: 0;
   }
+
+  @supports (animation-timeline: scroll(y)) {
+ 
+ section {
+   animation: fadein linear;
+   animation-timeline: scroll(y); 
+ }
+}
   
   canvas {
     max-width: 100%;
@@ -186,5 +197,16 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+  }
+  
+  @keyframes fadein{
+    from{
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to{
+      opacity: 1;
+      transform: translateX(0px);
+    }
   }
 </style>

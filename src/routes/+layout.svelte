@@ -1,9 +1,11 @@
 <script>
-  import { Header, Footer } from '$lib';
+  import { Background, Header, Footer } from '$lib';
   export let data;
   export let company = data.sites;
 
 </script>
+
+<Background />
 
 <Header {company}/>
 

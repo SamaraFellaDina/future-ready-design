@@ -1,5 +1,5 @@
 <script>
-  import { Title, AccessibillityGraph, AutomaticScan, ErrorResult, TypeGraph } from '$lib';
+  import { Orbit, Title, AccessibillityGraph, AutomaticScan, ErrorResult, TypeGraph } from '$lib';
   export let data = data;
   export let company = data.sites;
   export let resultsheet = data.scans;
@@ -21,6 +21,8 @@
     }
   }
 </script>
+
+<Orbit />
 
 <Title {company} {resultsheet} {nextMonth} {previousMonth} />
 

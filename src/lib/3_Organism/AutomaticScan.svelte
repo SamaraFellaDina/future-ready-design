@@ -21,6 +21,9 @@
     grid-area: 2 / 1 / 3 / 2;
     display: flex;
     gap: 1em;
+    animation: fadein 2s forwards;
+    animation-delay: 2s;
+    opacity: 0;
     
     @media screen and (max-width: 700px) {
       flex-direction: column;
@@ -31,6 +34,17 @@
   h2 {
     margin-bottom: 50px;
     font-size: 2em;
+  }
+
+  @keyframes fadein{
+    from{
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0px);
+    }
   }
 
 </style>
