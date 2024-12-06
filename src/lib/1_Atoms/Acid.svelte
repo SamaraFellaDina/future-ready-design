@@ -4,7 +4,7 @@
 
 <div class="psychedelic">
 	<ScrollyVideo 
-		src="/assets/video/acid.mov"
+		src="/assets/video/neon.mov"
 		muted
 	/>
 </div>
