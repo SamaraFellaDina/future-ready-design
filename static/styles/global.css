@@ -21,8 +21,8 @@
   --color-black: #5D666A;
 
   --color-regular-text: var(--color-black);
-  --color-background:#F0F0F0;
-  --color-background-section:#FFFFFF;
+  --color-background:#171717;
+  --color-background-section:#2222224f;
   --color-shadow: #C8C8C8;
 
   --color-status-good:#00800070;

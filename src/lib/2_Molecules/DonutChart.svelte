@@ -46,7 +46,7 @@
 
 
 <figure>
-  <canvas id="doughnut-chart" height="150" width="150"></canvas>
+  <canvas id="doughnut-chart" height="150" width="150"><img src="" alt=""></canvas>
   <figcaption>{percentage}%</figcaption>
 </figure>
 

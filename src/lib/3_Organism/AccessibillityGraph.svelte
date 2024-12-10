@@ -1,13 +1,32 @@
 <script>
   import { onMount } from 'svelte';
   import Chart from "chart.js/auto";
-  import { Icon } from "../index.js";
+  import { Background, Icon } from "../index.js";
 
   export let resultsheet = data.scans;
   let chart;
  
   import ChartDataLabels from 'chartjs-plugin-datalabels';
+ 
+// script voor view-transition
+  onMount(() => {
+  const section = document.getElementById('d');
 
+  section.addEventListener('click', () => {
+    if (document.startViewTransition) {
+      document.startViewTransition(() => toggleActiveState(section));
+    } else {
+      toggleActiveState(section);
+    }
+  });
+});
+
+function toggleActiveState(section) {
+  section.classList.toggle('active'); 
+  section.offsetWidth;
+}
+
+// acces chart script
   Chart.register(ChartDataLabels);
  
   let August = resultsheet[0].score;
@@ -135,7 +154,8 @@
   });
 </script>
 
-<section>
+<section id="d" class="active">
+  <Background name = "moon" />
   <div>
     <h2>Toegankelijkheid</h2>
     <nav>
@@ -161,13 +181,28 @@
 
 <style>
 
+section.active{
+    transform: scale(1);
+    z-index: 0;
+  }
+
   section {
     background-color: var(--color-background-section);
     border-radius: var(--section-border-radius);
     box-shadow: var(--box-shadow);
     padding: var(--average-padding);
     grid-area: 4 / 1 / 5 / 3;
+    position: relative;
+    view-transition-name: ultra;
+    /* overwritten properties */
+    transform: scale(2) translateY(-200px);
+    cursor: pointer;
+    z-index: 3000;
   }
+
+  ::view-transition-group(ultra) {
+    animation-duration: 3s;
+}
   
   canvas {
     max-width: 100%;
@@ -179,6 +214,11 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
+  }
+
+  div, figure{
+    z-index: 2;
+    position: relative;
   }
 
   nav {

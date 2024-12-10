@@ -2,6 +2,7 @@
 export { default as Icon } from './1_Atoms/Icon.svelte'
 export { default as Chart } from './1_Atoms/BlankBarChart.svelte'
 export { default as SkipLink } from './1_Atoms/SkipLink.svelte'
+export { default as Background } from './1_Atoms/Background.svelte'
 
 export { default as BarChart } from './2_Molecules/BarChart.svelte'
 export { default as DonutChart } from './2_Molecules/DonutChart.svelte'

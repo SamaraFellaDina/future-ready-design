@@ -1,9 +1,30 @@
 <script>
-  import { BarChart } from '../index.js'
+  import { Background, BarChart } from '../index.js'
   export let result = data.scans;
+  import { onMount } from 'svelte';
+
+// script voor view-transition
+  onMount(() => {
+  const section = document.getElementById('b');
+
+  section.addEventListener('click', () => {
+    if (document.startViewTransition) {
+      document.startViewTransition(() => toggleActiveState(section));
+    } else {
+      toggleActiveState(section);
+    }
+  });
+});
+
+function toggleActiveState(section) {
+  section.classList.toggle('active'); 
+  section.offsetWidth;
+}
+
 </script>
 
-<section>
+<section id="b" class="active">
+  <Background name = "risograph" />
   <h2>Soorten foutmeldingen</h2>
   <figure>
     <BarChart {result}/>
@@ -11,6 +32,11 @@
 </section>
 
 <style>
+
+section.active{
+    transform: scale(1);
+    z-index: 0;
+  }
   
   section {
     background-color: var(--color-background-section);
@@ -18,9 +44,24 @@
     box-shadow: var(--box-shadow);
     padding: var(--average-padding);
     grid-area: 3 / 1 / 4 / 2;
+    position: relative;
+    view-transition-name: amazing;
+    /* overwritten properties */
+    transform: scale(2);
+    cursor: pointer;
+    z-index: 3000;
   }
+
+  ::view-transition-group(super) {
+    animation-duration: 3s;
+}
 
   h2 {
     margin-bottom: 50px;
+  }
+
+  h2, figure{
+    z-index: 2;
+    position: relative;
   }
 </style>
