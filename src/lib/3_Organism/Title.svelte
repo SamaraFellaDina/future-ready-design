@@ -30,6 +30,10 @@
     font-size: 2em;
   }
 
+  h1,
+  p {
+    color: aqua;
+  }
   @media screen and (max-width: 500px) {
     section {
       flex-direction: column;

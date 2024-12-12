@@ -13,11 +13,11 @@
   let DefineAxis = 'x';
   let chartBorderColor = chartData.map(value => {
     if (value >= 20) {
-      return 'red'; 
+      return '#FD02CB'; 
     } else if (value >= 10) {
-      return 'orange'; 
+      return '#E83916'; 
     } else {
-      return 'green'; 
+      return '#69AC2E'; 
     }
   });
 

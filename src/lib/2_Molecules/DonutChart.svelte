@@ -7,7 +7,7 @@
   let percentage = result.score;
 
   onMount(() => {
-    let doughnutColor = percentage < 50 ? '#c30010' : percentage < 80 ? '#faa800' : '#228b22';
+    let doughnutColor = percentage < 50 ? '#BD2406' : percentage < 80 ? '#E3641D' : '#69AC2E';
     let doughnutColorAlt = doughnutColor + "33";
 
     const data = {
@@ -63,6 +63,8 @@
     left: 50%; 
     transform: translate(-50%, -50%);
     font-weight: 700;
+    color: yellow;
+
   }
 
   figure {

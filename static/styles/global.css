@@ -16,14 +16,14 @@
   --font-family: 'Outfit', arial, sans-serif;
   --font-weight-thin: 100;
 
-  --color-blue: #0275FF;
-  --color-lightblue: #D5E8FF;
-  --color-black: #5D666A;
+  --color-blue: #FD02CB;
+  --color-lightblue: #fd02cb6b;
+  --color-black: #6454AD;
 
   --color-regular-text: var(--color-black);
-  --color-background:#F0F0F0;
-  --color-background-section:#FFFFFF;
-  --color-shadow: #C8C8C8;
+  --color-background:#DFCE18;
+  --color-background-section:#fff697;
+  --color-shadow: #69AC2E;
 
   --color-status-good:#00800070;
   --color-status-fine:#ffa60053;
@@ -35,7 +35,7 @@
   --average-gap: 20px;
   --average-padding: 30px;
 
-  --box-shadow: 0px 0px 9px -2px var(--color-shadow);
+  --box-shadow: 10px 10px 0px -2px var(--color-shadow);
   --section-border-radius: 8px;  
   
 }
@@ -43,6 +43,21 @@
 @media screen and (max-width: 500px) {
   :root {
     --average-padding: 20px; 
+  }
+}
+
+@keyframes silly{
+  0%{
+    rotate:-5deg;
+  }
+  25%{
+    rotate:5deg;
+  }
+  50%{
+    rotate:-5deg;
+  }
+  100%{
+    rotate:5deg;
   }
 }
 
@@ -57,6 +72,36 @@
 
 body {
   background-color: var(--color-background);
+  background: url('../assets/gif/BG.gif');
+}
+
+section,
+ul {
+  margin: 5em 0;
+}
+section,
+li:first-child {
+  animation: silly 5s steps(4) infinite reverse;
+}
+
+section:nth-child(1),
+li:first-child:nth-child(1) {
+  animation-delay: 0s;
+}
+
+section:nth-child(2),
+li:first-child:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+section:nth-child(3),
+li:first-child:nth-child(3) {
+  animation-delay: 1s;
+}
+
+section:nth-child(4),
+li:first-child:nth-child(4) {
+  animation-delay: 1.5s;
 }
 
 h1,

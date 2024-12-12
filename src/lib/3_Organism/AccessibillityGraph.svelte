@@ -164,9 +164,10 @@
   section {
     background-color: var(--color-background-section);
     border-radius: var(--section-border-radius);
-    box-shadow: var(--box-shadow);
+    box-shadow: 10px 10px 0px -2px var(--color-blue);
     padding: var(--average-padding);
     grid-area: 4 / 1 / 5 / 3;
+    background-color: #F38F34;
   }
   
   canvas {

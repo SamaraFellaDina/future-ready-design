@@ -13,11 +13,12 @@
 <style>
   
   section {
-    background-color: var(--color-background-section);
+    background-color: #6ee5fa;
     border-radius: var(--section-border-radius);
-    box-shadow: var(--box-shadow);
+    box-shadow: 10px 10px 0px -2px var(--color-background);
     padding: var(--average-padding);
     grid-area: 3 / 1 / 4 / 2;
+
   }
 
   h2 {
