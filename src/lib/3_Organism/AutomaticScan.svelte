@@ -37,6 +37,7 @@ function toggleActiveState(section) {
 :global(.auto.active2) {  
     transform: scale(2) translateY(200px);
     z-index: 3000;
+    animation: float cubic-bezier(0.250, 0.100, 0.250, 1.000) infinite;
   }
 
  
@@ -54,7 +55,6 @@ function toggleActiveState(section) {
     transform: scale(1);
     cursor: pointer;
     z-index: 1;
-    /* animation: rotatezoom 2s forwards; */
   }
 
 ::view-transition-group(super) {
@@ -64,15 +64,4 @@ function toggleActiveState(section) {
   div{
     z-index: 1;
   }
-
-
-@keyframes rotatezoom{
-  from{
-    transform: rotateZ(0deg);
-  }
-  to{
-    transform: rotateZ(360deg);
-  }
-}
-
 </style>

@@ -74,10 +74,13 @@ function toggleActiveState(element) {
   }
 
   :global(.liedjes.active) {
-      border: 2px solid red;
+      transform: scale(2) !important;
+      z-index: 3000 !important;
+      padding: 40px !important;
   }
 
   li {
+    
     display: grid;
     grid-template-rows: 0.5fr 1fr;
     height: 20%;
@@ -88,11 +91,20 @@ function toggleActiveState(element) {
     padding: var(--average-gap);
     /* https://grainy-gradients.vercel.app/ */
     filter: contrast(170%) brightness(950%);
-    filter: contrast(170%) brightness(950%);
     background: 
-    linear-gradient(45deg, rgba(0,0,255,1), rgba(0,0,0,0)),
+    linear-gradient(45deg, var(--color-blue), rgba(0,0,0,0)),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    /* view-transition-name: outstanding; */
+    /* overwritten properties */
+    transform: scale(1);
+    cursor: pointer;
+    z-index: 0;
+    
   }
+
+  ::view-transition-group(outstanding) {
+    animation-duration: 3s;
+}
 
   li h2 {
     padding-bottom: 0.5em;

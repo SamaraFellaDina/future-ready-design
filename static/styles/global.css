@@ -16,9 +16,9 @@
   --font-family: 'Outfit', arial, sans-serif;
   --font-weight-thin: 100;
 
-  --color-blue: #0275FF;
-  --color-lightblue: #D5E8FF;
-  --color-black: #5D666A;
+  --color-blue: hsl(182 100% 52%);
+  --color-lightblue: hsl(61 100% 30%);
+  --color-black: #ffffff;
 
   --color-regular-text: var(--color-black);
   --color-background:#171717;
@@ -55,9 +55,17 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: var(--color-background);
+@property --ang {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }
+
+body {
+  background: linear-gradient(var(--ang, 0deg), var(--color-blue) 50%, var(--color-lightblue) 0%);
+  animation: rot 1s cubic-bezier(0.68, -0.57, 0.26, 1.65) infinite alternate-reverse;
+}
+
 
 h1,
 h2,
@@ -108,3 +116,13 @@ button {
 @view-transition{
   navigation: auto;
 }
+
+@keyframes rot {
+  to {
+    --ang: 1turn;
+    transform: translateY(100px);
+  }
+}
+
+
+

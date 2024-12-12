@@ -22,7 +22,7 @@
 });
 
 function toggleActiveState(section) {
-  section.classList.toggle('active'); 
+  section.classList.toggle('active3'); 
   section.offsetWidth;
 }
 
@@ -154,7 +154,7 @@ function toggleActiveState(section) {
   });
 </script>
 
-<section id="d" class="active">
+<section id="d" class="acces">
   <Background name = "moon" />
   <div>
     <h2>Toegankelijkheid</h2>
@@ -181,9 +181,11 @@ function toggleActiveState(section) {
 
 <style>
 
-section.active{
-    transform: scale(1);
-    z-index: 0;
+:global(.acces.active3){
+    
+    transform: scale(2) translateY(-200px);
+    z-index: 3000;
+    
   }
 
   section {
@@ -195,9 +197,9 @@ section.active{
     position: relative;
     view-transition-name: ultra;
     /* overwritten properties */
-    transform: scale(2) translateY(-200px);
+    transform: scale(1);
     cursor: pointer;
-    z-index: 3000;
+    z-index: 0;
   }
 
   ::view-transition-group(ultra) {

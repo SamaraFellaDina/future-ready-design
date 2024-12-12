@@ -17,13 +17,13 @@
 });
 
 function toggleActiveState(section) {
-  section.classList.toggle('active'); 
+  section.classList.toggle('active4'); 
   section.offsetWidth;
 }
 
 </script>
 
-<section id="b" class="active">
+<section id="b" class="type">
   <Background name = "risograph" />
   <h2>Soorten foutmeldingen</h2>
   <figure>
@@ -33,10 +33,10 @@ function toggleActiveState(section) {
 
 <style>
 
-section.active{
-    transform: scale(1);
-    z-index: 0;
-  }
+:global(.type.active4){
+  transform: scale(2);
+  z-index: 3000;
+}
   
   section {
     background-color: var(--color-background-section);
@@ -47,9 +47,9 @@ section.active{
     position: relative;
     view-transition-name: amazing;
     /* overwritten properties */
-    transform: scale(2);
+    transform: scale(1);
     cursor: pointer;
-    z-index: 3000;
+    z-index: 0;
   }
 
   ::view-transition-group(super) {
