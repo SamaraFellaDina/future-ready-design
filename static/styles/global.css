@@ -104,3 +104,7 @@ button {
   border: none;
   cursor: pointer;
 }
+
+@view-transition{
+  navigation: auto;
+}

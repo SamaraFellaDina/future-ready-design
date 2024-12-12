@@ -17,13 +17,13 @@
 });
 
 function toggleActiveState(section) {
-  section.classList.toggle('active'); 
+  section.classList.toggle('active2'); 
   section.offsetWidth;
 }
 
 </script>
 
-<section id="a" class="active">
+<section id="a" class="auto">
   <Background name = "art" />
     <div>
       <h2>{result.title}</h2>
@@ -34,10 +34,12 @@ function toggleActiveState(section) {
 
 <style>
 
-  section.active{
-    transform: scale(1);
-    z-index: 0;
+:global(.auto.active2) {  
+    transform: scale(2) translateY(200px);
+    z-index: 3000;
   }
+
+ 
  
   section {
     background-color: var(--color-background-section);
@@ -49,9 +51,9 @@ function toggleActiveState(section) {
     gap: 1em;
     view-transition-name: super;
     /* overwritten properties */
-    transform: scale(2) translateY(200px);
+    transform: scale(1);
     cursor: pointer;
-    z-index: 3000;
+    z-index: 1;
     /* animation: rotatezoom 2s forwards; */
   }
 
@@ -72,4 +74,5 @@ function toggleActiveState(section) {
     transform: rotateZ(360deg);
   }
 }
+
 </style>
