@@ -27,6 +27,8 @@
 
 <ul>
   {#each result.result as { title, amount }, index}
+  <a href="/Result">
+
     <li>
       <div>
         <h2>{title}</h2>
@@ -37,6 +39,8 @@
         <Icon name={icons[index]} /> 
       </div>
     </li>
+
+  </a>
   {/each}
 </ul>
 
