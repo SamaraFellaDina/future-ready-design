@@ -7,22 +7,9 @@
   let index = 0;
   let result = data.scans[index];
 
-  function nextMonth() {
-    if (index < data.scans.length - 1) {
-      index += 1;
-      result = data.scans[index];
-    }
-  }
-
-  function previousMonth() {
-    if (index > 0) {
-      index -= 1;
-      result = data.scans[index];
-    }
-  }
 </script>
 
-<Title {company} {resultsheet} {nextMonth} {previousMonth} />
+<Title {data} {company} />
 
 <AutomaticScan {result} />
 <ErrorResult {result} />

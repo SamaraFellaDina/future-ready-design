@@ -63,7 +63,7 @@
 
 body {
   background: linear-gradient(var(--ang, 0deg), var(--color-blue) 50%, var(--color-lightblue) 0%);
-  animation: rot 1s cubic-bezier(0.68, -0.57, 0.26, 1.65) infinite alternate-reverse;
+  /* animation: rot 1s cubic-bezier(0.68, -0.57, 0.26, 1.65) infinite alternate-reverse; */
 }
 
 

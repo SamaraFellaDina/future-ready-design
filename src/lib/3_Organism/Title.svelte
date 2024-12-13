@@ -1,8 +1,7 @@
 <script>
   import { MonthlyNavigation } from "../index.js";
   export let company;
-  export let nextMonth;
-  export let previousMonth;
+  export let data;
 </script>
 
 <section>
@@ -10,7 +9,7 @@
     <h1>{company[0].title}/home</h1>
     <p>Automatische Scan</p>
   </div>
-  <MonthlyNavigation onNextMonth={nextMonth} onPreviousMonth={previousMonth} />
+  <MonthlyNavigation {data} />
 </section>
 
 <style>

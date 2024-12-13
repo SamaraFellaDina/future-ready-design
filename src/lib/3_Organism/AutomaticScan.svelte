@@ -18,7 +18,6 @@
 
 function toggleActiveState(section) {
   section.classList.toggle('active2'); 
-  section.offsetWidth;
 }
 
 </script>
