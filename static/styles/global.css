@@ -12,6 +12,23 @@
   font-style: normal; 
 }
 
+@keyframes grow {
+  0% {
+    transform: scale(0%);
+  }
+
+  100%{
+    transform: scale(100%);
+
+  }
+  
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: grow .5s ease-in-out none;
+}
+
 :root {
   --font-family: 'Outfit', arial, sans-serif;
   --font-weight-thin: 100;
