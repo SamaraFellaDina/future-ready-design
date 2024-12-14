@@ -1,8 +1,6 @@
 <script>
   export let percentage;
-  const radius = 40;
-  const circumference = 2 * Math.PI * radius;
-  let donutAnimation = `${(percentage / 100) * circumference} ${circumference}`;
+  let donutAnimation = `${(percentage / 100) * 250} 250`;
   let donutColor = percentage < 50 ? 'var(--color-status-bad-border)' : percentage < 80 ? 'var(--color-status-fine-border)' : 'var(--color-status-good-border)';
 </script>
 
@@ -37,15 +35,14 @@
   circle:nth-of-type(1) {
     fill: none;
     stroke: #ccc;
-    stroke-width: 20;
+    stroke-width: 10;
   }
 
   circle:nth-of-type(2) {
     fill: none;
     stroke: var(--donutcolor);
-    stroke-width: 20;
-    animation: donutanimation 0.5s forwards;
-    transition: stroke-dasharray 0.5s ease-out;
+    stroke-width: 10;
+    animation: donutanimation 0.8s forwards ease-out;
   }
 
   figcaption {
@@ -53,8 +50,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: var(--font-size);
-    font-weight: bold;
-    color: #333;
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-regular-text);
   }
 </style>

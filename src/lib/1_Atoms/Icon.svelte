@@ -122,7 +122,7 @@
 
 <style>
 
-.top-icon{
+svg {
   min-width: 20px;
 }
 

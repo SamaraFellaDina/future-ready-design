@@ -7,9 +7,9 @@
 
 <Header {company}/>
 
-<main id="main-content" class="wrapper">
+<!-- <main id="main-content" class="wrapper"> -->
   <slot />
-</main>
+<!-- </main> -->
 
 <Footer />
 
@@ -17,6 +17,12 @@
   :global(:root) {
     --font-family: 'Outfit', arial, sans-serif;
     --font-weight-thin: 100;
+    --font-size-regular: 16px;
+    --font-size-small: 14px;
+    --font-size-large: 28px;
+    --font-size-medium: 20px;
+    --font-size-xlarge: 32px;
+    --font-weight-bold: 700;
 
     --color-blue: #0275FF;
     --color-lightblue: #D5E8FF;
