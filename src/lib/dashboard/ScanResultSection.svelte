@@ -54,7 +54,7 @@
     flex-direction: column;
     gap: var(--average-gap);
     box-shadow: var(--box-shadow);
-    grid-column: 2 / 8;
+    grid-column: 2 / 4;
   }
 
   section > div:first-of-type {
@@ -106,9 +106,10 @@
 
   a {
     display: flex;
-    gap: var(--average-gap);
+    gap: 10px;
     align-items: center;
     color: var(--color-regular-text);
+    text-decoration: none;
   }
 
   span {
