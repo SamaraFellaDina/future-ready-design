@@ -21,3 +21,4 @@ export { default as BlankTitle } from "./dashboard/BlankTitle.svelte";
 export { default as AccessibillitySection } from "./dashboard/AccessibillitySection.svelte";
 export { default as ScanResultSection } from "./dashboard/ScanResultSection.svelte";
 export { default as SearchBar } from "./dashboard/SearchBar.svelte";
+export { default as PageResults } from "./dashboard/PageResults.svelte";

@@ -1,5 +1,5 @@
 <script>
-  import { BlankTitle, AccessibillitySection, ScanResultSection, SearchBar } from '$lib'
+  import { BlankTitle, AccessibillitySection, ScanResultSection, SearchBar, PageResults } from '$lib'
   export let data;
   let company = data.sites;
 </script>
@@ -12,6 +12,8 @@
   <ScanResultSection />
 
   <SearchBar />
+
+  <PageResults />
 </main>
 
 <style>
