@@ -30,6 +30,11 @@
     font-size: 2em;
   }
 
+  h1,
+  p {
+    color: var(--color-background-section);
+  }
+
   @media screen and (max-width: 500px) {
     section {
       flex-direction: column;

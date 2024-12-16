@@ -16,26 +16,26 @@
   --font-family: 'Outfit', arial, sans-serif;
   --font-weight-thin: 100;
 
-  --color-blue: #0275FF;
-  --color-lightblue: #D5E8FF;
-  --color-black: #5D666A;
+  --color-blue: #C50208;
+  --color-lightblue: #c5020846;
+  --color-black: #3A5D35;
 
   --color-regular-text: var(--color-black);
-  --color-background:#F0F0F0;
-  --color-background-section:#FFFFFF;
-  --color-shadow: #C8C8C8;
+  --color-background: var(--color-blue);
+  --color-background-section:#FFFFB9;
+  --color-shadow: #FFFFB9;
 
-  --color-status-good:#00800070;
-  --color-status-fine:#ffa60053;
-  --color-status-bad:#ff00004a;
-  --color-status-good-border:green;
-  --color-status-fine-border:orange;
-  --color-status-bad-border:red;
+  --color-status-good:#3a5d3597;
+  --color-status-fine:#fb9f0a87;
+  --color-status-bad:#c502087c;
+  --color-status-good-border:#3A5D35;
+  --color-status-fine-border:#FB9F0A;
+  --color-status-bad-border:#C50208;
 
   --average-gap: 20px;
   --average-padding: 30px;
 
-  --box-shadow: 0px 0px 9px -2px var(--color-shadow);
+  --box-shadow: 0px 0px 20px 5px var(--color-shadow);
   --section-border-radius: 8px;  
   
 }
@@ -57,6 +57,11 @@
 
 body {
   background-color: var(--color-background);
+}
+
+ul,
+section {
+  margin: 5em 0;
 }
 
 h1,
@@ -103,4 +108,31 @@ button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+li:hover,
+section:hover {
+animation: jingle 2s cubic-bezier(0.950, 0.190, 0.055, 0.895) .1s;  
+}
+
+@keyframes jingle {
+  0%{
+    rotate: 20deg;
+  }
+  25%{
+    rotate: -20deg;
+  }
+  50%{
+    rotate: 10deg;
+  }
+  75%{
+    rotate: -10deg;
+  }
+  90%{
+    rotate: 5deg;
+  }
+  100%{
+    rotate: 0deg;
+  }
+  
 }
