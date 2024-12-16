@@ -24,8 +24,8 @@
   
 }
 
-::view-transition-old(root),
-::view-transition-new(root) {
+::view-transition-old(dingentje),
+::view-transition-new(dingentje) {
   animation: grow .5s ease-in-out none;
 }
 
@@ -52,7 +52,7 @@
   --average-gap: 20px;
   --average-padding: 30px;
 
-  --box-shadow: 10px 10px 0px -2px var(--color-shadow);
+  --box-shadow: 15px 15px 0px -2px var(--color-shadow);
   --section-border-radius: 8px;  
   
 }
@@ -98,7 +98,7 @@ ul {
 }
 section,
 li:first-child {
-  animation: silly 5s steps(4) infinite reverse;
+  /* animation: silly 5s steps(4) infinite reverse; */
 }
 
 section:nth-child(1),

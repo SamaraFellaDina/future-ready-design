@@ -62,6 +62,9 @@
     list-style: none;
     padding: var(--average-gap);
   }
+  a:nth-child(1) {
+    view-transition-name: dingentje;
+  }
 
   li h2 {
     padding-bottom: 0.5em;
