@@ -136,6 +136,7 @@
 </script>
 
 <section>
+  <img src="https://img.pikbest.com/png-images/20241116/red-gift-bow-with-ribbon-detail-png-on-transparent-background_11096262.png!sw800"  width="200" height="200" class="strikje" alt="">
   <div>
     <h2>Toegankelijkheid</h2>
     <nav>
@@ -167,6 +168,14 @@
     box-shadow: var(--box-shadow);
     padding: var(--average-padding);
     grid-area: 4 / 1 / 5 / 3;
+    position: relative;
+  }
+
+  .strikje{
+    position: absolute;
+    top: 0%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
   }
   
   canvas {

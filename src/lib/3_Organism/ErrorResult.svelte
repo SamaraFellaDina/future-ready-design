@@ -26,6 +26,7 @@
 </script>
 
 <ul>
+  <img src="https://img.pikbest.com/png-images/20241116/red-gift-bow-with-ribbon-detail-png-on-transparent-background_11096262.png!sw800"  width="100" height="100" class="strikje" alt="">
   {#each result.result as { title, amount }, index}
     <li>
       <div>
@@ -46,6 +47,14 @@
     display: flex;
     flex-direction: column;
     row-gap: var(--average-gap);
+    position: relative;
+  }
+
+  .strikje{
+    position: absolute;
+    top: 0%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
   }
 
   li {
