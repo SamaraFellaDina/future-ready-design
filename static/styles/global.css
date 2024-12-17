@@ -53,10 +53,15 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
 }
 
 body {
-  background-color: var(--color-background);
+  background-color: var(--color-blue);
+
+  background-image: url('../assets/gif/giphy.gif');
+  background-blend-mode: multiply;
+  z-index: 10;
 }
 
 ul,
@@ -112,7 +117,8 @@ button {
 
 li:hover,
 section:hover {
-animation: jingle 2s cubic-bezier(0.950, 0.190, 0.055, 0.895) .1s;  
+animation: jingle 2s cubic-bezier(0.950, 0.190, 0.055, 0.895) .1s forwards;  
+animation-fill-mode: forwards;
 }
 
 @keyframes jingle {
