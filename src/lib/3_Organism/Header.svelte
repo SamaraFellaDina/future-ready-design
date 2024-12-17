@@ -64,7 +64,7 @@
 <style>
   nav {
     position: fixed;
-    background-color: var(--color-background-section);
+    background-color: transparent;
     height: 100%;
     padding: var(--average-padding);
     display: flex;

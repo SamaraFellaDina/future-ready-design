@@ -12,11 +12,32 @@
   font-style: normal; 
 }
 
+@font-face {
+  font-family: 'Lora';
+  src: url('/fonts/Lora-Medium.ttf') format('truetype');
+  font-weight: 400; 
+  font-style: normal; 
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('/fonts/Lora-Bold.ttf') format('truetype');
+  font-weight: 700; 
+  font-style: normal; 
+}
+
+@font-face {
+  font-family: 'SawarabiMincho';
+  src: url('/fonts/SawarabiMincho-Regular.ttf') format('truetype');
+  font-weight: 400; 
+  font-style: normal; 
+}
+
 :root {
-  --font-family: 'Outfit', arial, sans-serif;
+  --font-family: 'SawarabiMincho', 'Georgia', serif;
   --font-weight-thin: 100;
 
-  --color-blue: #0275FF;
+  --color-blue: #b6e3ea;
   --color-lightblue: #D5E8FF;
   --color-black: #5D666A;
 
@@ -48,7 +69,7 @@
 
 * {
   font-family: var(--font-family);
-  color: var(--color-regular-text);
+  color: var(--color-lightblue);
 
   padding: 0;
   margin: 0;
@@ -56,8 +77,10 @@
 }
 
 body {
-  background-color: var(--color-background);
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  position: relative;
 }
+
 
 h1,
 h2,
