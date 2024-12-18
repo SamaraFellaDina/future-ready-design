@@ -1,5 +1,5 @@
-# [live-link](https://future-ready-design-git-sammy-5c24b1-samarafelladinas-projects.vercel.app](https://sammy-view-transition.netlify.app)
-hier kan je de [live link](https://future-ready-design-git-sammy-5c24b1-samarafelladinas-projects.vercel.app](https://sammy-view-transition.netlify.app) vinden van de huidige coding spike 
+# [live-link](https://sammy-view-transition.netlify.app)
+hier kan je de [live link](https://sammy-view-transition.netlify.app) vinden van de huidige coding spike 
 
 # Screenshot
 ![screenshot](docs/screenshots/screenshot-view-transition.png)
