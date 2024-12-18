@@ -1,8 +1,12 @@
 <script>
-    import { onMount } from 'svelte';
-    onMount(() => {
-      document.body.classList.add('loaded');
-    });
+  export let percentageData;
+
+  import { onMount } from 'svelte';
+  onMount(() => {
+    document.body.classList.add('loaded');
+  });
+
+  const isValid = (value) => value !== undefined && value !== null && value !== "";
 </script>
 
 <div class="container">
@@ -16,44 +20,36 @@
         <li>20</li>
         <li>0</li>
       </ul>
-      <ul class="chart-x">
-        <li style="--start:100%; --end:80%">
-          <span>Jan</span>
-        </li>
-        <li style="--start:80%; --end:40%; --delay: 0.1">
-          <span>Feb</span>
-        </li>
-        <li style="--start:40%; --end:60%; --delay: 0.2">
-          <span>Mar</span>
-        </li>
-        <li style="--start:60%; --end:20%; --delay: 0.3">
-          <span>Apr</span>
-        </li>
-        <li style="--start:20%; --end:30%; --delay: 0.4">
-          <span>Mei</span>
-        </li>
-        <li style="--start:30%; --end:14%; --delay: 0.5">
-          <span>Jun</span>
-        </li>
-        <li style="--start:14%; --end:70%; --delay: 0.6">
-          <span>Jul</span>
-        </li>
-        <li style="--start:70%; --end:70%; --delay: 0.7">
-          <span>Aug</span>
-        </li>
-        <li style="--start:70%; --end:80%; --delay: 0.8">
-          <span>Sep</span>
-        </li>
-        <li style="--start:80%; --end:80%; --delay: 0.9">
-          <span>Okt</span>
-        </li>
-        <li style="--start:80%; --end:60%; --delay: 1.0">
-          <span>Nov</span>
-        </li>
-        <li style="--start:60%; --end:50%; --delay: 1.1">
-          <span>Dec</span>
-        </li>
-      </ul>
+      <div class="chart-bars">
+        <ul class="bars">
+          {#each percentageData as { start, end, delay }}
+            {#if isValid(start) && isValid(end)}
+              <li style="--start: {start}%; --end: {end}%; --delay: {delay}s">
+                <div class="bar"></div>
+                <div class="dot">
+                  <span class="tooltip">{end}%</span>
+                </div>
+              </li>
+            {:else}
+              <li style="visibility: hidden;"></li>
+            {/if}
+          {/each}
+        </ul>
+        <ul class="labels">
+          <li>Jan</li>
+          <li>Feb</li>
+          <li>Mar</li>
+          <li>Apr</li>
+          <li>May</li>
+          <li>Jun</li>
+          <li>Jul</li>
+          <li>Aug</li>
+          <li>Sep</li>
+          <li>Oct</li>
+          <li>Nov</li>
+          <li>Dec</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -66,11 +62,12 @@
 
 ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .chart-wrapper {
   display: flex;
-  gap: 20px;
   padding: 20px;
   border: var(--border);
   flex: 2;
@@ -82,32 +79,37 @@ ul {
 
 .chart-wrapper .chart-y li + li {
   margin-top: 40px;
+  margin-bottom: 30px;
 }
 
-.chart-wrapper .chart-x {
+.chart-bars {
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 
-.chart-wrapper .chart-x li {
+.chart-bars .bars {
+  display: flex;
+  flex-grow: 1;
+  height: 200px; /* Adjust for your desired chart height */
+  position: relative;
+  left: 33px;
+}
+
+.chart-bars .bars li {
   position: relative;
   display: flex;
   align-items: flex-end;
   flex: 1;
 }
 
-.chart-wrapper .chart-x li::before,
-.chart-wrapper .chart-x li::after {
-  content: "";
+.chart-bars .bars .bar {
   position: absolute;
-  left: 0;
-  background: var(--color-blue);
-}
-
-.chart-wrapper .chart-x li::before {
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background: var(--color-blue);
   clip-path: polygon(
     0 calc(100% - var(--start)),
     0 calc(100% - var(--start)),
@@ -117,15 +119,7 @@ ul {
   transition: clip-path 0.5s calc(var(--delay, 0) * 0.5s);
 }
 
-.chart-wrapper .chart-x li::after {
-  top: calc(100% - var(--start));
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  transform: translate(-5px, -5px);
-}
-
-.loaded .chart-wrapper .chart-x li::before {
+.loaded .chart-bars .bars .bar {
   clip-path: polygon(
     0 calc(100% - var(--start)),
     100% calc(100% - var(--end)),
@@ -134,4 +128,36 @@ ul {
   );
 }
 
+.chart-bars .bars .dot {
+  position: absolute;
+  top: calc(100% - var(--start));
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--color-blue);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chart-bars .labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 0 5px;
+}
+
+.chart-bars .labels li {
+  text-align: center;
+  flex: 1;
+}
+
+.bars li:last-child .bar {
+  display: none;
+}
+
+span.tooltip {
+  position: absolute;
+  bottom: 20px;
+  left: -10px;
+}
 </style>

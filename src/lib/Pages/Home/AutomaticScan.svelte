@@ -9,7 +9,7 @@
     <h2>{result.title}</h2>
     <p>{result.description}</p>
   </div>
-  <BlankDonutChart {result} {percentage}/>
+  <BlankDonutChart {percentage}/>
 </section>
 
 <style>

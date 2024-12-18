@@ -23,7 +23,7 @@
 </script>
 
 <main>
-  <Title {company} {resultsheet} {nextMonth} {previousMonth} />
+  <Title {company} {nextMonth} {previousMonth} />
   <AutomaticScan {result} />
   <ErrorResult {result} />
   <TypeGraph {result} />
