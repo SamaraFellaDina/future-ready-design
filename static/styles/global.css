@@ -98,7 +98,7 @@ ul {
 }
 section,
 li:first-child {
-  /* animation: silly 5s steps(4) infinite reverse; */
+  animation: silly 5s steps(4) infinite reverse;
 }
 
 section:nth-child(1),
