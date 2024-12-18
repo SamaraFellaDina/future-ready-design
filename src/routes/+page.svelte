@@ -24,7 +24,6 @@
 
 <main>
   <Title {company} {resultsheet} {nextMonth} {previousMonth} />
-
   <AutomaticScan {result} />
   <ErrorResult {result} />
   <TypeGraph {result} />
@@ -39,7 +38,7 @@
     gap: 20px;  
     margin: 0 auto;
     padding: 30px 10px;
-    max-width: 1100px;
+    max-width: 1300px;
   }
 
   @media only screen and (max-width: 1600px) {

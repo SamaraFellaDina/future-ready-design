@@ -25,6 +25,7 @@
     gap: var(--average-gap);
     padding: 30px 10px;
     margin-left: 300px;
-    max-width: 1600px;
+    max-width: 1300px;
+    margin: 0 auto;
   }
 </style>
