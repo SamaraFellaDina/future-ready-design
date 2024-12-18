@@ -19,6 +19,54 @@
       </ul>
     </a>
   </li>
+    <li>
+    <a href="/">
+      <h2>
+        <span>over-ons</span>
+        <span>73%</span>
+      </h2>
+      <label>
+        <span>nieuwekijk.nl/over-ons</span>
+        <progress value="73" max="100">73%</progress>
+      </label>
+      <p><Icon name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
+      <ul>
+        <li><Icon name = "good" />Niveau A</li>
+      </ul>
+    </a>
+  </li>
+    <li>
+    <a href="/">
+      <h2>
+        <span>over-ons</span>
+        <span>73%</span>
+      </h2>
+      <label>
+        <span>nieuwekijk.nl/over-ons</span>
+        <progress value="73" max="100">73%</progress>
+      </label>
+      <p><Icon name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
+      <ul>
+        <li><Icon name = "good" />Niveau A</li>
+      </ul>
+    </a>
+  </li>
+    <li>
+    <a href="/">
+      <h2>
+        <span>over-ons</span>
+        <span>73%</span>
+      </h2>
+      <label>
+        <span>nieuwekijk.nl/over-ons</span>
+        <progress value="73" max="100">73%</progress>
+      </label>
+      <p><Icon name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
+      <ul>
+        <li><Icon name = "good" />Niveau A</li>
+      </ul>
+    </a>
+  </li>
 </ul>
 
 <style>
@@ -71,7 +119,7 @@
   }
 
   a li {
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-regular);
     display: flex;
     align-items: center;
     gap: 5px;

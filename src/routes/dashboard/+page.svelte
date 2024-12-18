@@ -14,6 +14,7 @@
   <SearchBar />
 
   <PageResults />
+
 </main>
 
 <style>
