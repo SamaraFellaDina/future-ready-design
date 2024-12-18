@@ -1,41 +1,41 @@
-# [live-link](https://6762cf2c8c27a20bf091ed7d--deluxe-flan-15f028.netlify.app/)
-hier kan je de [live link](https://6762cf2c8c27a20bf091ed7d--deluxe-flan-15f028.netlify.app/) vinden van de huidige coding spike 
+# [live-link](https://sammy-scroll-driven-animation.netlify.app)
+hier kan je de [live link](https://sammy-scroll-driven-animation.netlify.app) vinden van de huidige coding spike 
 
 # Screenshot
-![screenshot](docs/screenshots/screenshot-view-transition.png)
+![screenshot](<docs/screenshots/Screenshot 2024-12-18 at 14.39.57.png>)
 
 # Aan welke prompt heb je gewerkt
-![prompt](docs/screenshots/prompt.png)
+![Prompt](<docs/screenshots/Screenshot 2024-12-02 at 14.16.13.png>)
 
 # Welke inspiratie heb je opgedaan? 
 
-* in issue #86 ga ik bezig met het ontwerpen en inspiratie opdoen, hier kan je de gehele documentatie vinden
+* in issue #69 ga ik bezig met het ontwerpen en inspiratie opdoen, hier kan je de gehele documentatie vinden
 * Tijdens het opdoen van inpsiratie heb ik met moodboards gewerkt
+
 
 ## Maken van moodboards
 Ik wil per woord een moodboard maken en het uiteindelijk combineren. Hier kan je de woorden vinden:
 
-* Risoprint
-* Silly
+- electrical
+- 90s
+- space
+- psychedelia
 
-### Risoprint 
-Wat is een risoprint eigenlijk? Het is eigenlijk een soort zeefdruk of stencildruk waarbij er word geëxperimenteerd met de verschillende drukkleuren (CMYK). Bij deze techniek ontstaan er unieke texturen bij het printen 
+### electrical
 
-<img width="472" alt="Screenshot 2024-12-10 at 11 17 57" src="https://github.com/user-attachments/assets/0b1c6fff-72d1-458f-8ef7-5bdfca7cffb0">
+<img width="918" alt="Screenshot 2024-12-02 at 15 26 38" src="https://github.com/user-attachments/assets/af80c008-1fa0-4b87-99f7-99a06cb68207">
 
+### 90s
 
-### Silly 
-Ik heb hierop vooral op termen gezocht als:
-* Silly 
-* Silly design 
-* en zo door...
+<img width="920" alt="Screenshot 2024-12-02 at 15 26 45" src="https://github.com/user-attachments/assets/183a688b-2517-4cfe-a118-9a7369244f6e">
 
-<img width="471" alt="Screenshot 2024-12-10 at 11 18 04" src="https://github.com/user-attachments/assets/ae7cdf88-4573-4640-b829-c79433e98f43">
+### space
 
+<img width="915" alt="Screenshot 2024-12-02 at 15 26 53" src="https://github.com/user-attachments/assets/907ad990-4c6a-4f64-a211-35ec1eed12db">
 
-## Wat valt je op?
+### psychedelia
+
+<img width="914" alt="Screenshot 2024-12-02 at 15 27 00" src="https://github.com/user-attachments/assets/0649b7e4-2bd1-47b3-9c7b-210bb925a266">
+
 * De kleuren 
-* texturen & patronen
-* de positie
-* de transparantie 
-
+* texturen 
