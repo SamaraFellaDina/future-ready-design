@@ -1,5 +1,5 @@
-# [live-link](https://sammy-view-transition.netlify.app)
-hier kan je de [live link](https://sammy-view-transition.netlify.app) vinden van de huidige coding spike 
+# [live-link](https://sammy-javascript-audio-api.netlify.app)
+hier kan je de [live link](https://sammy-javascript-audio-api.netlify.app) vinden van de huidige coding spike 
 
 # Screenshot
 ![screenshot](docs/screenshots/image.png)
