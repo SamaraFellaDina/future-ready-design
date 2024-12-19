@@ -1,9 +1,11 @@
 <script>
-  import { Header, Footer } from '$lib';
+  import { Header, Footer, Yinsnow } from '$lib';
   export let data;
   export let company = data.sites;
 
 </script>
+
+<Yinsnow />
 
 <Header {company}/>
 

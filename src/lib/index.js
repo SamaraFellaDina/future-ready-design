@@ -2,10 +2,12 @@
 export { default as Icon } from './1_Atoms/Icon.svelte'
 export { default as Chart } from './1_Atoms/BlankBarChart.svelte'
 export { default as SkipLink } from './1_Atoms/SkipLink.svelte'
+export { default as Mainsound } from './1_Atoms/Mainsound.svelte'
 
 export { default as BarChart } from './2_Molecules/BarChart.svelte'
 export { default as DonutChart } from './2_Molecules/DonutChart.svelte'
 export { default as MonthlyNavigation } from './2_Molecules/MonthlyNavigation.svelte'
+export { default as Yinsnow } from './2_Molecules/Yinsnow.svelte'
 
 export { default as Title } from './3_Organism/Title.svelte'
 export { default as AccessibillityGraph } from './3_Organism/AccessibillityGraph.svelte'

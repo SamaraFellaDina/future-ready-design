@@ -1,7 +1,7 @@
 <script>
   import { Icon } from "../index.js";
   import { page } from '$app/stores';
-  import { SkipLink } from "../index.js";
+  import { Mainsound, SkipLink } from "../index.js";
   export let company;
   let name = company[0].title.toLowerCase();
   let currentPage = $page.url.pathname;
@@ -57,6 +57,7 @@
           </a>
         </li>
       {/each}
+      <Mainsound />
     </ul>
   </nav>
 </header>
