@@ -2,10 +2,12 @@
   import { Icon } from "../index.js";
   import { page } from '$app/stores';
   import { Mainsound, SkipLink } from "../index.js";
+  import { onMount } from "svelte";
   export let company;
   let name = company[0].title.toLowerCase();
   let currentPage = $page.url.pathname;
 
+  
   const primaryLinks = [
     { href: '/dashboard', label: 'Dashboard' },
     { href: '/info', label: 'Info' },

@@ -245,5 +245,11 @@
         }
       }
     } 
+
+    @media screen and (max-width: 700px) {
+      .snow{
+        $total: 10;
+      }
+    }
     
     </style>

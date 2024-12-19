@@ -8,7 +8,26 @@
   const left = document.querySelector('.left-half-type');
   const right = document.querySelector('.right-half-type');
 
+  let clickCount = 0; 
+
   uitpakken.addEventListener("click", () => {
+    clickCount++; 
+
+    if (clickCount % 2 !== 0) {
+      setTimeout(() => {
+        const audio = new Audio('./assets/sounds/papel-38926.mp3');
+        audio.playbackRate = Math.max(6, audio.playbackRate - 6);
+        audio.play();
+      }, 0);
+
+      setTimeout(() => {
+        const audio2 = new Audio('./assets/sounds/bell.mp3');
+        audio2.playbackRate = Math.max(1, audio2.playbackRate - 1);
+        audio2.play();
+      }, 1200);
+
+    }
+
     left.classList.toggle('uitpakken-type');
     right.classList.toggle('uitpakken2-type');
     uitpakken.classList.toggle('section-tril-type');
@@ -35,11 +54,13 @@
     grid-area: 3 / 1 / 4 / 2;
     position: relative;
     border: 10px ridge var(--color-blue);
+    cursor: pointer;
   }
 
   :global(section.section-tril-type) {
   animation: trillen 0.3s ease-in-out 4;
   z-index: 2;
+  cursor: unset;
 }
 
   .inpak{
@@ -55,7 +76,7 @@
   }
 
   .right-half-type{
-    clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);
+    clip-path: polygon(49% 0, 100% 0%, 100% 100%, 49% 100%);
     /* border-radius: var(--section-border-radius); */
   }
 
@@ -90,6 +111,7 @@
     to{
       transform: translateX(-500px);
       opacity: 0;
+      display: none;
     }
   }
 
@@ -97,6 +119,7 @@
     to{
       transform: translateX(500px);
       opacity: 0;
+      display: none;
     }
   }
 

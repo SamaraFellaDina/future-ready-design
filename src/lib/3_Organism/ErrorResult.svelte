@@ -24,23 +24,41 @@
   "aria-label-errors",
 ];
 
-  onMount(() => {
-    const uitpakken = document.getElementById('d');
-    const left = document.querySelector('.left-half-err');
-    const right = document.querySelector('.right-half-err');
+onMount(() => {
+  const errorList = document.getElementsByClassName('liedjes');
 
-    const errorList = document.getElementsByClassName('liedjes');
-    console.log(errorList)
+  Array.prototype.forEach.call(errorList, function (element) {
+    let clickCount = 0;
 
-    Array.prototype.forEach.call(errorList, function(element) {
-      element.addEventListener('click', () => {
-        left.classList.toggle('uitpakken-err');
-        right.classList.toggle('uitpakken2-err');
-        element.classList.toggle('li-tril')
-      });
+    element.addEventListener('click', () => {
+      clickCount++; 
+
+      if (clickCount % 2 !== 0) {
+        
+        setTimeout(() => {
+          const audio = new Audio('./assets/sounds/papel-38926.mp3');
+          audio.playbackRate = Math.max(6, audio.playbackRate - 6);
+          audio.play();
+        }, 0);
+
+        setTimeout(() => {
+          const audio2 = new Audio('./assets/sounds/bell.mp3');
+          audio2.playbackRate = Math.max(1, audio2.playbackRate - 1);
+          audio2.play();
+        }, 1200);
+      }
+      
+      const left = element.querySelector('.left-half-err');
+      const right = element.querySelector('.right-half-err');
+
+      left.classList.toggle('uitpakken-err');
+      right.classList.toggle('uitpakken2-err');
+      element.classList.toggle('li-tril');
+    });
   });
-
 });
+
+
 
 </script>
 
@@ -74,10 +92,12 @@
   .liedjes{
     position: relative;
     border: 10px ridge var(--color-blue);
+    cursor: pointer;
   }
 
   :global(.liedjes.li-tril) {
   animation: trillen 0.3s ease-in-out 4;
+  cursor: unset;
 }
 
   .inpak{
@@ -93,7 +113,7 @@
   }
 
   .right-half-err{
-    clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);
+    clip-path: polygon(49% 0, 100% 0%, 100% 100%, 49% 100%);
     /* border-radius: var(--section-border-radius); */
   }
 
@@ -179,6 +199,8 @@
     to{
       transform: translateX(-500px);
       opacity: 0;
+      display: none;
+
     }
   }
 
@@ -186,6 +208,7 @@
     to{
       transform: translateX(500px);
       opacity: 0;
+      display: none;
     }
   }
 

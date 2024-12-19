@@ -29,7 +29,3 @@
 <TypeGraph {result} />
 <AccessibillityGraph {resultsheet} />
 
-<audio autoplay loop>
-  <source src="assets/sounds/smog.ogg" type="audio/mpeg"/>
-</audio>
-

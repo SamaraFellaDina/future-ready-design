@@ -5,23 +5,24 @@
   export let previousMonth;
 </script>
 
-<section>
+<article>
   <div>
     <h1>{company[0].title}/home</h1>
     <p>Automatische Scan</p>
   </div>
   <MonthlyNavigation onNextMonth={nextMonth} onPreviousMonth={previousMonth} />
-</section>
+</article>
 
 <style>
-  section {
+  article {
     padding-top: var(--average-padding);
     grid-area: 1 / 1 / 2 / 3;
     display: flex;
     justify-content: space-between;
+    box-shadow: unset;
   }
 
-  section div {
+  article div {
     display: flex;
     flex-direction: column-reverse;
   }
@@ -31,7 +32,7 @@
   }
 
   @media screen and (max-width: 500px) {
-    section {
+    article {
       flex-direction: column;
       align-items: center;
       gap: 30px;

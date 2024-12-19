@@ -9,17 +9,32 @@ onMount(() => {
   const left = document.querySelector('.left-half');
   const right = document.querySelector('.right-half');
 
+  let clickCount = 0; 
+
   uitpakken.addEventListener("click", () => {
-    setTimeout(() => {
-      const audio = new Audio('./assets/sounds/angel_blast2.wav');
-      audio.play();
-    }, 1200)
-   
+    clickCount++; 
+
+    if (clickCount % 2 !== 0) {
+      setTimeout(() => {
+        const audio = new Audio('./assets/sounds/papel-38926.mp3');
+        audio.playbackRate = Math.max(6, audio.playbackRate - 6);
+        audio.play();
+      }, 0);
+
+      setTimeout(() => {
+        const audio2 = new Audio('./assets/sounds/bell.mp3');
+        audio2.playbackRate = Math.max(1, audio2.playbackRate - 1);
+        audio2.play();
+      }, 1200);
+
+    }
+    
     left.classList.toggle('uitpakken');
     right.classList.toggle('uitpakken2');
-    uitpakken.classList.toggle('section-tril')
+    uitpakken.classList.toggle('section-tril');
   });
 });
+
 </script>
 
 <section id="a">
@@ -46,6 +61,7 @@ onMount(() => {
     gap: 1em;
     position: relative;
     border: 10px ridge var(--color-blue);
+    cursor: pointer;
     
     @media screen and (max-width: 700px) {
       flex-direction: column;
@@ -55,6 +71,7 @@ onMount(() => {
 
   :global(section.section-tril) {
   animation: trillen 0.3s ease-in-out 4;
+  cursor: unset;
 }
 
   .inpak{
@@ -70,7 +87,7 @@ onMount(() => {
   }
 
   .right-half{
-    clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);
+    clip-path: polygon(49% 0, 100% 0%, 100% 100%, 49% 100%);
     /* border-radius: var(--section-border-radius); */
   }
 
