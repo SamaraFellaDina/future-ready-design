@@ -70,7 +70,7 @@
   });
 </script>
 
-<audio src="./assets/sounds/chorus_forest.ogg"></audio>
+<audio src="./assets/sounds/chorus_forest.ogg" loop></audio>
 <button data-playing="false" role="switch" aria-checked="false" class="toggle">
   <span>Bring it to life</span>
 </button>
