@@ -2,33 +2,37 @@
   import { Icon, BlankLineChart } from "$lib";
 
   export let resultsheet = data.scans;
-  let January = "";
-  let February = "";
-  let March = "";
-  let April = "";
-  let May = "";
-  let June = "";
-  let July = "";
-  let August = resultsheet[0].score;
-  let September = resultsheet[1].score;
-  let October = resultsheet[2].score;
-  let November = resultsheet[3].score;
-  let December = resultsheet[4].score;
-  
-  let percentageData = [
-    { start: January, end: February, delay: 0 },
-    { start: February, end: March, delay: 0.1 },
-    { start: March, end: April, delay: 0.2 },
-    { start: April, end: May, delay: 0.3 },
-    { start: May, end: June, delay: 0.4 },
-    { start: June, end: July, delay: 0.5 },
-    { start: July, end: August, delay: 0.6 },
-    { start: August, end: September, delay: 0.7 },
-    { start: September, end: October, delay: 0.8 },
-    { start: October, end: November, delay: 0.9 },
-    { start: November, end: December, delay: 1.0 },
-    { start: December, end: December, delay: 1.1 },
+
+  let months = [
+    { name: "Januari", score: "" },
+    { name: "Februari", score: "" },
+    { name: "Maart", score: "" },
+    { name: "April", score: "" },
+    { name: "Mei", score: "" },
+    { name: "Juni", score: "" },
+    { name: "Juli", score: "" },
+    { name: "Augustus", score: "" },
+    { name: "September", score: "" },
+    { name: "Oktober", score: "" },
+    { name: "November", score: "" },
+    { name: "December", score: "" }
   ];
+
+  resultsheet.forEach(({ date, score }) => {
+    const monthName = new Date(date).toLocaleString("nl-NL", { month: "long" });
+    const month = months.find(m => m.name.toLowerCase() === monthName.toLowerCase());
+    if (month) month.score = score;
+  });
+
+  let percentageData = months.map((month, index) => {
+    const nextMonth = months[index + 1] || month; // To loop back to December if needed
+    return {
+      start: month.score,
+      end: nextMonth.score,
+      delay: index * 0.1,
+      name: month.name
+    };
+  });
 </script>
 
 <section>

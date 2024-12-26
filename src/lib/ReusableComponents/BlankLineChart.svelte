@@ -1,63 +1,85 @@
 <script>
   export let percentageData;
 
-  import { onMount } from 'svelte';
-  onMount(() => {
-    document.body.classList.add('loaded');
-  });
-
   const isValid = (value) => value !== undefined && value !== null && value !== "";
+
+  const lastValidIndex = percentageData.slice().reverse().findIndex(({ start }) => isValid(start));
+  if (lastValidIndex !== -1) {
+    percentageData[percentageData.length - 1 - lastValidIndex].isLastValid = true;
+  }
 </script>
 
-<div class="container">
-  <div class="wrapper">
-    <div class="chart-wrapper">
-      <ul class="chart-y">
-        <li>100</li>
-        <li>80</li>
-        <li>60</li>
-        <li>40</li>
-        <li>20</li>
-        <li>0</li>
-      </ul>
-      <div class="chart-bars">
-        <ul class="bars">
-          {#each percentageData as { start, end, delay }}
-            {#if isValid(start) && isValid(end)}
-              <li style="--start: {start}%; --end: {end}%; --delay: {delay}s">
-                <div class="bar"></div>
-                <div class="dot">
-                  <span class="tooltip">{end}%</span>
+<figure>
+  <ul>
+    <li>100</li>
+    <li>80</li>
+    <li>60</li>
+    <li>40</li>
+    <li>20</li>
+    <li>0</li>
+  </ul>
+  <div>
+    <ul>
+      {#each percentageData as { start, end, delay, name, isLastValid }}
+        {#if isValid(start) && isValid(end)}
+          <li style="--start: {start}%; --end: {end}%; --delay: {delay}">
+            <div class="bar"></div>
+            <div class="dot">
+              {#if isLastValid}
+                <div class="last-dot {start < 50 ? 'bottom' : 'top'}">
+                  <span class="month">{name.substr(0, 3)}</span>
+                  <span class="value">{start}%</span>
                 </div>
-              </li>
-            {:else}
-              <li style="visibility: hidden;"></li>
-            {/if}
-          {/each}
-        </ul>
-        <ul class="labels">
-          <li>Jan</li>
-          <li>Feb</li>
-          <li>Mar</li>
-          <li>Apr</li>
-          <li>May</li>
-          <li>Jun</li>
-          <li>Jul</li>
-          <li>Aug</li>
-          <li>Sep</li>
-          <li>Oct</li>
-          <li>Nov</li>
-          <li>Dec</li>
-        </ul>
-      </div>
-    </div>
+              {/if}
+              {#if !isLastValid}
+              <div class="tooltip">
+                <span>{name.substr(0, 3)}</span>
+                <span>{start}%</span>
+              </div>
+              {/if}
+            </div>
+            <span class="month-label">{name.substr(0, 3)}</span>
+          </li>
+        {:else}
+          <li>
+            <span class="month-label">{name.substr(0, 3)}</span>
+          </li>
+        {/if}
+      {/each}
+    </ul>
+    <!-- <ul>
+      {#each percentageData as { name }}
+        <li>
+          {name.substr(0, 3)}
+        </li>
+      {/each}
+    </ul> -->
   </div>
-</div>
+</figure>
 
 <style>
 :root {
   --chart-thickness: 3px;
-  --border: 1px solid rgba(211, 211, 211, 0.6);
+}
+
+@keyframes lineAnimation {
+  from {
+    clip-path: polygon(
+      0 calc(100% - var(--start)),
+      0 calc(100% - var(--start)),
+      0 calc(100% - var(--start)),
+      0 calc(100% - var(--start))
+    );
+  }
+
+  to {
+    clip-path: polygon(
+      0 calc(100% - var(--start)),
+      100% calc(100% - var(--end)),
+      100% calc(calc(100% - var(--end)) + var(--chart-thickness)),
+      0 calc(calc(100% - var(--start)) + var(--chart-thickness))
+    );
+  }
 }
 
 ul {
@@ -66,44 +88,45 @@ ul {
   margin: 0;
 }
 
-.chart-wrapper {
+figure {
   display: flex;
-  padding: 20px;
-  border: var(--border);
-  flex: 2;
+  padding-bottom: 35px;
+  overflow-x: auto;
 }
 
-.chart-wrapper .chart-y li {
+figure > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+figure > ul li {
   padding: 0 15px;
 }
 
-.chart-wrapper .chart-y li + li {
-  margin-top: 40px;
-  margin-bottom: 30px;
-}
-
-.chart-bars {
+figure > div {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  width: 100%;
+  border-bottom: 2px solid var(--color-black);
+  border-left: 2px solid var(--color-black);
+  padding-left: 60px;
 }
 
-.chart-bars .bars {
+figure > div > ul:first-of-type {
   display: flex;
-  flex-grow: 1;
-  height: 200px; /* Adjust for your desired chart height */
   position: relative;
-  left: 33px;
+  height: 100%;
 }
 
-.chart-bars .bars li {
+figure > div > ul:first-of-type li {
   position: relative;
   display: flex;
-  align-items: flex-end;
-  flex: 1;
+  width: 100%;
+  min-width: 50px;
 }
 
-.chart-bars .bars .bar {
+figure > div > ul:first-of-type .bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -116,48 +139,107 @@ ul {
     0 calc(100% - var(--start)),
     0 calc(100% - var(--start))
   );
-  transition: clip-path 0.5s calc(var(--delay, 0) * 0.5s);
+  animation: lineAnimation 1s forwards;
 }
 
-.loaded .chart-bars .bars .bar {
-  clip-path: polygon(
-    0 calc(100% - var(--start)),
-    100% calc(100% - var(--end)),
-    100% calc(calc(100% - var(--end)) + var(--chart-thickness)),
-    0 calc(calc(100% - var(--start)) + var(--chart-thickness))
-  );
-}
-
-.chart-bars .bars .dot {
+figure > div > ul:first-of-type .dot {
   position: absolute;
   top: calc(100% - var(--start));
   left: 0;
-  width: 10px;
-  height: 10px;
-  background: var(--color-blue);
+  width: 14px;
+  height: 14px;
+  background: var(--color-background-section);
+  border: 2px solid var(--color-blue);
   border-radius: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
-.chart-bars .labels {
+figure > div > ul:nth-of-type(2) {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-  padding: 0 5px;
+  border-top: 1px solid var(--color-black);
+  padding-top: 10px;
 }
 
-.chart-bars .labels li {
+figure > div > ul:nth-of-type(2) > li {
   text-align: center;
   flex: 1;
+  text-transform: lowercase;
 }
 
-.bars li:last-child .bar {
+figure > div > ul li:last-child .bar {
   display: none;
 }
 
-span.tooltip {
+div.last-dot {
+  border: 2px solid var(--color-blue);
+  border-radius: 10px;
+  background-color: var(--color-background-section);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
   position: absolute;
+  left: -25px;
+  cursor: default;
+}
+
+div.last-dot.top {
+  top: 20px;
+}
+
+div.last-dot.bottom {
   bottom: 20px;
-  left: -10px;
+}
+
+figure div.dot:has(div.last-dot) {
+  cursor: default;
+}
+
+div.last-dot span {
+  color: var(--color-blue);
+  font-size: var(--font-size-medium);
+}
+
+div.last-dot span:nth-of-type(2) {
+  font-weight: var(--font-weight-bold);
+}
+
+div.tooltip {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  border: 2px solid var(--color-blue);
+  border-radius: 10px;
+  background-color: var(--color-background-section);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 20px;
+  left: -25px;
+}
+
+div.tooltip span {
+  color: var(--color-blue);
+  font-size: var(--font-size-medium);
+}
+
+div.tooltip span:nth-of-type(2) {
+  font-weight: var(--font-weight-bold);
+}
+
+div.dot:hover div.tooltip {
+  opacity: 1;
+  pointer-events: all;
+}
+
+span.month-label {
+  margin-left: -20px;
+  position: absolute;
+  bottom: -35px;
 }
 </style>
