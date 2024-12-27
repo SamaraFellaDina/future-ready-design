@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from "svelte";
   export let percentageData;
 
   const isValid = (value) => value !== undefined && value !== null && value !== "";
@@ -7,9 +8,20 @@
   if (lastValidIndex !== -1) {
     percentageData[percentageData.length - 1 - lastValidIndex].isLastValid = true;
   }
+
+  onMount(() => {
+    const figure = document.querySelector(".line-chart");
+    const lastDot = figure.querySelector(".last-dot");
+
+    if (figure && lastDot) {
+      figure.scrollLeft = lastDot.offsetLeft - figure.offsetLeft;
+
+      figure.style.scrollSnapType = "none";
+    }
+  });
 </script>
 
-<figure>
+<figure class="line-chart">	
   <ul>
     <li>100</li>
     <li>80</li>
@@ -92,6 +104,7 @@ figure {
   display: flex;
   padding-bottom: 35px;
   overflow-x: auto;
+  scroll-snap-type: x mandatory;
 }
 
 figure > ul {
@@ -184,6 +197,7 @@ div.last-dot {
   position: absolute;
   left: -25px;
   cursor: default;
+  scroll-snap-align: start;
 }
 
 div.last-dot.top {
