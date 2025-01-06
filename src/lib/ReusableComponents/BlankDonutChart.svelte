@@ -54,4 +54,10 @@
     font-weight: var(--font-weight-bold);
     color: var(--color-regular-text);
   }
+
+  @media screen and (max-width: 768px) {
+    figure {
+      align-self: center;
+    }
+  }
 </style>

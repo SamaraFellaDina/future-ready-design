@@ -86,7 +86,7 @@
     background-color: var(--color-lightblue);
     color: var(--color-blue);
     font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-regular);
     padding: 6px 10px;
     border-radius: 5px;
   }
@@ -134,7 +134,7 @@
     padding: 10px 30px;
     border-radius: 20px;
     border: none;
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-regular);
     font-weight: var(--font-weight-bold);
     cursor: pointer;
     height: fit-content;

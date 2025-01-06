@@ -44,7 +44,7 @@
       </li>
       {#each primaryLinks as links}
         <li>
-          <a class:active={currentPage === links.href} href={links.href}>
+          <a class:currentpage={currentPage === links.href} href={links.href}>
             {links.label}
           </a>
         </li>
@@ -57,7 +57,7 @@
       </li>
       {#each secondaryLinks as links}
         <li>
-          <a class:active={currentPage === links.href} href={links.href}>
+          <a class:currentpage={currentPage === links.href} href={links.href}>
             {links.label}
           </a>
         </li>
@@ -114,11 +114,11 @@
     transition: 0.3s;
   }
 
-  li a:hover {
+  li a.currentpage {
     color: var(--color-blue);
   }
 
-  .active {
+  li a:hover {
     color: var(--color-blue);
   }
 
