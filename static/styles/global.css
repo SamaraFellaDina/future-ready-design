@@ -12,7 +12,7 @@
   font-style: normal; 
 }
 
-:root {
+/* :root {
   --font-family: 'Outfit', arial, sans-serif;
   --font-weight-thin: 100;
 
@@ -38,7 +38,7 @@
   --box-shadow: 0px 0px 9px -2px var(--color-shadow);
   --section-border-radius: 8px;  
   
-}
+} */
 
 @media screen and (max-width: 500px) {
   :root {
