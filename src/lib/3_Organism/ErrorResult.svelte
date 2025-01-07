@@ -1,5 +1,5 @@
 <script>
-  import { Icon } from "../index.js";
+  import { Icon } from "$lib";
 
   export let result = data.scans;
 
