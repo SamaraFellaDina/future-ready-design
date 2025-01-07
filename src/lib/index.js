@@ -15,3 +15,4 @@ export { default as AutomaticScan } from "./Pages/Home/AutomaticScan.svelte";
 export { default as ErrorResult } from "./Pages/Home/ErrorResult.svelte";
 export { default as TypeGraph } from "./Pages/Home/TypeGraph.svelte";
 export { default as MonthlyNavigation } from "./Pages/Home/MonthlyNavigation.svelte";
+export { default as PageNavigation } from "./Pages/Home/PageNavigation.svelte";

@@ -1,8 +1,7 @@
 <script>
   import { MonthlyNavigation } from "$lib";
   export let company;
-  export let nextMonth;
-  export let previousMonth;
+
 </script>
 
 <section>
@@ -10,7 +9,6 @@
     <h1>{company[0].title}/home</h1>
     <p>Automatische Scan</p>
   </div>
-  <MonthlyNavigation onNextMonth={nextMonth} onPreviousMonth={previousMonth} />
 </section>
 
 <style>
