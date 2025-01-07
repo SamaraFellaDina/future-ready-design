@@ -7,6 +7,7 @@ export { default as BlankDonutChart } from "./ReusableComponents/BlankDonutChart
 export { default as BlankLineChart } from "./ReusableComponents/BlankLineChart.svelte";
 export { default as BlankBarChart } from "./ReusableComponents/BlankBarChart.svelte";
 
+
 /*HOME*/
 export { default as Title } from "./Pages/Home/Title.svelte";
 export { default as AccessibillityGraph } from "./Pages/Home/AccessibillityGraph.svelte";
