@@ -1,5 +1,5 @@
 <script>
-  import { MonthlyNavigation } from "../index.js";
+  import { MonthlyNavigation } from "$lib";
   export let company;
   export let nextMonth;
   export let previousMonth;
