@@ -1,7 +1,7 @@
 <script>
   export let percentage;
-  let donutAnimation = `${(percentage / 100) * 250} 250`;
-  let donutColor = percentage < 50 ? 'var(--color-status-bad-border)' : percentage < 80 ? 'var(--color-status-fine-border)' : 'var(--color-status-good-border)';
+  $: donutAnimation = `${(percentage / 100) * 250} 250`;
+  $: donutColor = percentage < 50 ? 'var(--color-status-bad-border)' : percentage < 80 ? 'var(--color-status-fine-border)' : percentage < 99 ? 'var(--color-status-decent-border)' : 'var(--color-status-good-border)';
 </script>
 
 <figure>
@@ -26,6 +26,7 @@
     position: relative;
     width: 150px;
     height: 150px;
+    align-self: center;
   }
 
   figure svg {

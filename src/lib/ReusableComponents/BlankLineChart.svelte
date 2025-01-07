@@ -1,6 +1,8 @@
 <script>
   import { onMount } from "svelte";
   export let percentageData;
+  export let chartWidth;
+  export let mobileChartWidth;
 
   const isValid = (value) => value !== undefined && value !== null && value !== "";
 
@@ -30,7 +32,7 @@
     <li>20</li>
     <li>0</li>
   </ul>
-  <div>
+  <div style="--chartwidth: {chartWidth}; --mobilechartwidth: {mobileChartWidth}">
     <ul>
       {#each percentageData as { start, end, delay, name, isLastValid }}
         {#if isValid(start) && isValid(end)}
@@ -114,7 +116,7 @@ figure > ul li {
 figure > div {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: var(--chartwidth);
   border-bottom: 2px solid var(--color-black);
   border-left: 2px solid var(--color-black);
   padding-left: 60px;
@@ -249,5 +251,11 @@ span.month-label {
   margin-left: -20px;
   position: absolute;
   bottom: -35px;
+}
+
+@media screen and (max-width: 1040px) {
+  figure > div {
+    width: var(--mobilechartwidth);
+  }
 }
 </style>

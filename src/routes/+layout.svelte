@@ -7,9 +7,9 @@
 
 <Header {company}/>
 
-<main id="main-content" class="wrapper">
+
   <slot />
-</main>
+
 
 <Footer />
 
@@ -37,6 +37,7 @@
     --color-status-fine:#ffa60053;
     --color-status-bad:#ff00004a;
     --color-status-good-border:green;
+    --color-status-decent-border:var(--color-blue);
     --color-status-fine-border:orange;
     --color-status-bad-border:red;
 
