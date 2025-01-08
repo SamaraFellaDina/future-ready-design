@@ -13,7 +13,7 @@
     <h1>{company[0].title}/home</h1>
     <p>Automatische Scan</p>
   </div>
-  {#if currentPage === "/"}
+  {#if currentPage === "/nieuwekijk/home"}
     <MonthlyNavigation onNextMonth={nextMonth} onPreviousMonth={previousMonth} />
   {/if}
 </section>

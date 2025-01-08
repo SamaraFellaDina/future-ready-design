@@ -53,7 +53,7 @@
     <ul>
       <li>
         <Icon name="page-links" />
-        <span>{name}</span>
+        <a href = '/nieuwekijk/overzicht'><span>{name}</span></a>
       </li>
       {#each secondaryLinks as links}
         <li>
