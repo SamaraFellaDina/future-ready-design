@@ -1,5 +1,5 @@
 <script>
-  import { Icon } from '$lib';
+  import { Icon, BlankDonutChart} from '$lib';
   export let data = data;
   let sites = data.sites
   console.log(sites)
@@ -10,10 +10,7 @@
   <ul>
     {#each sites as {url, title}}
     <li>
-      <svg>
-        <Icon name='home-icon'/>
-      </svg>
-      
+      <Icon name='home-icon' width=20 height=20/>
       <section>
         <h2>{title}</h2>
         <p>{url.replace(/^https?:\/\//, "")}</p>
@@ -22,10 +19,7 @@
           <p>toegankelijk</p>
         </div>
       </section>
-  
-      <figure>
-  
-      </figure>
+        <BlankDonutChart percentage=80/>
     </li>
     {/each}
 
@@ -46,6 +40,7 @@
   }
 
   ul {
+    --average-gap: .8em;
     display: block;
     list-style-type: none;
     margin-block-start: 0;
@@ -58,19 +53,28 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: var(--average-gap);
   }
 
   li {
     background-color: var(--color-background-section);
     border-radius: var(--section-border-radius);
     padding: var(--average-padding);
+
+    display: flex;
+    gap: var(--average-gap);
   }
 
   li svg {
     --icon-ratio: 1.2em;
     width: var(--icon-ratio);
     height: var(--icon-ratio);
+  }
+
+  li figure {
+    --ratio:1em;
+    width: var(--ratio);
+    height: var(--ratio);
   }
 
 

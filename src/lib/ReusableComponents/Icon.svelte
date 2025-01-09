@@ -1,5 +1,7 @@
 <script>
   export let name = '';
+  export let width = '';
+  export let height = '';
 </script>
 
 {#if name == 'bedrijf'}
@@ -120,7 +122,7 @@
     </svg>
 
     {:else if name == "home-icon"}
-    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117.57 143.18">
+    <svg width={width} height={height} id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117.57 143.18">
     <defs>
     <style>
       .cls-1 {
