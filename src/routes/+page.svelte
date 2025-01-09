@@ -22,8 +22,6 @@
         <BlankDonutChart percentage=80/>
     </li>
     {/each}
-
-
   </ul>
 </main>
 
@@ -50,10 +48,9 @@
     padding-inline-start: 0;
     unicode-bidi: isolate;
 
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: var(--average-gap);
+
   }
 
   li {
@@ -71,22 +68,12 @@
     height: var(--icon-ratio);
   }
 
-  li figure {
-    --ratio:1em;
-    width: var(--ratio);
-    height: var(--ratio);
-  }
-
 
   @media (min-width: 700px) {
-    ul {
-      flex-wrap: wrap;
-      flex-direction: row;
-    }
-    li {
-      width: 45%;
-    }
-      
+
+      ul {
+        grid-template-columns: 50% 50%;
+      }
     }
 
 
