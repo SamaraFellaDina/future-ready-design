@@ -1,18 +1,16 @@
 <script>
-
+    import { Icon } from "$lib";
 </script>
 <article class="content-wrapper">
     <section>
         <h2>Op tijd gebasseerde media</h2>
         <p>richtlijn 1.2</p>
-        <svg>
-
-        </svg>
+        <Icon name ="eye" />
         <progress id="file" value="32" max="100"> 32% </progress>
     </section>
     <section>
         <details>
-            <summary>1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen)<input type="checkbox"></summary>
+            <summary>1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen)<input type="checkbox"><Icon name ="warning" /></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>
@@ -35,7 +33,7 @@
             </section>
         </details>
         <details>
-            <summary>1.2.2 Ondertitels voor doven en slechthorenden (vooraf opgenomen)<input type="checkbox"></summary>
+            <summary>1.2.2 Ondertitels voor doven en slechthorenden (vooraf opgenomen)<input type="checkbox"><Icon name ="warning" /></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>
@@ -81,7 +79,7 @@
             </section>
         </details>
         <details>
-            <summary>1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen) <input type="checkbox"></summary>
+            <summary>1.2.4 Ondertitels voor doven en slechthorenden (live)<input type="checkbox"></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>
@@ -104,7 +102,7 @@
             </section>
         </details>
         <details>
-            <summary>1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen) <input type="checkbox"></summary>
+            <summary>1.2.5 Audiodescriptie (vooraf opgenomen)<input type="checkbox"></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>
@@ -127,7 +125,7 @@
             </section>
         </details>
         <details>
-            <summary>1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen) <input type="checkbox"></summary>
+            <summary>1.2.6 Gebarentaal (vooraf opgenomen)<input type="checkbox"></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>
@@ -150,7 +148,7 @@
             </section>
         </details>
         <details>
-            <summary>1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen) <input type="checkbox"></summary>
+            <summary>1.2.7 Verlengde audiodescriptie (vooraf opgenomen)<input type="checkbox"></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>
@@ -173,7 +171,7 @@
             </section>
         </details>
         <details>
-            <summary>1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen) <input type="checkbox"></summary>
+            <summary>1.2.8 Media-alternatief (vooraf opgenomen)<input type="checkbox"></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>

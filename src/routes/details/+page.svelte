@@ -1,6 +1,5 @@
 <script>
-  import { Title, Donuts, GuideLine11, GuideLine12, GuideLine13, GuideLine14, GuideLine21, GuideLine31, Filter } from "$lib";
-  import GuideLine1_1 from "../../lib/Pages/detailpage/GuideLine1-1.svelte";
+  import { Title, Donuts, GuideLine11, GuideLine12, GuideLine13, GuideLine14, GuideLine21, GuideLine31, GuideLine32, GuideLine41, GuideLine42, Filter } from "$lib";
   export let data = data;
   export let company = data.sites;
 
@@ -19,6 +18,9 @@
     <GuideLine14 />
     <GuideLine21 />
     <GuideLine31 />
+    <GuideLine32 />
+    <GuideLine41 />
+    <GuideLine42 />
   </article>
 
   <article>
@@ -52,10 +54,6 @@
     grid-area: 2 / 2 / 3 / 3;
     display: flex;
     background-color: var(--color-background-section);
-  }
-
-  :global(svg:not([name])) {
-    display: none;
   }
 
   :global(.content-wrapper) {

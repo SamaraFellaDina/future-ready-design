@@ -4,13 +4,13 @@
 <article class="content-wrapper">
     <section>
         <h2>Aanpasbaar</h2>
-        <p>richtlijn 2.1</p>
+        <p>richtlijn 3.2</p>
         <Icon name ="eye" />
         <progress id="file" value="32" max="100"> 32% </progress>
     </section>
     <section>
         <details>
-            <summary>2.1.1 Info en relaties<input type="checkbox"></summary>
+            <summary>3.2.1 Info en relaties<input type="checkbox"></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>
@@ -33,7 +33,7 @@
             </section>
         </details>
         <details>
-            <summary>2.1.2 Betekenisvolle volgorde<input type="checkbox"></summary>
+            <summary>3.2.2 Betekenisvolle volgorde<input type="checkbox"></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>
@@ -56,7 +56,7 @@
             </section>
         </details>
         <details>
-            <summary>2.1.3 Zintuiglijke eigenschappen<input type="checkbox"></summary>
+            <summary>3.2.3 Zintuiglijke eigenschappen<input type="checkbox"></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>
@@ -79,7 +79,7 @@
             </section>
         </details>
         <details>
-            <summary>2.1.4 Weergavestand<input type="checkbox"></summary>
+            <summary>3.2.4 Weergavestand<input type="checkbox"></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>
@@ -102,7 +102,7 @@
             </section>
         </details>
         <details>
-            <summary>2.1.5 Identificeer het doel van de input<input type="checkbox"></summary>
+            <summary>3.2.5 Identificeer het doel van de input<input type="checkbox"></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>
@@ -125,7 +125,7 @@
             </section>
         </details>
         <details>
-            <summary>2.1.6 Identificeer het doel<input type="checkbox"></summary>
+            <summary>3.2.6 Identificeer het doel<input type="checkbox"></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>
@@ -148,7 +148,7 @@
             </section>
         </details>
         <details>
-            <summary>2.1.7 Identificeer het doel<input type="checkbox"></summary>
+            <summary>3.2.7 Identificeer het doel<input type="checkbox"></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>

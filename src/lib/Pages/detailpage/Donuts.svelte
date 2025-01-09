@@ -2,7 +2,7 @@
   export let result = data.scans;
   import { BlankDonutChart, Icon } from "$lib";
 
-  $: percentagetest = 70; // Reactief maken
+  $: percentagetest = 70 // Reactief maken
   $: percentage = result.score; // Reactief maken
 </script>
 
