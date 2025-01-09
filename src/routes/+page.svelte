@@ -1,10 +1,39 @@
+<script>
+  export let data = data;
+  let sites = data.sites
+  console.log(sites)
 
+</script>
 
 <main>
-  <h1>landingspagina</h1>
+  <ul>
+    {#each sites as {url, title}}
+    <li>
+      <svg>
+  
+      </svg>
+      
+      <section>
+        <h2>{title}</h2>
+        <p>{url}</p>
+        <div>
+          <svg></svg>
+          <p>toegankelijk</p>
+        </div>
+      </section>
+  
+      <figure>
+  
+      </figure>
+    </li>
+    {/each}
+
+
+  </ul>
 </main>
 
 <style>
+
   main {
     display: grid;
     grid-template-columns: 2.2fr 0.8fr; 
@@ -15,11 +44,42 @@
     max-width: 1100px;
   }
 
-  @media only screen and (max-width: 1600px) {
-    main {
-      max-width: 900px;
-      }
 
+
+  ul {
+    display: block;
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0;
+    unicode-bidi: isolate;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  li {
+    background-color: var(--color-background-section);
+    border-radius: var(--section-border-radius);
+    padding: var(--average-padding);
+  }
+  @media (min-width: 700px) {
+    ul {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    li {
+      width: 45%;
+    }
+      
+    }
+
+
+  @media only screen and (max-width: 1600px) {
     main {
       display: flex;
       flex-direction: column;
@@ -31,4 +91,7 @@
       padding-left: 70px;
     }
   }
+
+  
+
 </style>
