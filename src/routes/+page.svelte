@@ -15,7 +15,7 @@
       
       <section>
         <h2>{title}</h2>
-        <p>{url}</p>
+        <p>{url.replace(/^https?:\/\//, "")}</p>
         <div>
           <svg></svg>
           <p>toegankelijk</p>
