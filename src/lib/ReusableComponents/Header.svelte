@@ -21,17 +21,22 @@
     { href: `/${name}/blog`, label: '/blog' },
     { href: `/${name}/blog-detail`, label: '/blog-detail' }
   ];
+
+  let isActive = false;
+
+  function toggleActive() {
+    isActive = !isActive;
+  }
 </script>
 
 <SkipLink />
 <header>
-  <input type="checkbox" name="sidebar" id="sidebar" aria-label="toggle navigatiemenu"/>
-  <label for="sidebar">
+  <button type="button" aria-label="open of sluit navigatiemenu" class:active={isActive} on:click={toggleActive}>
     <Icon name = "sidebar" />
     <span>Menu</span>
-  </label>
+  </button>
   <nav>
-    <a href ="/"><Icon name = "accessdash-logo" /></a>
+    <a href ="/"><Icon name = "accessdash-logo" aria-label="ga naar de homepage"/></a>
     <ul>
       <li>
         <Icon name="dashboard" />
@@ -39,7 +44,7 @@
       </li>
       {#each primaryLinks as links}
         <li>
-          <a class:active={currentPage === links.href} href={links.href}>
+          <a class:currentpage={currentPage === links.href} href={links.href}>
             {links.label}
           </a>
         </li>
@@ -48,11 +53,11 @@
     <ul>
       <li>
         <Icon name="page-links" />
-        <span>{name}</span>
+        <a href = '/nieuwekijk/overzicht'><span>{name}</span></a>
       </li>
       {#each secondaryLinks as links}
         <li>
-          <a class:active={currentPage === links.href} href={links.href}>
+          <a class:currentpage={currentPage === links.href} href={links.href}>
             {links.label}
           </a>
         </li>
@@ -109,48 +114,40 @@
     transition: 0.3s;
   }
 
+  li a.currentpage {
+    color: var(--color-blue);
+  }
+
   li a:hover {
     color: var(--color-blue);
   }
 
-  .active {
-    color: var(--color-blue);
-  }
-
-  input {
-    position: absolute;
-    left: -100vw;
-  }
-
-  input:checked ~ nav {
-    transform: translateX(-80%);
-  }
-
-  input:checked ~ label {
-    transform: translateX(-225px) scaleX(-1);
-  }
-
-  input:checked ~ nav a {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  input:focus-visible ~ label {
-    border: 3px solid black;
-    border-radius: 5px;
-  }
-
-  label {
+  button {
     position: fixed;
     top: 20px;
     cursor: pointer;
     z-index: 2;
     left: 240px;
     transition: 0.5s;
+    width: min-content;
   }
 
-  label > span {
-    display: none;
+  button span {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  button.active ~ nav {
+    transform: translateX(-80%);
+  }
+
+  button.active {
+    transform: translateX(-225px) scaleX(-1);
+  }
+
+  button.active ~ nav a {
+    opacity: 0;
+    pointer-events: none;
   }
 
   nav > a {
@@ -168,16 +165,16 @@
       overflow-y: hidden;
     }
 
-    label {
+    button {
       transform: translateX(-225px) scaleX(-1);
     }
 
-    input:checked ~ nav {
+    button.active ~ nav {
       transform: translateX(0);
       overflow-y: auto;
     }
 
-    input:checked ~ label {
+    button.active {
       transform: translateX(0);
     }
 
@@ -186,19 +183,19 @@
       pointer-events: none;
     }
 
-    input:checked ~ nav a {
+    button.active ~ nav a {
       opacity: 1;
       pointer-events: all;
     }
   }
 
   @media screen and (max-width: 700px) {
-    input:not(:checked) ~ nav {
+    button:not(.active) ~ nav {
       background-color: transparent;
       box-shadow: none;
     }
 
-    input:not(:checked) ~ label {
+    button:not(.active) {
       box-shadow: var(--box-shadow);
       background: #FFFFFF80;
       padding: 6px 8px;
@@ -206,4 +203,30 @@
     }
   }
 
+  @media (scripting: none) {
+    header nav:not(.active) {
+      flex-direction: row;
+      width: 100%;
+      height: min-content;
+      transform: unset;
+      left: unset;
+      position: static;
+      background-color: var(--color-background-section);
+    }
+
+    header nav ul {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    nav a {
+      opacity: 1;
+      pointer-events: all;
+      margin-top: 0;
+    }
+
+    button {
+      display: none;
+    }
+  }
 </style>
