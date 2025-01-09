@@ -1,4 +1,5 @@
 <script>
+  import { Icon } from '$lib';
   export let data = data;
   let sites = data.sites
   console.log(sites)
@@ -10,7 +11,7 @@
     {#each sites as {url, title}}
     <li>
       <svg>
-  
+        <Icon name='home-icon'/>
       </svg>
       
       <section>
@@ -44,8 +45,6 @@
     max-width: 1100px;
   }
 
-
-
   ul {
     display: block;
     list-style-type: none;
@@ -67,6 +66,14 @@
     border-radius: var(--section-border-radius);
     padding: var(--average-padding);
   }
+
+  li svg {
+    --icon-ratio: 1.2em;
+    width: var(--icon-ratio);
+    height: var(--icon-ratio);
+  }
+
+
   @media (min-width: 700px) {
     ul {
       flex-wrap: wrap;
