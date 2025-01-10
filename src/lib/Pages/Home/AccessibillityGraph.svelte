@@ -2,7 +2,8 @@
   import { Icon, BlankLineChart } from "$lib";
 
   export let resultsheet = data.scans;
-
+  let chartWidth = "100%";
+  let mobileChartWidth = "auto";
   let months = [
     { name: "Januari", score: "" },
     { name: "Februari", score: "" },
@@ -48,7 +49,7 @@
       </button>
     </nav>
   </div>
-  <BlankLineChart {percentageData}/>
+  <BlankLineChart {percentageData} {chartWidth} {mobileChartWidth} />
 </section>
 
 <style>
@@ -74,4 +75,10 @@
     align-items: center;
     gap: 10px;
   }
+
+  /* @media screen and (max-width: 1040px) {
+    :global(figure > div) {
+      width: unset !important;
+    }
+  } */
 </style>
