@@ -29,7 +29,6 @@ ul {
     --average-gap: 20px;
     display: grid;
     gap: var(--average-gap);
-    
     @media (min-width: 900px) {
       grid-template-columns: 50% 50%;
     }
@@ -41,8 +40,8 @@ ul {
     padding: var(--average-padding);
     box-shadow: var(--box-shadow);
     display: grid;
-    grid-template-columns: 10% 50% 40%;
-    justify-content: space-between;
+    grid-template-columns: 0.2fr 0.5fr 0.3fr;
+    justify-content: space-between ;
     gap: var(--average-gap);
   }
 
