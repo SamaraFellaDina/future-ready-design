@@ -7,14 +7,17 @@
   {#each data.sites as {url, title}}
   <li>
     <Icon name='home-icon' width=30 height=30/>
-    <section>
-      <h2>{title}</h2>
-      <p>{url.replace(/^https?:\/\/(www\.)?/, "")}</p>
+    <div>
+      <section>
+        <h2>{title}</h2>
+        <p>{url.replace(/^https?:\/\/(www\.)?/, "")}</p>
+      </section>
+
       <div>
         <Icon name='good' width=30 height=30 color='var(--color-status-good-border)'/>
         <p>toegankelijk</p>
       </div>
-    </section>
+    </div>
     <BlankDonutChart percentage=80/>
   </li>
   {/each}
@@ -38,18 +41,18 @@ ul {
     padding: var(--average-padding);
     box-shadow: var(--box-shadow);
     display: grid;
-    grid-template-columns: 10% 50% 30%;
+    grid-template-columns: 10% 50% 40%;
     justify-content: space-between;
     gap: var(--average-gap);
   }
 
-  ul li section {
-    display: grid;
-    grid-template-rows: 30% 50% 20%;
-    align-content: space-between;
+  ul li div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  ul li section div {
+  ul li div div {
     background-color: var(--color-status-good);
     border-radius: var(--section-border-radius);
     border: solid 2px var(--color-status-good-border);
