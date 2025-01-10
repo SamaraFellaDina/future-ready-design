@@ -45,7 +45,7 @@ ul {
 
   ul li section {
     display: grid;
-    grid-template-rows: 30% 30% 20%;
+    grid-template-rows: 30% 50% 20%;
     align-content: space-between;
   }
 
