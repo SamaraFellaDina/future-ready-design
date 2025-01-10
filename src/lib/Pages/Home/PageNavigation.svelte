@@ -1,7 +1,6 @@
 <script>
   import { Icon, BlankDonutChart} from '$lib';
   export let data = data;
-  console.log(data)
 </script>
 
 <ul>
@@ -38,6 +37,10 @@ ul {
     display: grid;
     gap: var(--average-gap);
 
+
+    @media (min-width: 700px) {
+      grid-template-columns: 50% 50%;
+    }
   }
 
   ul li {
@@ -74,9 +77,5 @@ ul {
     align-content: center;
 
   }
-  @media (min-width: 700px) {
-      ul {
-        grid-template-columns: 50% 50%;
-      }
-    }
+
 </style>
