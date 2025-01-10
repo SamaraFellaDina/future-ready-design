@@ -1,7 +1,11 @@
 <script>
   import { MonthlyNavigation } from "$lib";
+  import { page } from "$app/stores";
   export let company;
+  export let nextMonth;
+  export let previousMonth;
 
+  let currentPage = $page.url.pathname;
 </script>
 
 <section>
@@ -9,6 +13,9 @@
     <h1>{company[0].title}/home</h1>
     <p>Automatische Scan</p>
   </div>
+  {#if currentPage === "/nieuwekijk/home"}
+    <MonthlyNavigation onNextMonth={nextMonth} onPreviousMonth={previousMonth} />
+  {/if}
 </section>
 
 <style>
