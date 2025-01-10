@@ -43,7 +43,7 @@ ul {
     gap: var(--average-gap);
   }
 
-  ul li section{
+  ul li section {
     display: grid;
     grid-template-rows: 30% 30% 20%;
     align-content: space-between;
