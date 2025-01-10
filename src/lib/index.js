@@ -18,7 +18,8 @@ export { default as MonthlyNavigation } from "./Pages/Home/MonthlyNavigation.sve
 
 /*DETAILS*/
 
-export { default as Donuts } from "./Pages/detailpage/Donuts.svelte";
+export { default as AccessibillityScore } from "./Pages/detailpage/AccessibillityScore.svelte";
+export { default as ScanResult } from "./Pages/detailpage/ScanResult.svelte";
 export { default as GuideLine11 } from "./Pages/detailpage/GuideLine1-1.svelte";
 export { default as GuideLine12 } from "./Pages/detailpage/GuideLine1-2.svelte";
 export { default as GuideLine13 } from "./Pages/detailpage/GuideLine1-3.svelte";

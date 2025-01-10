@@ -1,5 +1,5 @@
 <script>
-  import { Title, Donuts, GuideLine11, GuideLine12, GuideLine13, GuideLine14, GuideLine21, GuideLine31, GuideLine32, GuideLine41, GuideLine42, Filter } from "$lib";
+  import { Title, AccessibillityScore, ScanResult, GuideLine11, GuideLine12, GuideLine13, GuideLine14, GuideLine21, GuideLine31, GuideLine32, GuideLine41, GuideLine42, Filter } from "$lib";
   export let data = data;
   export let company = data.sites;
 
@@ -11,7 +11,10 @@
   <Title {company} />
 
   <article>
-    <Donuts {result} />
+    <div>
+    <AccessibillityScore />
+    <ScanResult />
+  </div>
     <GuideLine11 />
     <GuideLine12 />
     <GuideLine13 />
@@ -32,12 +35,12 @@
 <style>
   main {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 4fr 1fr;
     grid-template-rows: 0.2fr 1fr;
     gap: 20px;
     margin: 0 auto;
     padding: 30px 10px;
-    max-width: 1100px;
+    max-width: 1300px;
   }
 
   article:first-child {
@@ -47,17 +50,19 @@
     background-color: var(--color-background-section);
   }
   article:last-child{
-    background-color: var(--color-background-section);
-    border-radius: var(--section-border-radius);
-    box-shadow: var(--box-shadow);
-    padding: var(--average-padding);
     grid-area: 2 / 2 / 3 / 3;
     display: flex;
-    background-color: var(--color-background-section);
+    position: relative;
   }
 
   :global(.content-wrapper) {
     margin-bottom: 20px;
+  }
+
+  div{
+    display: grid;
+    margin-bottom: 20px;
+    gap: 20px;
   }
 
 

@@ -25,4 +25,13 @@
 
 <style>
 
+section{
+    background-color: var(--color-background-section);
+    border-radius: var(--section-border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--average-padding);
+    position: fixed;
+    width: 100%;
+}
+
 </style>
