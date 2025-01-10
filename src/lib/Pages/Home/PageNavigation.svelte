@@ -25,20 +25,10 @@
 
 ul {
     --average-gap: 20px;
-    display: block;
-    list-style-type: none;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0;
-    unicode-bidi: isolate;
-
     display: grid;
     gap: var(--average-gap);
-
-
-    @media (min-width: 700px) {
+    
+    @media (min-width: 900px) {
       grid-template-columns: 50% 50%;
     }
   }
@@ -53,12 +43,6 @@ ul {
     grid-template-columns: 10% 50% 30%;
     justify-content: space-between;
     gap: var(--average-gap);
-  }
-
-  ul li svg {
-    --icon-ratio: 1.2em;
-    width: var(--icon-ratio);
-    height: var(--icon-ratio);
   }
 
   ul li section{
