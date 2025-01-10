@@ -5,11 +5,11 @@
 
 
   const getIconName = (amount) => {
-    if (amount >= 0 && amount <= 20) {
+    if (amount === 0 ) {
       return "good"; 
-    } else if (amount >= 21 && amount <= 40) {
+    } else if (amount >= 1 && amount <= 20) {
       return "warning"; 
-    } else if (amount >= 41) {
+    } else if (amount >= 21) {
       return "critical-warning";
     }
     return "good"; 
