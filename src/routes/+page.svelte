@@ -11,7 +11,7 @@
 
   main {
     margin: 0 auto;
-    padding: 30px 10px;
+    padding: var(--average-padding);
     max-width: 1100px;
   }
 
