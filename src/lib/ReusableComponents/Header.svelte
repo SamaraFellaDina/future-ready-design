@@ -52,7 +52,7 @@
     </ul>
     <ul>
       <li>
-        <Icon name="page-links" />
+        <Icon name="header-arrow" />
         <a href = '/nieuwekijk/overzicht'><span>{name}</span></a>
       </li>
       {#each secondaryLinks as links}
