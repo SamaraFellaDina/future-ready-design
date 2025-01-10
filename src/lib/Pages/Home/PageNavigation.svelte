@@ -69,7 +69,10 @@ ul {
     border-radius: var(--section-border-radius);
     border: solid 2px var(--color-status-good-border);
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 10% 90%;
+    align-items: center;
+    align-content: center;
+
   }
   @media (min-width: 700px) {
       ul {
