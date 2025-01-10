@@ -27,4 +27,10 @@
     max-width: 1300px;
     margin: 0 auto;
   }
+
+  @media only screen and (min-width: 700px) and (max-width: 1440px) {
+    main {
+      padding-left: 70px;
+    }
+  }
 </style>
