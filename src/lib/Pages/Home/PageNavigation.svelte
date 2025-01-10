@@ -1,5 +1,5 @@
 <script>
-  import { Icon, BlankDonutChart} from '$lib';
+  import { Icon, BlankDonutChart } from '$lib';
   export let data = data;
 </script>
 
@@ -11,12 +11,11 @@
       <h2>{title}</h2>
       <p>{url.replace(/^https?:\/\/(www\.)?/, "")}</p>
       <div>
-      <Icon name='good' width=30 height=30 color='var(--color-status-good-border)'/>
-
+        <Icon name='good' width=30 height=30 color='var(--color-status-good-border)'/>
         <p>toegankelijk</p>
       </div>
     </section>
-      <BlankDonutChart percentage=80/>
+    <BlankDonutChart percentage=80/>
   </li>
   {/each}
 </ul>
@@ -38,7 +37,6 @@ ul {
     border-radius: var(--section-border-radius);
     padding: var(--average-padding);
     box-shadow: var(--box-shadow);
-
     display: grid;
     grid-template-columns: 10% 50% 30%;
     justify-content: space-between;
@@ -59,7 +57,6 @@ ul {
     grid-template-columns: 10% 90%;
     align-items: center;
     align-content: center;
-
   }
 
 </style>
