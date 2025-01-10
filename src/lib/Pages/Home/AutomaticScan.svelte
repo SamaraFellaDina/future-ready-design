@@ -1,7 +1,8 @@
 <script>
   export let result = data.scans;
   import { BlankDonutChart } from '$lib';
-  let percentage = result.score;
+
+  $: percentage = result.score; // Reactief maken
 </script>
 
 <section>
@@ -21,7 +22,7 @@
     grid-area: 2 / 1 / 3 / 2;
     display: flex;
     gap: 1em;
-    
+
     @media screen and (max-width: 700px) {
       flex-direction: column;
       gap: 0;
