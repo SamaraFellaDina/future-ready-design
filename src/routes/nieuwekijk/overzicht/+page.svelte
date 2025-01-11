@@ -1,33 +1,34 @@
-
+<script>
+  import { Title, AccessibillityScore, ScanResult, SearchBar, SearchResults } from '$lib';
+  export let data;
+  let company = data.sites;
+</script>
 
 <main>
-  <h1>overzichtpagina</h1>
-  <a href='/nieuwekijk/overzicht/detail'>detailpagina</a>
+  <Title {company}/>
+
+  <AccessibillityScore />
+
+  <ScanResult />
+
+  <SearchBar />
+
+  <SearchResults />
 </main>
 
 <style>
   main {
     display: grid;
-    grid-template-columns: 2.2fr 0.8fr; 
-    grid-template-rows: 0.2fr 0.8fr 1fr 1.2fr;   
-    gap: 20px;  
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: var(--average-gap);
     padding: 30px 10px;
-    max-width: 1100px;
+    margin-left: 300px;
+    max-width: 1300px;
+    margin: 0 auto;
   }
 
-  @media only screen and (max-width: 1600px) {
-    main {
-      max-width: 900px;
-      }
-
-    main {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-
-  @media only screen and (min-width: 700px) and (max-width: 1040px) {
+  @media only screen and (min-width: 700px) and (max-width: 1440px) {
     main {
       padding-left: 70px;
     }
