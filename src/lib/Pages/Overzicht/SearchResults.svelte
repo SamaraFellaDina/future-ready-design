@@ -11,7 +11,7 @@
       </h2>
       <label>
         <span>nieuwekijk.nl/over-ons</span>
-        <progress value="73" max="100">73%</progress>
+        <meter value="73" max="100">73%</meter>
       </label>
       <p><Icon name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
       <ul>
@@ -27,7 +27,7 @@
       </h2>
       <label>
         <span>nieuwekijk.nl/over-ons</span>
-        <progress value="73" max="100">73%</progress>
+        <meter value="73" max="100">73%</meter>
       </label>
       <p><Icon name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
       <ul>
@@ -43,7 +43,7 @@
       </h2>
       <label>
         <span>nieuwekijk.nl/over-ons</span>
-        <progress value="73" max="100">73%</progress>
+        <meter value="73" max="100">73%</meter>
       </label>
       <p><Icon name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
       <ul>
@@ -59,7 +59,7 @@
       </h2>
       <label>
         <span>nieuwekijk.nl/over-ons</span>
-        <progress value="73" max="100">73%</progress>
+        <meter value="73" max="100">73%</meter>
       </label>
       <p><Icon name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
       <ul>
@@ -103,7 +103,7 @@
     cursor: unset;
   }
 
-  progress {
+  meter {
     width: 100%;
   }
 
