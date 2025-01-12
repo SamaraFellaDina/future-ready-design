@@ -21,27 +21,29 @@
         *Dit is een schatting gegenereerd door een automatische scan. Test altijd handmatig voor een volledig beeld.
       </p>
     </div>
-    <ul>
-      <li>Aandacht vereist</li>
-      <li>
-        <a href="/">
-          <Icon name = "arrow-right" />
-          /over-ons
-        </a>
-      </li>
-      <li>
-        <a href="/">
-          <Icon name = "arrow-right" />
-          /over-ons
-        </a>
-      </li>
-      <li>
-        <a href="/">
-          <Icon name = "arrow-right" />
-          /over-ons
-        </a>
-      </li> 
-    </ul>
+    <div>
+      <h3>Aandacht vereist</h3>
+      <ul>
+        <li>
+          <a href="/">
+            <Icon name = "arrow-right" />
+            /over-ons
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <Icon name = "arrow-right" />
+            /over-ons
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <Icon name = "arrow-right" />
+            /over-ons
+          </a>
+        </li> 
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -71,7 +73,7 @@
     font-size: var(--font-size-large);
   }
 
-  h3 {
+  div > div:first-of-type > h3 {
     border: 1px solid var(--bordercolor);
     width: fit-content;
     padding: 10px;
@@ -82,12 +84,11 @@
     list-style: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: auto;
     column-gap: var(--average-gap);
   }
 
-  li:first-of-type {
-    grid-column: 1 / -1;
+  div > div:nth-of-type(2) > h3 {
     font-weight: var(--font-weight-bold);
   }
 

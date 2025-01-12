@@ -37,32 +37,36 @@
   </button>
   <nav>
     <a href ="/"><Icon name = "accessdash-logo" aria-label="ga naar de homepage"/></a>
-    <ul>
-      <li>
+    <div>
+      <h2>
         <Icon name="dashboard" />
         <span>Dashboard</span>
-      </li>
-      {#each primaryLinks as links}
-        <li>
-          <a class:currentpage={currentPage === links.href} href={links.href}>
-            {links.label}
-          </a>
-        </li>
-      {/each}
-    </ul>
-    <ul>
-      <li>
+      </h2>
+      <ul>
+        {#each primaryLinks as links}
+          <li>
+            <a class:currentpage={currentPage === links.href} href={links.href}>
+              {links.label}
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </div>
+    <div>
+      <h2>
         <Icon name="header-arrow" />
         <a href = '/nieuwekijk/overzicht'><span>{name}</span></a>
-      </li>
-      {#each secondaryLinks as links}
-        <li>
-          <a class:currentpage={currentPage === links.href} href={links.href}>
-            {links.label}
-          </a>
-        </li>
-      {/each}
-    </ul>
+      </h2>
+      <ul>
+        {#each secondaryLinks as links}
+          <li>
+            <a class:currentpage={currentPage === links.href} href={links.href}>
+              {links.label}
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </div>
   </nav>
 </header>
 
@@ -93,8 +97,8 @@
     list-style: none;
   }
 
-  li:first-child {
-    padding-bottom: 10px;
+  h2 {
+    padding-bottom: 20px;
     display: flex;
     gap: 10px;
     align-items: center;
