@@ -73,7 +73,7 @@
     font-size: var(--font-size-large);
   }
 
-  div > div:first-of-type > h3 {
+  div > div:nth-of-type(2) > h3 {
     border: 1px solid var(--bordercolor);
     width: fit-content;
     padding: 10px;
@@ -88,7 +88,7 @@
     column-gap: var(--average-gap);
   }
 
-  div > div:nth-of-type(2) > h3 {
+  div > div:nth-of-type(3) > h3 {
     font-weight: var(--font-weight-bold);
   }
 
