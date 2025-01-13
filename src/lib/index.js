@@ -7,7 +7,7 @@ export { default as Icon } from "./ReusableComponents/Icon.svelte";
 export { default as BlankDonutChart } from "./ReusableComponents/BlankDonutChart.svelte";
 export { default as BlankLineChart } from "./ReusableComponents/BlankLineChart.svelte";
 export { default as BlankBarChart } from "./ReusableComponents/BlankBarChart.svelte";
-export { default as Title } from "./ReusableComponents/Title.svelte";
+export { default as Title } from "./ReusableComponents/Title.svelte"
 
 /*HOME*/
 export { default as AccessibillityGraph } from "./Pages/Home/AccessibillityGraph.svelte";
@@ -30,3 +30,10 @@ export { default as GuideLine32 } from "./Pages/detailpage/GuideLine3-2.svelte";
 export { default as GuideLine41 } from "./Pages/detailpage/GuideLine4-1.svelte";
 export { default as GuideLine42 } from "./Pages/detailpage/GuideLine4-2.svelte";
 export { default as Filter } from "./Pages/detailpage/Filter.svelte";
+export { default as PageNavigation } from "./Pages/Home/PageNavigation.svelte";
+
+/*OVERZICHT*/
+export { default as AccessibillityScore } from "./Pages/Overzicht/AccessibillityScore.svelte";
+export { default as ScanResult } from "./Pages/Overzicht/ScanResult.svelte";
+export { default as SearchBar } from "./Pages/Overzicht/SearchBar.svelte";
+export { default as SearchResults } from "./Pages/Overzicht/SearchResults.svelte";
