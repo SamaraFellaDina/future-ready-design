@@ -19,14 +19,30 @@
     { name: "December", score: "" }
   ];
 
+  function getDutchMonthName(date, locale = "nl-NL") {
+    return new Date(date).toLocaleString(locale, { month: "long" });
+  }
+
+  function linkDutchMonthNameToMonthsArray(monthsArray, monthName) {
+    return monthsArray.find(
+      (month) => month.name.toLowerCase() === monthName.toLowerCase()
+    );
+  }
+
   resultsheet.forEach(({ date, score }) => {
-    const monthName = new Date(date).toLocaleString("nl-NL", { month: "long" });
-    const month = months.find(m => m.name.toLowerCase() === monthName.toLowerCase());
-    if (month) month.score = score;
+    const dutchMonthName = getDutchMonthName(date);
+    const linkedMonth = linkDutchMonthNameToMonthsArray(months, dutchMonthName);
+    if (linkedMonth) {
+      linkedMonth.score = score;
+    }
   });
 
+  function getNextMonth(months, index) {
+    return months[index + 1] || months[index];
+  }
+
   let percentageData = months.map((month, index) => {
-    const nextMonth = months[index + 1] || month; // To loop back to December if needed
+    const nextMonth = getNextMonth(months, index);
     return {
       start: month.score,
       end: nextMonth.score,
