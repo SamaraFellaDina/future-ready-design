@@ -24,6 +24,12 @@
     grid-area: 1 / 1 / 2 / 3;
     display: flex;
     justify-content: space-between;
+    
+    @media (max-width: 500px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
   }
 
   section div {
@@ -33,13 +39,5 @@
 
   h1 {
     font-size: 2em;
-  }
-
-  @media screen and (max-width: 500px) {
-    section {
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-    }
   }
 </style>

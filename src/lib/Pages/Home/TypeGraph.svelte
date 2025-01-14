@@ -6,7 +6,7 @@
   let labels;
   let maxY;
   let stepY;
-
+  
   $: {
     results = result.result.slice(1);
     labels = results.map((item) => ({
@@ -31,7 +31,7 @@
 
 <section>
   <h2>Soorten foutmeldingen</h2>
-  <BlankBarChart {labels} {maxY} {stepY} />
+  <BlankBarChart {labels} {chartMaxY} {chartStepY}/>
 </section>
 
 <style>

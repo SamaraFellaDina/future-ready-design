@@ -1,14 +1,19 @@
 <script>
   import { Icon } from '$lib';
   export let labels;
-  export let maxY;
-  export let stepY;
+  export let chartMaxY;
+  export let chartStepY;
+
+  const calculateChartYAxisSteps = Array.from(
+    { length: chartMaxY / chartStepY + 1 },
+    (_, i) => i * chartStepY
+  );
 </script>
 
 <figure>
   <ul>
-    {#each Array.from({ length: maxY / stepY + 1 }, (_, i) => i * stepY) as y}
-      <li>{y}</li>
+    {#each calculateChartYAxisSteps as stepY}
+      <li>{stepY}</li>
     {/each}
   </ul>
 
@@ -30,7 +35,7 @@
             <span>Aantal: {value}</span>
           </div>
         </div>
-        <div style="--final-height: {(value / maxY) * 100}%;"></div>
+        <div style="--final-height: {(value / chartMaxY) * 100}%;"></div>
         <span>{name}</span>
       </li>
     {/each}
@@ -48,15 +53,20 @@
   }
 
   figure {
+    --border-style: 2px solid var(--color-border);
     display: flex;
     position: relative;
     width: inherit;
     height: 300px;
-    border-left: 2px solid var(--color-black);
-    border-bottom: 2px solid var(--color-black);
+    border-left: var(--border-style);
+    border-bottom: var(--border-style);
     grid-column: 1 / -1;
     margin-left: 30px;
     margin-bottom: 40px;
+    
+    @media (max-width: 700px) {
+      margin-bottom: 80px;
+    }
   }
 
   ul:first-of-type {
@@ -84,8 +94,8 @@
   }
 
   li > div:nth-of-type(2) {
-    border: 2px dashed var(--color-blue);
-    animation: grow-height 1s ease-out forwards;
+    border: 2px dashed var(--color-primary);
+    animation: growHeight 1s ease-out forwards;
     height: 0;
     --final-height: 100%;
   }
@@ -93,9 +103,9 @@
   li > div:nth-of-type(1) {
     width: 20px;
     height: 20px;
-    background: var(--color-blue);
+    background: var(--color-primary);
     border-radius: 100%;
-    border: 4px solid var(--color-lightblue);
+    border: 4px solid var(--color-primary-highlight);
     margin-top: 10px;
     position: relative;
     cursor: pointer;
@@ -105,6 +115,11 @@
     position: absolute;
     bottom: -60px;
     text-align: center;
+
+    @media (max-width: 700px) {
+      bottom: -80px;
+      transform: rotate(45deg) scale(0.8);
+    }
   }
 
   li > div:nth-of-type(1) > div {
@@ -116,7 +131,7 @@
     background-color: var(--color-background-section);
     padding: 10px;
     border-radius: 10px;
-    border: 2px solid var(--color-blue);
+    border: 2px solid var(--color-primary);
     white-space: nowrap;
     justify-content: center;
     align-items: center;
@@ -124,36 +139,25 @@
     opacity: 0;
     pointer-events: none;
     transition: 0.3s;
+
+    @media (max-width: 700px) {
+      white-space: unset;
+    }
   }
 
   li > div:nth-of-type(1) > div span:first-of-type {
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-bold);
-    color: var(--color-blue);
+    color: var(--color-primary);
   }
 
   li > div:nth-of-type(1) > div span:nth-of-type(2) {
     font-size: var(--font-size-medium);
-    color: var(--color-blue);
+    color: var(--color-primary);
   }
 
   li > div:nth-of-type(1):hover > div {
     opacity: 1;
     pointer-events: all;
-  }
-
-  @media screen and (max-width: 700px) {
-    li > span {
-      transform: rotate(45deg) scale(0.8);
-      bottom: -80px;
-    }
-
-    figure {
-      margin-bottom: 80px;
-    }
-
-    li > div:nth-of-type(1) > div {
-      white-space: unset;
-    }
   }
 </style>

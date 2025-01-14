@@ -61,7 +61,7 @@ a {
 }
 
 a {
-  --color-hyperlink:var(--color-blue);
+  --color-hyperlink:var(--color-primary);
   --color-hyperlink-active: #004497;
 
   color: var(--color-hyperlink);

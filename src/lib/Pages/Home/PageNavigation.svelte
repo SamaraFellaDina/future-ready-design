@@ -1,6 +1,15 @@
 <script>
   import { Icon, BlankDonutChart } from '$lib';
   export let data = data;
+
+  const filterUrlCheck = (url) => {
+    const filterUrl = ["https://", "www."];
+    let cleanedUrl = url;
+    filterUrl.forEach((part) => {
+      cleanedUrl = cleanedUrl.replace(part, "");
+    });
+    return cleanedUrl;
+  }; 
 </script>
 
 <ul>
@@ -10,7 +19,7 @@
     <div>
       <section>
         <h2>{title}</h2>
-        <p>{url.replace(/^https?:\/\/(www\.)?/, "")}</p>
+        <p>{filterUrlCheck(url)}</p>
       </section>
 
       <div>
@@ -29,6 +38,7 @@ ul {
     --average-gap: 20px;
     display: grid;
     gap: var(--average-gap);
+    
     @media (min-width: 900px) {
       grid-template-columns: 50% 50%;
     }
