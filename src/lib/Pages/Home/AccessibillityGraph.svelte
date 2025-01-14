@@ -53,7 +53,6 @@
 </section>
 
 <style>
-
   section {
     background-color: var(--color-background-section);
     border-radius: var(--section-border-radius);
@@ -75,10 +74,4 @@
     align-items: center;
     gap: 10px;
   }
-
-  /* @media screen and (max-width: 1040px) {
-    :global(figure > div) {
-      width: unset !important;
-    }
-  } */
 </style>

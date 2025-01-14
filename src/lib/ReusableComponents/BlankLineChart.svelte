@@ -120,6 +120,9 @@ figure > div {
   border-bottom: 2px solid var(--color-black);
   border-left: 2px solid var(--color-black);
   padding-left: 60px;
+  @media (max-width: 1040px) {
+    width: var(--mobilechartwidth);
+  }
 }
 
 figure > div > ul:first-of-type {
@@ -251,11 +254,5 @@ span.month-label {
   margin-left: -20px;
   position: absolute;
   bottom: -35px;
-}
-
-@media screen and (max-width: 1040px) {
-  figure > div {
-    width: var(--mobilechartwidth);
-  }
 }
 </style>
