@@ -1,8 +1,12 @@
 <script>
-  export let result = data.scans;
   import { BlankDonutChart } from '$lib';
+  export let result = data.scans;
 
-  $: percentage = result.score; // Reactief maken
+  let percentage;
+
+  $:{
+    percentage = result.score; // Reactief maken
+  } 
 </script>
 
 <section>

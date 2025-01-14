@@ -69,7 +69,7 @@
   --chart-thickness: 3px;
 }
 
-@keyframes lineAnimation {
+@keyframes line-animation {
   from {
     clip-path: polygon(
       0 calc(100% - var(--start)),
@@ -153,7 +153,7 @@ figure > div > ul:first-of-type .bar {
     0 calc(100% - var(--start)),
     0 calc(100% - var(--start))
   );
-  animation: lineAnimation 1s forwards;
+  animation: line-animation 1s forwards;
 }
 
 figure > div > ul:first-of-type .dot {
