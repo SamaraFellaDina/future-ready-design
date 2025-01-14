@@ -1,5 +1,5 @@
 <script>
-  import { Icon, BlankDonutChart } from '$lib';
+  import { Icon, DonutChartTemplate } from '$lib';
   export let data = data;
 </script>
 
@@ -18,7 +18,7 @@
         <p>toegankelijk</p>
       </div>
     </div>
-    <BlankDonutChart percentage=80/>
+    <DonutChartTemplate percentage=80/>
   </li>
   {/each}
 </ul>

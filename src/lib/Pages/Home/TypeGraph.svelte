@@ -1,5 +1,5 @@
 <script>
-  import { BlankBarChart } from '$lib';
+  import { IconLineChartTemplate } from '$lib';
   export let result = data.scans;
 
   // Reactieve berekeningen
@@ -29,7 +29,7 @@
 
 <section>
   <h2>Soorten foutmeldingen</h2>
-  <BlankBarChart {labels} {chartMaxY} {chartStepY}/>
+  <IconLineChartTemplate {labels} {chartMaxY} {chartStepY}/>
 </section>
 
 <style>
