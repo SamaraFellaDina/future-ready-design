@@ -1,14 +1,19 @@
 <script>
   import { Icon } from '$lib';
   export let labels;
-  export let maxY;
-  export let stepY;
+  export let chartMaxY;
+  export let chartStepY;
+
+  const calculateChartYAxisSteps = Array.from(
+    { length: chartMaxY / chartStepY + 1 },
+    (_, i) => i * chartStepY
+  );
 </script>
 
 <figure>
   <ul>
-    {#each Array.from({ length: maxY / stepY + 1 }, (_, i) => i * stepY) as y}
-      <li>{y}</li>
+    {#each calculateChartYAxisSteps as stepY}
+      <li>{stepY}</li>
     {/each}
   </ul>
 
@@ -30,7 +35,7 @@
             <span>Aantal: {value}</span>
           </div>
         </div>
-        <div style="--final-height: {(value / maxY) * 100}%;"></div>
+        <div style="--final-height: {(value / chartMaxY) * 100}%;"></div>
         <span>{name}</span>
       </li>
     {/each}
