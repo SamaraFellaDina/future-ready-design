@@ -46,9 +46,11 @@
     display: flex;
     flex-direction: column;
     row-gap: var(--average-gap);
+
     @media (max-width: 700px) {
       grid-template-columns: 1fr 1fr;
     };
+
     @media (max-width: 1600px) {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -66,9 +68,11 @@
     box-shadow: var(--box-shadow);
     list-style: none;
     padding: var(--average-gap);
+    
     @media (max-width: 700px) {
       padding: 10px;
     };
+
     @media (max-width: 1600px) {
       height: 100%;
       margin-bottom: var(--average-gap);

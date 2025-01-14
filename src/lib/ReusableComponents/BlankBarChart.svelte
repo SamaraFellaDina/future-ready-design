@@ -62,6 +62,7 @@
     grid-column: 1 / -1;
     margin-left: 30px;
     margin-bottom: 40px;
+    
     @media (max-width: 700px) {
       margin-bottom: 80px;
     }
@@ -113,6 +114,7 @@
     position: absolute;
     bottom: -60px;
     text-align: center;
+
     @media (max-width: 700px) {
       bottom: -80px;
       transform: rotate(45deg) scale(0.8);
@@ -136,6 +138,7 @@
     opacity: 0;
     pointer-events: none;
     transition: 0.3s;
+
     @media (max-width: 700px) {
       white-space: unset;
     }

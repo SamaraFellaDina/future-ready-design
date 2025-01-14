@@ -84,6 +84,7 @@
     z-index: 1;
     width: 280px;
     overflow-y: auto;
+    
     @media (max-width: 1700px) {
       transform: translateX(-80%);
       overflow-y: hidden;
@@ -138,6 +139,7 @@
     left: 240px;
     transition: 0.5s;
     width: min-content;
+
     @media (max-width: 1700px) {
       transform: translateX(-225px) scaleX(-1);
     }
@@ -150,6 +152,7 @@
 
   button.active ~ nav {
     transform: translateX(-80%);
+
     @media (max-width: 1700px) {
       transform: translateX(0);
       overflow-y: auto;
@@ -158,6 +161,7 @@
 
   button.active {
     transform: translateX(-225px) scaleX(-1);
+
     @media (max-width: 1700px) {
       transform: translateX(0);
     }
@@ -166,6 +170,7 @@
   button.active ~ nav a {
     opacity: 0;
     pointer-events: none;
+
     @media (max-width: 1700px) {
       opacity: 1;
       pointer-events: all;
@@ -181,24 +186,26 @@
     opacity: 0.5;
   }
 
-  @media (max-width: 1700px) {
-    nav a {
+  button:not(.active) {
+    @media (max-width: 700px) {
+      box-shadow: var(--box-shadow);
+      background: #FFFFFF80;
+      padding: 6px 8px;
+      border-radius: 50%;
+    }
+  }
+
+  nav a {
+    @media (max-width: 1700px) {
       opacity: 0;
       pointer-events: none;
     }
   }
 
-  @media (max-width: 700px) {
-    button:not(.active) ~ nav {
+  button:not(.active) ~ nav {
+    @media (max-width: 700px) {
       background-color: transparent;
       box-shadow: none;
-    }
-
-    button:not(.active) {
-      box-shadow: var(--box-shadow);
-      background: #FFFFFF80;
-      padding: 6px 8px;
-      border-radius: 50%;
     }
   }
 

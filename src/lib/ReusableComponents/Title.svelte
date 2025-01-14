@@ -24,6 +24,7 @@
     grid-area: 1 / 1 / 2 / 3;
     display: flex;
     justify-content: space-between;
+    
     @media (max-width: 500px) {
       flex-direction: column;
       align-items: center;

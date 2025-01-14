@@ -120,6 +120,7 @@ figure > div {
   border-bottom: 2px solid var(--color-black);
   border-left: 2px solid var(--color-black);
   padding-left: 60px;
+  
   @media (max-width: 1040px) {
     width: var(--mobile-chart-width);
   }

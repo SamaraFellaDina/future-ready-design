@@ -35,21 +35,25 @@
     box-shadow: var(--box-shadow);
     grid-column: 1 / 2;
   }
+
   h2 {
     font-size: var(--font-size-large);
     padding-bottom: var(--average-gap);
   }
+
   div {
     display: flex;
     gap: var(--average-gap);
     align-items: center;
   }
+
   ul {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: var(--average-gap);
   }
+  
   li {
     display: flex;
   }
