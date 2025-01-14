@@ -65,7 +65,12 @@
 
 <script>
   export let percentage;
-  $: donutColor = percentage < 50 ? 'var(--color-status-bad-border)' : percentage < 80 ? 'var(--color-status-fine-border)' : percentage < 99 ? 'var(--color-status-decent-border)' : 'var(--color-status-good-border)';
+
+  let donutColor;
+
+  $:{ 
+    donutColor = percentage < 50 ? 'var(--color-status-bad-border)' : percentage < 80 ? 'var(--color-status-fine-border)' : percentage < 99 ? 'var(--color-status-decent-border)' : 'var(--color-status-good-border)';
+  }
 </script>
 
 <div>
