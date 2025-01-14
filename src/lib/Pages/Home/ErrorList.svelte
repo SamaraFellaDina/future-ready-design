@@ -1,5 +1,5 @@
 <script>
-  import { Icon } from "$lib";
+  import { IconLibrary } from "$lib";
 
   export let result = data.scans;
 
@@ -15,12 +15,12 @@
   };
 
   const icons = [
-  "detected-errors",
-  "contrast-errors",
-  "structural-errors",
-  "missing-alt-texts",
-  "aria-label-errors",
-];
+    "detected-errors",
+    "contrast-errors",
+    "structural-errors",
+    "missing-alt-texts",
+    "aria-label-errors",
+  ];
 
 </script>
 
@@ -29,11 +29,11 @@
     <li>
       <div>
         <h2>{title}</h2>
-        <Icon name={getIconName(amount)} /> 
+        <IconLibrary name={getIconName(amount)} /> 
       </div>
       <div class="amount">
         <p>{amount}</p>
-        <Icon name={icons[index]} /> 
+        <IconLibrary name={icons[index]} /> 
       </div>
     </li>
   {/each}

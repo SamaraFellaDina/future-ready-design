@@ -1,5 +1,5 @@
 <script>
-  import { Icon } from '$lib'
+  import { IconLibrary } from '$lib'
 </script>
 
 <ul>
@@ -13,9 +13,9 @@
         <span>nieuwekijk.nl/over-ons</span>
         <meter value="73" max="100">73%</meter>
       </label>
-      <p><Icon name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
+      <p><IconLibrary name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
       <ul>
-        <li><Icon name = "good" />Niveau A</li>
+        <li><IconLibrary name = "good" />Niveau A</li>
       </ul>
     </a>
   </li>
@@ -29,9 +29,9 @@
         <span>nieuwekijk.nl/over-ons</span>
         <meter value="73" max="100">73%</meter>
       </label>
-      <p><Icon name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
+      <p><IconLibrary name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
       <ul>
-        <li><Icon name = "good" />Niveau A</li>
+        <li><IconLibrary name = "good" />Niveau A</li>
       </ul>
     </a>
   </li>
@@ -45,9 +45,9 @@
         <span>nieuwekijk.nl/over-ons</span>
         <meter value="73" max="100">73%</meter>
       </label>
-      <p><Icon name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
+      <p><IconLibrary name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
       <ul>
-        <li><Icon name = "good" />Niveau A</li>
+        <li><IconLibrary name = "good" />Niveau A</li>
       </ul>
     </a>
   </li>
@@ -61,9 +61,9 @@
         <span>nieuwekijk.nl/over-ons</span>
         <meter value="73" max="100">73%</meter>
       </label>
-      <p><Icon name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
+      <p><IconLibrary name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
       <ul>
-        <li><Icon name = "good" />Niveau A</li>
+        <li><IconLibrary name = "good" />Niveau A</li>
       </ul>
     </a>
   </li>

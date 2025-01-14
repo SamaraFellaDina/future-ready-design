@@ -1,16 +1,16 @@
 <script>
-    import { Icon } from "$lib";
+    import { IconLibrary } from "$lib";
 </script>
 <article class="content-wrapper">
     <section>
         <h2>Op tijd gebasseerde media</h2>
         <p>richtlijn 1.2</p>
-        <Icon name ="eye" />
+        <IconLibrary name ="eye" />
         <progress id="file" value="32" max="100"> 32% </progress>
     </section>
     <section>
         <details>
-            <summary>1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen)<input type="checkbox"><Icon name ="warning" /></summary>
+            <summary>1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen)<input type="checkbox"><IconLibrary name ="warning" /></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>
@@ -33,7 +33,7 @@
             </section>
         </details>
         <details>
-            <summary>1.2.2 Ondertitels voor doven en slechthorenden (vooraf opgenomen)<input type="checkbox"><Icon name ="warning" /></summary>
+            <summary>1.2.2 Ondertitels voor doven en slechthorenden (vooraf opgenomen)<input type="checkbox"><IconLibrary name ="warning" /></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>

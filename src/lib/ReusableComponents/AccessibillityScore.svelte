@@ -1,23 +1,23 @@
 <script>
-  import { BlankDonutChart, Icon } from '$lib'
+  import { DonutChart, IconLibrary } from '$lib'
   let percentage = 80;
 </script>
 
 <section>
   <h2>Toegankelijkheid</h2>
   <div>
-    <BlankDonutChart {percentage} />
+    <DonutChart {percentage} />
     <ul>
       <li>
-        <Icon name = "good" />
+        <IconLibrary name = "good" />
         <p>Niveau A</p>
       </li>
       <li>
-        <Icon name = "good" />
+        <IconLibrary name = "good" />
         <p>Niveau AA</p>
       </li>
       <li>
-        <Icon name = "good" />
+        <IconLibrary name = "good" />
         <p>Niveau AAA</p>
       </li>
     </ul>

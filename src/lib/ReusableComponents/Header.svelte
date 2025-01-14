@@ -1,5 +1,5 @@
 <script>
-  import { Icon } from "$lib";
+  import { IconLibrary } from "$lib";
   import { page } from '$app/stores';
   export let company;
   let name = company[0].title.toLowerCase();
@@ -31,14 +31,14 @@
 <a class="skip-link" href="#main-content">Skip naar main content</a>
 <header>
   <button type="button" aria-label={isActive ? "Navigatiemenu is geopend" : "Navigatiemenu is gesloten"} class:active={isActive} on:click={toggleActive}>
-    <Icon name = "sidebar" />
+    <IconLibrary name = "sidebar" />
     <span>Menu</span>
   </button>
   <nav>
-    <a href ="/"><Icon name = "accessdash-logo" aria-label="ga naar de homepage"/></a>
+    <a href ="/"><IconLibrary name = "accessdash-logo" aria-label="ga naar de homepage"/></a>
     <div>
       <h2>
-        <Icon name="dashboard" />
+        <IconLibrary name="dashboard" />
         <span>Dashboard</span>
       </h2>
       <ul>
@@ -53,7 +53,7 @@
     </div>
     <div>
       <h2>
-        <Icon name="header-arrow" />
+        <IconLibrary name="header-arrow" />
         <a href = '/nieuwekijk/overzicht'><span>{name}</span></a>
       </h2>
       <ul>

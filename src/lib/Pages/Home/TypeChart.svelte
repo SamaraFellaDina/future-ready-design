@@ -1,5 +1,5 @@
 <script>
-  import { BlankBarChart } from "$lib";
+  import { IconLineChart } from "$lib";
   export let result = data.scans;
 
   let results;
@@ -31,7 +31,7 @@
 
 <section>
   <h2>Soorten foutmeldingen</h2>
-  <BlankBarChart {labels} {chartMaxY} {chartStepY}/>
+  <IconLineChart {labels} {chartMaxY} {chartStepY}/>
 </section>
 
 <style>

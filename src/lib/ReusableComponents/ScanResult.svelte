@@ -1,5 +1,5 @@
 <script>
-    import { BlankDonutChart, Icon } from '$lib'
+    import { DonutChart, IconLibrary } from '$lib'
     import { page } from "$app/stores";
     let percentage = 40;
     let borderColor = percentage < 50 ? 'var(--color-status-bad-border)' : percentage < 80 ? 'var(--color-status-fine-border)' : 'var(--color-status-good-border)';
@@ -17,7 +17,7 @@
     </div>
   
     <div>
-      <BlankDonutChart {percentage} />
+      <DonutChart {percentage} />
       <div>
         <h3 style="--bordercolor: {borderColor}">3 nieuwe fouten ontdekt</h3>
         <p>
@@ -29,19 +29,19 @@
         <li>Aandacht vereist</li>
         <li>
           <a href="/">
-            <Icon name = "arrow-right" />
+            <IconLibrary name = "arrow-right" />
             /over-ons
           </a>
         </li>
         <li>
           <a href="/">
-            <Icon name = "arrow-right" />
+            <IconLibrary name = "arrow-right" />
             /over-ons
           </a>
         </li>
         <li>
           <a href="/">
-            <Icon name = "arrow-right" />
+            <IconLibrary name = "arrow-right" />
             /over-ons
           </a>
         </li> 

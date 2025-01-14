@@ -1,19 +1,19 @@
 <script>
-  import { Title, AccessibillityScore, ScanResult, SearchBar, SearchResults } from '$lib';
+  import { CurrentPageTitle, AccessibillityScore, ScanResult, FilterBar, ResultList } from '$lib';
   export let data;
   let company = data.sites;
 </script>
 
 <main>
-  <Title {company}/>
+  <CurrentPageTitle {company}/>
 
   <AccessibillityScore />
 
   <ScanResult />
 
-  <SearchBar />
+  <FilterBar />
 
-  <SearchResults />
+  <ResultList />
 </main>
 
 <style>

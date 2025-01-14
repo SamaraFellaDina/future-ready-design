@@ -1,5 +1,5 @@
 <script>
-  import { Icon, BlankLineChart } from "$lib";
+  import { IconLibrary, LineChart } from "$lib";
 
   export let resultsheet = data.scans;
   let chartWidth = "100%";
@@ -57,15 +57,15 @@
     <h2>Toegankelijkheid</h2>
     <nav>
       <button>
-        <Icon name="arrow-left" />
+        <IconLibrary name="arrow-left" />
       </button>
       <span>2024</span>
       <button>
-        <Icon name="arrow-right" />
+        <IconLibrary name="arrow-right" />
       </button>
     </nav>
   </div>
-  <BlankLineChart {percentageData} {chartWidth} {mobileChartWidth} />
+  <LineChart {percentageData} {chartWidth} {mobileChartWidth} />
 </section>
 
 <style>

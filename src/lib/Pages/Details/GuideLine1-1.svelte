@@ -1,11 +1,11 @@
 <script>
-    import { Icon } from "$lib";
+    import { IconLibrary } from "$lib";
 </script>
 <article class="content-wrapper">
     <section>
         <h2>Tekstalternatieven</h2>
         <p>richtlijn 1.1</p>
-        <Icon name ="eye" />
+        <IconLibrary name ="eye" />
         <progress id="file" value="32" max="100"> 32% </progress>
     </section>
     <section>

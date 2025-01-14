@@ -1,5 +1,5 @@
 <script>
-  import { Title, AccessibillityGraph, AutomaticScan, ErrorResult, TypeGraph } from '$lib';
+  import { CurrentPageTitle, YearlyResultLineChart, ScanResultPage, ErrorList, TypeChart } from '$lib';
   export let data = data;
   export let company = data.sites;
   export let resultsheet = data.scans;
@@ -23,11 +23,11 @@
 </script>
 
 <main>
-  <Title {company} {nextMonth} {previousMonth} />
-  <AutomaticScan {result} />
-  <ErrorResult {result} />
-  <TypeGraph {result} />
-  <AccessibillityGraph {resultsheet} />
+  <CurrentPageTitle {company} {nextMonth} {previousMonth} />
+  <ScanResultPage {result} />
+  <ErrorList {result} />
+  <TypeChart {result} />
+  <YearlyResultLineChart {resultsheet} />
 </main>
 
 <style>

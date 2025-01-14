@@ -1,5 +1,5 @@
 <script>
-  import { Icon, BlankDonutChart } from '$lib';
+  import { IconLibrary, DonutChart } from '$lib';
   export let data = data;
 
   const filterUrlCheck = (url) => {
@@ -15,7 +15,7 @@
 <ul>
   {#each data.sites as {url, title}}
   <li>
-    <Icon name='home-icon' width=30 height=30/>
+    <IconLibrary name='home-icon' width=30 height=30/>
     <div>
       <section>
         <h2>{title}</h2>
@@ -23,11 +23,11 @@
       </section>
 
       <div>
-        <Icon name='good' width=30 height=30 color='var(--color-status-good-border)'/>
+        <IconLibrary name='good' width=30 height=30 color='var(--color-status-good-border)'/>
         <p>toegankelijk</p>
       </div>
     </div>
-    <BlankDonutChart percentage=80/>
+    <DonutChart percentage=80/>
   </li>
   {/each}
 </ul>

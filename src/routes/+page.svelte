@@ -1,10 +1,10 @@
 <script>
-  import { PageNavigation} from '$lib';
+  import { SiteOverview} from '$lib';
   export let data = data;
 </script>
 
 <main>
-  <PageNavigation {data}/>
+  <SiteOverview {data}/>
 </main>
 
 <style>

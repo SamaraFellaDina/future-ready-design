@@ -1,5 +1,5 @@
 <script>
-  import { BlankDonutChart } from '$lib';
+  import { DonutChart } from '$lib';
   export let result = data.scans;
 
   let percentage;
@@ -14,7 +14,7 @@
     <h2>{result.title}</h2>
     <p>{result.description}</p>
   </div>
-  <BlankDonutChart {percentage}/>
+  <DonutChart {percentage}/>
 </section>
 
 <style>

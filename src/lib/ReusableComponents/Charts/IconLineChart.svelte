@@ -1,5 +1,5 @@
 <script>
-  import { Icon } from '$lib';
+  import { IconLibrary } from '$lib';
   export let labels;
   export let chartMaxY;
   export let chartStepY;
@@ -21,13 +21,13 @@
     {#each labels as { name, value }}
       <li>
         {#if name === "Contrast fouten"}
-          <Icon name="contrast-errors" />
+          <IconLibrary name="contrast-errors" />
         {:else if name === "Structurele fouten"}
-          <Icon name="structural-errors" />
+          <IconLibrary name="structural-errors" />
         {:else if name === "Ontbrekende alt-teksten"}
-          <Icon name="missing-alt-texts" />
+          <IconLibrary name="missing-alt-texts" />
         {:else if name === "Ontbrekende aria-labels"}
-          <Icon name="aria-label-errors" />
+          <IconLibrary name="aria-label-errors" />
         {/if}
         <div>
           <div>

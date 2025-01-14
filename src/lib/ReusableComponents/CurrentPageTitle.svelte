@@ -1,5 +1,5 @@
 <script>
-  import { MonthlyNavigation } from "$lib";
+  import { MonthlySwitchButtons } from "$lib";
   import { page } from "$app/stores";
   export let company;
   export let nextMonth;
@@ -14,7 +14,7 @@
     <p>Automatische Scan</p>
   </div>
   {#if currentPage === "/nieuwekijk/home"}
-    <MonthlyNavigation onNextMonth={nextMonth} onPreviousMonth={previousMonth} />
+    <MonthlySwitchButtons onNextMonth={nextMonth} onPreviousMonth={previousMonth} />
   {/if}
 </section>
 

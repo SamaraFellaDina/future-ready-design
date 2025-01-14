@@ -1,13 +1,13 @@
 <script>
-  import { Icon } from "$lib";
+  import { IconLibrary } from "$lib";
   export let onNextMonth;     
   export let onPreviousMonth; 
 </script>
 
 <nav>
-  <button on:click={onPreviousMonth}><Icon name="arrow-left" /></button>
+  <button on:click={onPreviousMonth}><IconLibrary name="arrow-left" /></button>
   <p>Aug.</p> 
-  <button on:click={onNextMonth}><Icon name="arrow-right" /></button>
+  <button on:click={onNextMonth}><IconLibrary name="arrow-right" /></button>
 </nav>
 
 <style>
