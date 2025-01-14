@@ -96,7 +96,7 @@
     height: 20px;
     background: var(--color-primary);
     border-radius: 100%;
-    border: 4px solid var(--color-lightblue);
+    border: 4px solid var(--color-primary-highlight);
     margin-top: 10px;
     position: relative;
     cursor: pointer;

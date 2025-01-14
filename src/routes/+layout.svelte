@@ -23,7 +23,7 @@
 
     /* colors */
     --color-primary: #0275FF;
-    --color-lightblue: #D5E8FF;
+    --color-primary-highlight: #D5E8FF;
 
     --color-regular-text: #5D666A;
     --color-background:#F0F0F0;

@@ -83,7 +83,7 @@
   }
 
   fieldset span {
-    background-color: var(--color-lightblue);
+    background-color: var(--color-primary-highlight);
     color: var(--color-primary);
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-regular);
@@ -93,7 +93,7 @@
 
   label:has(input[type="checkbox"]:checked) span {
     background-color: var(--color-primary);
-    color: var(--color-lightblue);
+    color: var(--color-primary-highlight);
   }
 
   legend {
