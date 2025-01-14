@@ -84,7 +84,7 @@
   }
 
   li > div:nth-of-type(2) {
-    border: 2px dashed var(--color-blue);
+    border: 2px dashed var(--color-primary);
     animation: growHeight 1s ease-out forwards;
     height: 0;
     --final-height: 100%;
@@ -93,7 +93,7 @@
   li > div:nth-of-type(1) {
     width: 20px;
     height: 20px;
-    background: var(--color-blue);
+    background: var(--color-primary);
     border-radius: 100%;
     border: 4px solid var(--color-lightblue);
     margin-top: 10px;
@@ -116,7 +116,7 @@
     background-color: var(--color-background-section);
     padding: 10px;
     border-radius: 10px;
-    border: 2px solid var(--color-blue);
+    border: 2px solid var(--color-primary);
     white-space: nowrap;
     justify-content: center;
     align-items: center;
@@ -129,12 +129,12 @@
   li > div:nth-of-type(1) > div span:first-of-type {
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-bold);
-    color: var(--color-blue);
+    color: var(--color-primary);
   }
 
   li > div:nth-of-type(1) > div span:nth-of-type(2) {
     font-size: var(--font-size-medium);
-    color: var(--color-blue);
+    color: var(--color-primary);
   }
 
   li > div:nth-of-type(1):hover > div {

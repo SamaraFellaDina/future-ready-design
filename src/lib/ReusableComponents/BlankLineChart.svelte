@@ -141,7 +141,7 @@ figure > div > ul:first-of-type .bar {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--color-blue);
+  background: var(--color-primary);
   clip-path: polygon(
     0 calc(100% - var(--start)),
     0 calc(100% - var(--start)),
@@ -158,7 +158,7 @@ figure > div > ul:first-of-type .dot {
   width: 14px;
   height: 14px;
   background: var(--color-background-section);
-  border: 2px solid var(--color-blue);
+  border: 2px solid var(--color-primary);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
@@ -183,7 +183,7 @@ figure > div > ul li:last-child .bar {
 }
 
 div.last-dot {
-  border: 2px solid var(--color-blue);
+  border: 2px solid var(--color-primary);
   border-radius: 10px;
   background-color: var(--color-background-section);
   display: flex;
@@ -209,7 +209,7 @@ figure div.dot:has(div.last-dot) {
 }
 
 div.last-dot span {
-  color: var(--color-blue);
+  color: var(--color-primary);
   font-size: var(--font-size-medium);
 }
 
@@ -221,7 +221,7 @@ div.tooltip {
   opacity: 0;
   pointer-events: none;
   transition: 0.3s;
-  border: 2px solid var(--color-blue);
+  border: 2px solid var(--color-primary);
   border-radius: 10px;
   background-color: var(--color-background-section);
   display: flex;
@@ -234,7 +234,7 @@ div.tooltip {
 }
 
 div.tooltip span {
-  color: var(--color-blue);
+  color: var(--color-primary);
   font-size: var(--font-size-medium);
 }
 

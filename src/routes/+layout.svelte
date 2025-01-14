@@ -6,15 +6,12 @@
 </script>
 
 <Header {company}/>
-
-
   <slot />
-
-
 <Footer />
 
 <style>
   :global(:root) {
+    /* fonts */
     --font-family: 'Outfit', arial, sans-serif;
     --font-weight-thin: 100;
     --font-size-regular: 16px;
@@ -24,7 +21,8 @@
     --font-size-xlarge: 32px;
     --font-weight-bold: 700;
 
-    --color-blue: #0275FF;
+    /* colors */
+    --color-primary: #0275FF;
     --color-lightblue: #D5E8FF;
     --color-black: #5D666A;
 
@@ -37,7 +35,7 @@
     --color-status-fine:#ffa60053;
     --color-status-bad:#ff00004a;
     --color-status-good-border:green;
-    --color-status-decent-border:var(--color-blue);
+    --color-status-decent-border:var(--color-primary);
     --color-status-fine-border:orange;
     --color-status-bad-border:red;
 

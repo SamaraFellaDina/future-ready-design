@@ -108,7 +108,7 @@
   }
 
   span {
-    color: var(--color-blue);
+    color: var(--color-primary);
   }
 
   li a {
@@ -119,11 +119,11 @@
   }
 
   li a.currentpage {
-    color: var(--color-blue);
+    color: var(--color-primary);
   }
 
   li a:hover {
-    color: var(--color-blue);
+    color: var(--color-primary);
   }
 
   button {
