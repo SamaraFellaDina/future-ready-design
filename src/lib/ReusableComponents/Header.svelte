@@ -1,7 +1,6 @@
 <script>
-  import { Icon } from "$lib";
+  import { Icon, SkipLink } from "$lib";
   import { page } from '$app/stores';
-  import { SkipLink } from "$lib";
   export let company;
   let name = company[0].title.toLowerCase();
   let currentPage = $page.url.pathname;
