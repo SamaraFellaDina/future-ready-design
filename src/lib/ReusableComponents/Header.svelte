@@ -31,7 +31,7 @@
 
 <SkipLink />
 <header>
-  <button type="button" aria-label="open of sluit navigatiemenu" class:active={isActive} on:click={toggleActive}>
+  <button type="button" aria-label={isActive ? "Navigatiemenu is geopend" : "Navigatiemenu is gesloten"} class:active={isActive} on:click={toggleActive}>
     <Icon name = "sidebar" />
     <span>Menu</span>
   </button>
