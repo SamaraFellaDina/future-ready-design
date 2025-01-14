@@ -2,7 +2,6 @@
 /*REUSABLE COMPONENTS*/
 export { default as Header } from "./ReusableComponents/Header.svelte";
 export { default as Footer } from "./ReusableComponents/Footer.svelte";
-export { default as SkipLink } from "./ReusableComponents/SkipLink.svelte";
 export { default as Icon } from "./ReusableComponents/Icon.svelte";
 export { default as BlankDonutChart } from "./ReusableComponents/BlankDonutChart.svelte";
 export { default as BlankLineChart } from "./ReusableComponents/BlankLineChart.svelte";
