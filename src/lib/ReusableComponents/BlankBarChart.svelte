@@ -48,12 +48,13 @@
   }
 
   figure {
+    --border-style: 2px solid var(--color-border);
     display: flex;
     position: relative;
     width: inherit;
     height: 300px;
-    border-left: 2px solid var(--color-black);
-    border-bottom: 2px solid var(--color-black);
+    border-left: var(--border-style);
+    border-bottom: var(--border-style);
     grid-column: 1 / -1;
     margin-left: 30px;
     margin-bottom: 40px;
@@ -84,7 +85,7 @@
   }
 
   li > div:nth-of-type(2) {
-    border: 2px dashed var(--color-blue);
+    border: 2px dashed var(--color-primary);
     animation: growHeight 1s ease-out forwards;
     height: 0;
     --final-height: 100%;
@@ -93,9 +94,9 @@
   li > div:nth-of-type(1) {
     width: 20px;
     height: 20px;
-    background: var(--color-blue);
+    background: var(--color-primary);
     border-radius: 100%;
-    border: 4px solid var(--color-lightblue);
+    border: 4px solid var(--color-primary-highlight);
     margin-top: 10px;
     position: relative;
     cursor: pointer;
@@ -116,7 +117,7 @@
     background-color: var(--color-background-section);
     padding: 10px;
     border-radius: 10px;
-    border: 2px solid var(--color-blue);
+    border: 2px solid var(--color-primary);
     white-space: nowrap;
     justify-content: center;
     align-items: center;
@@ -129,12 +130,12 @@
   li > div:nth-of-type(1) > div span:first-of-type {
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-bold);
-    color: var(--color-blue);
+    color: var(--color-primary);
   }
 
   li > div:nth-of-type(1) > div span:nth-of-type(2) {
     font-size: var(--font-size-medium);
-    color: var(--color-blue);
+    color: var(--color-primary);
   }
 
   li > div:nth-of-type(1):hover > div {
