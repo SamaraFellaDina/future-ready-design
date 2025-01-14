@@ -3,7 +3,6 @@
 
   export let result = data.scans;
 
-
   const getIconName = (amount) => {
     if (amount === 0 ) {
       return "good"; 

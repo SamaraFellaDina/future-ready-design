@@ -38,7 +38,7 @@
 </figure>
 
 <style>
-  @keyframes growHeight {
+  @keyframes grow-height {
     from {
       height: 0;
     }
@@ -85,7 +85,7 @@
 
   li > div:nth-of-type(2) {
     border: 2px dashed var(--color-blue);
-    animation: growHeight 1s ease-out forwards;
+    animation: grow-height 1s ease-out forwards;
     height: 0;
     --final-height: 100%;
   }

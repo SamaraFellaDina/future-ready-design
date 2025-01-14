@@ -73,13 +73,13 @@
 </div>
 
 <style>
-    @property --x {
+    @property --remaining-progress {
     syntax: '<integer>';
     inherits: true;
     initial-value: 100; 
   }
 
-  @property --y {
+  @property --fill-progress {
     syntax: '<number>';
     inherits: true;
     initial-value: 1; 
@@ -90,7 +90,7 @@
     height: 135px;
     appearance: none;
     position: relative;
-    animation: y 2s .5s both;
+    animation: fill-progress 2s .5s both;
     timeline-scope: --progress;
   }
   progress::-webkit-progress-bar {
@@ -107,14 +107,14 @@
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    animation: x linear;
+    animation: remaining-progress  linear;
     animation-timeline: --progress;
     animation-range: entry 100% exit 100%;
   }
 
   progress::before {
     content: counter(val) "%";
-    counter-reset: val calc(var(--y)*var(--x));
+    counter-reset: val calc(var(--fill-progress)*var(--remaining-progress));
     display: grid;
     place-content: center;
     font-size: var(--font-size-large);
@@ -129,14 +129,14 @@
     border-radius: 50%;
     mask: 
       conic-gradient(#0000 0 0) subtract content-box,
-      conic-gradient(#000 calc(1%*var(--y)*var(--x)),#0000 0);
+      conic-gradient(#000 calc(1%*var(--fill-progress)*var(--remaining-progress)),#0000 0);
   }
 
-  @keyframes x {
-    to {--x: 0}
+  @keyframes remaining-progress  {
+    to {--remaining-progress: 0}
   }
 
-  @keyframes y {
-    0% {--y: 0}
+  @keyframes fill-progress{
+    0% {--fill-progress: 0}
   }
 </style>
