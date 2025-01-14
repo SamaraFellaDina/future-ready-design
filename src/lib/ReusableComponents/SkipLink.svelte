@@ -1,5 +1,3 @@
-<script>
-</script>
 
 <a href="#main-content">Skip naar main content</a>
 
