@@ -30,7 +30,7 @@
 
 <a class="skip-link" href="#main-content">Skip naar main content</a>
 <header>
-  <button type="button" aria-label="open of sluit navigatiemenu" class:active={isActive} on:click={toggleActive}>
+  <button type="button" aria-label={isActive ? "Navigatiemenu is geopend" : "Navigatiemenu is gesloten"} class:active={isActive} on:click={toggleActive}>
     <Icon name = "sidebar" />
     <span>Menu</span>
   </button>
@@ -98,6 +98,11 @@
     z-index: 1;
     width: 280px;
     overflow-y: auto;
+    
+    @media (max-width: 1700px) {
+      transform: translateX(-80%);
+      overflow-y: hidden;
+    }
   }
 
   ul {
@@ -148,6 +153,10 @@
     left: 240px;
     transition: 0.5s;
     width: min-content;
+
+    @media (max-width: 1700px) {
+      transform: translateX(-225px) scaleX(-1);
+    }
   }
 
   button span {
@@ -157,15 +166,29 @@
 
   button.active ~ nav {
     transform: translateX(-80%);
+
+    @media (max-width: 1700px) {
+      transform: translateX(0);
+      overflow-y: auto;
+    }
   }
 
   button.active {
     transform: translateX(-225px) scaleX(-1);
+
+    @media (max-width: 1700px) {
+      transform: translateX(0);
+    }
   }
 
   button.active ~ nav a {
     opacity: 0;
     pointer-events: none;
+
+    @media (max-width: 1700px) {
+      opacity: 1;
+      pointer-events: all;
+    }
   }
 
   nav > a {
@@ -177,47 +200,26 @@
     opacity: 0.5;
   }
 
-  @media screen and (max-width: 1700px) {
-    nav {
-      transform: translateX(-80%);
-      overflow-y: hidden;
-    }
-
-    button {
-      transform: translateX(-225px) scaleX(-1);
-    }
-
-    button.active ~ nav {
-      transform: translateX(0);
-      overflow-y: auto;
-    }
-
-    button.active {
-      transform: translateX(0);
-    }
-
-    nav a {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    button.active ~ nav a {
-      opacity: 1;
-      pointer-events: all;
-    }
-  }
-
-  @media screen and (max-width: 700px) {
-    button:not(.active) ~ nav {
-      background-color: transparent;
-      box-shadow: none;
-    }
-
-    button:not(.active) {
+  button:not(.active) {
+    @media (max-width: 700px) {
       box-shadow: var(--box-shadow);
       background: #FFFFFF80;
       padding: 6px 8px;
       border-radius: 50%;
+    }
+  }
+
+  nav a {
+    @media (max-width: 1700px) {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  button:not(.active) ~ nav {
+    @media (max-width: 700px) {
+      background-color: transparent;
+      box-shadow: none;
     }
   }
 

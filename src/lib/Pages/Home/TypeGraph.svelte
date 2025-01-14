@@ -8,10 +8,10 @@
     name: item.title,
     value: item.amount
   }));
-  $: maxY = Math.max(...results.map((item) => item.amount)) + 10;
-  $: stepY = maxY <= 20 
-    ? 5 : maxY <= 50 
-      ? 10 : maxY <= 100 
+  $: chartMaxY = Math.max(...results.map((item) => item.amount)) + 10;
+  $: chartStepY = chartMaxY <= 20 
+    ? 5 : chartMaxY <= 50 
+      ? 10 : chartMaxY <= 100 
         ? 20 : 50;
 
   // let maxY = Math.max(...results.map((item) => item.amount)) + 10;
@@ -29,7 +29,7 @@
 
 <section>
   <h2>Soorten foutmeldingen</h2>
-  <BlankBarChart {labels} {maxY} {stepY}/>
+  <BlankBarChart {labels} {chartMaxY} {chartStepY}/>
 </section>
 
 <style>

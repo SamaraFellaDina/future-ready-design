@@ -32,7 +32,7 @@
     <li>20</li>
     <li>0</li>
   </ul>
-  <div style="--chartwidth: {chartWidth}; --mobilechartwidth: {mobileChartWidth}">
+  <div style="--chart-width: {chartWidth}; --mobile-chart-width: {mobileChartWidth}">
     <ul>
       {#each percentageData as { start, end, delay, name, isLastValid }}
         {#if isValid(start) && isValid(end)}
@@ -117,10 +117,14 @@ figure > div {
   --border-style:2px solid var(--color-border);
   display: flex;
   flex-direction: column;
-  width: var(--chartwidth);
+  width: var(--chart-width);
   border-bottom: var(--border-style);
   border-left: var(--border-style);
   padding-left: 60px;
+  
+  @media (max-width: 1040px) {
+    width: var(--mobile-chart-width);
+  }
 }
 
 figure > div > ul:first-of-type {
@@ -252,11 +256,5 @@ span.month-label {
   margin-left: -20px;
   position: absolute;
   bottom: -35px;
-}
-
-@media screen and (max-width: 1040px) {
-  figure > div {
-    width: var(--mobilechartwidth);
-  }
 }
 </style>

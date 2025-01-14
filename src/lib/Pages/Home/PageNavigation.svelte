@@ -38,6 +38,7 @@ ul {
     --average-gap: 20px;
     display: grid;
     gap: var(--average-gap);
+    
     @media (min-width: 900px) {
       grid-template-columns: 50% 50%;
     }

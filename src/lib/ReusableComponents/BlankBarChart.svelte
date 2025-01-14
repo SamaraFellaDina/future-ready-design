@@ -1,14 +1,19 @@
 <script>
   import { Icon } from '$lib';
   export let labels;
-  export let maxY;
-  export let stepY;
+  export let chartMaxY;
+  export let chartStepY;
+
+  const calculateChartYAxisSteps = Array.from(
+    { length: chartMaxY / chartStepY + 1 },
+    (_, i) => i * chartStepY
+  );
 </script>
 
 <figure>
   <ul>
-    {#each Array.from({ length: maxY / stepY + 1 }, (_, i) => i * stepY) as y}
-      <li>{y}</li>
+    {#each calculateChartYAxisSteps as stepY}
+      <li>{stepY}</li>
     {/each}
   </ul>
 
@@ -30,7 +35,7 @@
             <span>Aantal: {value}</span>
           </div>
         </div>
-        <div style="--final-height: {(value / maxY) * 100}%;"></div>
+        <div style="--final-height: {(value / chartMaxY) * 100}%;"></div>
         <span>{name}</span>
       </li>
     {/each}
@@ -58,6 +63,10 @@
     grid-column: 1 / -1;
     margin-left: 30px;
     margin-bottom: 40px;
+    
+    @media (max-width: 700px) {
+      margin-bottom: 80px;
+    }
   }
 
   ul:first-of-type {
@@ -106,6 +115,11 @@
     position: absolute;
     bottom: -60px;
     text-align: center;
+
+    @media (max-width: 700px) {
+      bottom: -80px;
+      transform: rotate(45deg) scale(0.8);
+    }
   }
 
   li > div:nth-of-type(1) > div {
@@ -125,6 +139,10 @@
     opacity: 0;
     pointer-events: none;
     transition: 0.3s;
+
+    @media (max-width: 700px) {
+      white-space: unset;
+    }
   }
 
   li > div:nth-of-type(1) > div span:first-of-type {
@@ -141,20 +159,5 @@
   li > div:nth-of-type(1):hover > div {
     opacity: 1;
     pointer-events: all;
-  }
-
-  @media screen and (max-width: 700px) {
-    li > span {
-      transform: rotate(45deg) scale(0.8);
-      bottom: -80px;
-    }
-
-    figure {
-      margin-bottom: 80px;
-    }
-
-    li > div:nth-of-type(1) > div {
-      white-space: unset;
-    }
   }
 </style>
