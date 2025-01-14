@@ -1,6 +1,6 @@
 <script>
   export let result = data.scans;
-  import { DonutChartTemplate } from '$lib';
+  import { BlankDonutChart } from '$lib';
 
   $: percentage = result.score; // Reactief maken
 </script>
@@ -10,7 +10,7 @@
     <h2>{result.title}</h2>
     <p>{result.description}</p>
   </div>
-  <DonutChartTemplate {percentage}/>
+  <BlankDonutChart {percentage}/>
 </section>
 
 <style>

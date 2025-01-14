@@ -1,12 +1,12 @@
 <script>
-  import { DonutChartTemplate, Icon } from '$lib'
+  import { BlankDonutChart, Icon } from '$lib'
   let percentage = 80;
 </script>
 
 <section>
   <h2>Toegankelijkheid</h2>
   <div>
-    <DonutChartTemplate {percentage} />
+    <BlankDonutChart {percentage} />
     <ul>
       <li>
         <Icon name = "good" />
