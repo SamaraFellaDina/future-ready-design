@@ -32,7 +32,7 @@
     <li>20</li>
     <li>0</li>
   </ul>
-  <div style="--chartwidth: {chartWidth}; --mobilechartwidth: {mobileChartWidth}">
+  <div style="--chart-width: {chartWidth}; --mobile-chart-width: {mobileChartWidth}">
     <ul>
       {#each percentageData as { start, end, delay, name, isLastValid }}
         {#if isValid(start) && isValid(end)}
@@ -116,12 +116,12 @@ figure > ul li {
 figure > div {
   display: flex;
   flex-direction: column;
-  width: var(--chartwidth);
+  width: var(--chart-width);
   border-bottom: 2px solid var(--color-black);
   border-left: 2px solid var(--color-black);
   padding-left: 60px;
   @media (max-width: 1040px) {
-    width: var(--mobilechartwidth);
+    width: var(--mobile-chart-width);
   }
 }
 
