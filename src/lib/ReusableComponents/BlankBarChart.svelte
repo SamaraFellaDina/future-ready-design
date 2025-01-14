@@ -48,12 +48,13 @@
   }
 
   figure {
+    --border-style: 2px solid var(--color-border);
     display: flex;
     position: relative;
     width: inherit;
     height: 300px;
-    border-left: 2px solid var(--color-black);
-    border-bottom: 2px solid var(--color-black);
+    border-left: var(--border-style);
+    border-bottom: var(--border-style);
     grid-column: 1 / -1;
     margin-left: 30px;
     margin-bottom: 40px;

@@ -23,13 +23,14 @@
 
     /* colors */
     --color-primary: #0275FF;
+    /* --color-black: #5D666A; */
     --color-lightblue: #D5E8FF;
-    --color-black: #5D666A;
 
-    --color-regular-text: var(--color-black);
+    --color-regular-text: #5D666A;
     --color-background:#F0F0F0;
     --color-background-section:#FFFFFF;
     --color-shadow: #C8C8C8;
+    --color-border:#5D666A;
 
     --color-status-good:#00800070;
     --color-status-fine:#ffa60053;
