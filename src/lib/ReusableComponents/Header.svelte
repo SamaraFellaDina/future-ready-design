@@ -1,7 +1,6 @@
 <script>
   import { Icon } from "$lib";
   import { page } from '$app/stores';
-  import { SkipLink } from "$lib";
   export let company;
   let name = company[0].title.toLowerCase();
   let currentPage = $page.url.pathname;
@@ -29,7 +28,7 @@
   }
 </script>
 
-<SkipLink />
+<a class="skip-link" href="#main-content">Skip naar main content</a>
 <header>
   <button type="button" aria-label="open of sluit navigatiemenu" class:active={isActive} on:click={toggleActive}>
     <Icon name = "sidebar" />
@@ -71,6 +70,21 @@
 </header>
 
 <style>
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background-color: black;
+  color: white;
+  opacity: 0;
+}
+
+.skip-link:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+}
   nav {
     position: fixed;
     background-color: var(--color-background-section);
@@ -108,7 +122,7 @@
   }
 
   span {
-    color: var(--color-blue);
+    color: var(--color-primary);
   }
 
   li a {
@@ -119,11 +133,11 @@
   }
 
   li a.currentpage {
-    color: var(--color-blue);
+    color: var(--color-primary);
   }
 
   li a:hover {
-    color: var(--color-blue);
+    color: var(--color-primary);
   }
 
   button {
