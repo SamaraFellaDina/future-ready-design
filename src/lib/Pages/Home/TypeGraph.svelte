@@ -4,8 +4,8 @@
 
   let results;
   let labels;
-  let maxY;
-  let stepY;
+  let chartMaxY;
+  let chartStepY;
   
   $: {
     results = result.result.slice(1);
@@ -14,17 +14,17 @@
       value: item.amount,
     }));
 
-    maxY = Math.max(...results.map((item) => item.amount)) + 10;
-    stepY;
+    chartMaxY = Math.max(...results.map((item) => item.amount)) + 10;
+    chartStepY;
 
-    if (maxY <= 20) {
-      stepY = 5;
-    } else if (maxY > 20 && maxY <= 50) {
-      stepY = 10;
-    } else if (maxY > 50 && maxY <= 100) {
-      stepY = 20;
-    } else if (maxY > 100) {
-      stepY = 50;
+    if (chartMaxY <= 20) {
+      chartStepY = 5;
+    } else if (chartMaxY > 20 && chartMaxY <= 50) {
+      chartStepY = 10;
+    } else if (chartMaxY > 50 && chartMaxY <= 100) {
+      chartStepY = 20;
+    } else if (chartMaxY > 100) {
+      chartStepY = 50;
     }
   }
 </script>

@@ -43,7 +43,7 @@
 </figure>
 
 <style>
-  @keyframes grow-height {
+  @keyframes growHeight {
     from {
       height: 0;
     }

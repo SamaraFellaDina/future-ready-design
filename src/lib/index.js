@@ -32,7 +32,5 @@ export { default as Filter } from "./Pages/Details/Filter.svelte";
 export { default as PageNavigation } from "./Pages/Home/PageNavigation.svelte";
 
 /*OVERZICHT*/
-// export { default as AccessibillityScore } from "./Pages/Overzicht/AccessibillityScore.svelte";
-// export { default as ScanResult } from "./Pages/Overzicht/ScanResult.svelte";
 export { default as SearchBar } from "./Pages/Overzicht/SearchBar.svelte";
 export { default as SearchResults } from "./Pages/Overzicht/SearchResults.svelte";
