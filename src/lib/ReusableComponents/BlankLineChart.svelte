@@ -114,11 +114,12 @@ figure > ul li {
 }
 
 figure > div {
+  --border-style:2px solid var(--color-border);
   display: flex;
   flex-direction: column;
   width: var(--chartwidth);
-  border-bottom: 2px solid var(--color-black);
-  border-left: 2px solid var(--color-black);
+  border-bottom: var(--border-style);
+  border-left: var(--border-style);
   padding-left: 60px;
 }
 
@@ -168,7 +169,7 @@ figure > div > ul:nth-of-type(2) {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-  border-top: 1px solid var(--color-black);
+  border-top: 1px solid var(--color-border);
   padding-top: 10px;
 }
 

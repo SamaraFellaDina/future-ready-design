@@ -23,7 +23,6 @@
 
     /* colors */
     --color-primary: #0275FF;
-    /* --color-black: #5D666A; */
     --color-lightblue: #D5E8FF;
 
     --color-regular-text: #5D666A;
