@@ -7,9 +7,9 @@
     if (amount === 0 ) {
       return "good"; 
     } else if (amount >= 1 && amount <= 20) {
-      return "warning"; 
+      return "fine"; 
     } else if (amount >= 21) {
-      return "critical-warning";
+      return "bad";
     }
     return "good"; 
   };

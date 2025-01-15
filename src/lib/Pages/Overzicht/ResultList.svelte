@@ -13,7 +13,7 @@
         <span>nieuwekijk.nl/over-ons</span>
         <meter value="73" max="100">73%</meter>
       </label>
-      <p><IconLibrary name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
+      <p><IconLibrary name = "fine" />Mogelijk nieuwe fouten ontdekt</p>
       <ul>
         <li><IconLibrary name = "good" />Niveau A</li>
       </ul>
@@ -29,7 +29,7 @@
         <span>nieuwekijk.nl/over-ons</span>
         <meter value="73" max="100">73%</meter>
       </label>
-      <p><IconLibrary name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
+      <p><IconLibrary name = "fine" />Mogelijk nieuwe fouten ontdekt</p>
       <ul>
         <li><IconLibrary name = "good" />Niveau A</li>
       </ul>
@@ -45,7 +45,7 @@
         <span>nieuwekijk.nl/over-ons</span>
         <meter value="73" max="100">73%</meter>
       </label>
-      <p><IconLibrary name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
+      <p><IconLibrary name = "fine" />Mogelijk nieuwe fouten ontdekt</p>
       <ul>
         <li><IconLibrary name = "good" />Niveau A</li>
       </ul>
@@ -61,7 +61,7 @@
         <span>nieuwekijk.nl/over-ons</span>
         <meter value="73" max="100">73%</meter>
       </label>
-      <p><IconLibrary name = "warning" />Mogelijk nieuwe fouten ontdekt</p>
+      <p><IconLibrary name = "fine" />Mogelijk nieuwe fouten ontdekt</p>
       <ul>
         <li><IconLibrary name = "good" />Niveau A</li>
       </ul>
