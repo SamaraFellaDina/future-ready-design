@@ -1,5 +1,5 @@
 <script>
-    import { DonutChart, IconLibrary } from '$lib'
+    import { DonutChart, IconLibrary, WarningSign } from '$lib'
     import { page } from "$app/stores";
     let percentage = 40;
     let borderColor = percentage < 50 ? 'var(--color-status-bad-border)' : percentage < 80 ? 'var(--color-status-fine-border)' : 'var(--color-status-good-border)';
@@ -19,7 +19,9 @@
     <div>
       <DonutChart {percentage} />
       <div>
-        <h3 style="--bordercolor: {borderColor}">3 nieuwe fouten ontdekt</h3>
+        <WarningSign>
+          <h3> 3 nieuwe fouten ontdekt</h3>
+        </WarningSign>
         <p>
           *Dit is een schatting gegenereerd door een automatische scan. Test altijd handmatig voor een volledig beeld.
         </p>

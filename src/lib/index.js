@@ -8,6 +8,7 @@ export { default as IconLineChart } from "./ReusableComponents/Charts/IconLineCh
 export { default as CurrentPageTitle } from "./ReusableComponents/CurrentPageTitle.svelte";
 export { default as AccessibillityScore } from "./ReusableComponents/AccessibillityScore.svelte";
 export { default as ScanResult } from "./ReusableComponents/ScanResult.svelte";
+export { default as WarningSign } from "./ReusableComponents/WarningSign.svelte";
 
 /*HOME*/
 export { default as YearlyResultLineChart } from "./Pages/Home/YearlyResultLineChart.svelte";
