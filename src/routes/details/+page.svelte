@@ -28,7 +28,7 @@
   main {
     display: grid;
     grid-template-columns: 4fr 1fr;
-    grid-template-rows: 0.2fr 1fr;
+    grid-template-rows: 0.2fr 2fr;
     gap: 20px;
     margin: 0 auto;
     padding: 30px 10px;
@@ -72,6 +72,12 @@
   @media only screen and (min-width: 700px) and (max-width: 1040px) {
     main {
       padding-left: 70px;
+    }
+
+    div{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
   }
 </style>
