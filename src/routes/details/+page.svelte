@@ -1,5 +1,5 @@
 <script>
-  import { CurrentPageTitle, AccessibillityScore, ScanResult, GuideLine11, GuideLine12, Filter } from "$lib";
+  import { CurrentPageTitle, AccessibillityScore, ScanResult, GuideLines, Filter } from "$lib";
   export let data = data;
   export let company = data.sites;
 
@@ -15,8 +15,7 @@
       <AccessibillityScore />
       <ScanResult />
     </div>
-    <GuideLine11 />
-    <GuideLine12 />
+    <GuideLines />
   </article>
 
   <article>
