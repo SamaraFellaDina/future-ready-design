@@ -2,158 +2,128 @@
   export let percentage;
 
   let donutColor;
-  let donutAnimation;
 
   $:{ 
-    donutAnimation = `${(percentage / 100) * 250} 250`;
     donutColor = percentage < 50 ? 'var(--color-status-bad-border)' : percentage < 80 ? 'var(--color-status-fine-border)' : percentage < 99 ? 'var(--color-status-decent-border)' : 'var(--color-status-good-border)';
   }
 </script>
 
-<figure>
-  <svg width="150" height="150" viewBox="0 0 100 100">
-    <circle cx="50" cy="50" r="40"></circle>
-    <circle cx="50" cy="50" r="40" style="--donutanimation: {donutAnimation}; --donutcolor: {donutColor}"></circle>
-  </svg>
-  <figcaption>{percentage}%</figcaption>
-</figure>
-
-<div>
-  <progress max="100" value={percentage} style="--donutcolor: {donutColor}">{percentage}</progress>
-</div>
+<span class="meter" style="--value: {percentage}; --_fg: {donutColor}">
+  <meter max="100" value="{percentage}" data-animate>{percentage}</meter>
+</span>
 
 <style>
-    @property --remaining-progress {
+  .meter {
+    /* You can overwrite these properties with your own values or defaults */
+    --_v: var(--value, 0);
+    --_w: var(--width, 150px);
+    --_b: var(--bar, 15px);
+    --_d: var(--delay, .1s);
+    --_dur: var(--duration, 2s);
+    --_fg: var(--color, green);
+    --_bg: var(--background, #ccc);
+
+    display: inline grid;
+    place-items: center;
+  }
+
+  .meter:has([data-animate="on-interaction"]) {
+    --_v: 0;
+  }
+
+  .meter:not([style^='--value:']),
+  .meter:has(meter:not([value][max="100"])) {
+    --_fg: #666;
+    opacity: .6;
+  }
+
+  .meter:has(meter[high][optimum]) {
+    --_fg: var(--color, orange);
+  }
+
+  .meter:has(meter[low][high][optimum]) {
+    --_fg: var(--color, red);
+  }
+
+  .meter meter {
+    /* Make sure meter and number are positioned on top of each other */
+    grid-area: 1 / 1;
+
+    /* Make a circle */
+    width: var(--_w);
+    height: var(--_w);
+    border-radius: 50%;
+
+    /* Some background stuff */
+    background-image:
+      radial-gradient(var(--_b) circle
+        at 50% calc(var(--_b) / 2),
+        var(--_fg) 50%, transparent 0),
+      radial-gradient(var(--_b) circle at
+        calc(50% + ((50% - var(--_b) / 2) * sin(var(--_v) * 3.6deg)))
+        calc(50% - ((50% - var(--_b) / 2) * cos(var(--_v) * 3.6deg))),
+        var(--_fg) 50%, transparent 0),
+      conic-gradient(var(--_fg) calc(var(--_v) * 3.6deg), var(--_bg) 0);
+
+    /* Cut a hole in the center, so you don't see the entire conic gradient */
+    mask-image: radial-gradient(closest-side, transparent calc((var(--_w) / 2) - var(--_b)), red 0);
+    @starting-style {
+      --_v: 0;
+    }
+  }
+
+  .meter meter[data-animate]:not([data-animate="on-interaction"]) {
+    transition: var(--_dur) --_v var(--_d);
+  }
+
+  .meter meter::-webkit-meter-bar {
+    display: none;
+  }
+
+  .meter meter::-moz-meter-bar {
+    background: none;
+  }
+
+  .meter:has([data-animate]:not([data-animate="on-interaction"]))::after {
+    opacity: 0;
+    animation: counter forwards 1s var(--_d);
+  }
+
+  .meter:not(:has([data-animate="on-interaction"]))::after {
+    --_cv: var(--_v);
+    counter-set: v var(--_cv);
+    content: counter(v) '%';
+
+    /* Make sure meter and number are positioned on top of each other */
+    grid-area: 1 / 1;
+
+    /* Make the font scale a bit */
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+    /* Use the donut color */
+    color: var(--regular-text-color);
+  }
+
+  /* Used to transition the donut chart */
+  @property --_v {
     syntax: '<integer>';
     inherits: true;
-    initial-value: 100; 
+    initial-value: 0;
   }
 
-  @property --fill-progress {
-    syntax: '<number>';
-    inherits: true;
-    initial-value: 1; 
+  /* Used to animate the generated content */
+  @property --_cv {
+    syntax: '<integer>';
+    inherits: false;
+    initial-value: 0;
   }
 
-  progress {
-    width: 135px;
-    height: 135px;
-    appearance: none;
-    position: relative;
-    animation: fill-progress 2s .5s both;
-    timeline-scope: --progress;
-
-    @supports not (animation-timeline: --progress) {
-      display: none;
-    }
-  }
-  progress::-webkit-progress-bar {
-    overflow: auto;
-    visibility: hidden;
-  }
-
-  progress::-webkit-progress-value {
-    view-timeline: --progress inline;
-  }
-
-  progress::before,
-  progress::after {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    animation: remaining-progress  linear;
-    animation-timeline: --progress;
-    animation-range: entry 100% exit 100%;
-  }
-
-  progress::before {
-    content: counter(val) "%";
-    counter-reset: val calc(var(--fill-progress)*var(--remaining-progress));
-    display: grid;
-    place-content: center;
-    font-size: var(--font-size-large);
-    font-weight: var(--font-weight-bold);
-    border: 15.5px solid #ccc;
-  }
-
-  progress::after {
-    content: "";
-    background-color: var(--donutcolor);
-    padding: 15px;
-    border-radius: 50%;
-    mask: 
-      conic-gradient(#0000 0 0) subtract content-box,
-      conic-gradient(#000 calc(1%*var(--fill-progress)*var(--remaining-progress)),#0000 0);
-  }
-
-  @keyframes remaining-progress  {
-    to {--remaining-progress: 0}
-  }
-
-  @keyframes fill-progress{
-    0% {--fill-progress: 0}
-  }
-
-  @keyframes donutanimation {
+  @keyframes counter {
     from {
-      stroke-dasharray: 0 250;
+      --_cv: 0;
     }
     to {
-      stroke-dasharray: var(--donutanimation);
-    }
-  }
-  
-  figure {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    align-self: center;
-
-    @media (max-width: 768px) {
-      align-self: center;
-    }
-
-    @supports (animation-timeline: --progress) {
-      display: none;
-    }
-  }
-
-  figure svg {
-    transform: rotate(-90deg);
-  }
-
-  circle:nth-of-type(1) {
-    fill: none;
-    stroke: #ccc;
-    stroke-width: 10;
-  }
-
-  circle:nth-of-type(2) {
-    fill: none;
-    stroke: var(--donutcolor);
-    stroke-width: 10;
-    animation: donutanimation 0.8s forwards ease-out;
-  }
-
-  figcaption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: var(--font-size-large);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-regular-text);
-  }
-
-  /* @supports not (animation-timeline: --progress) {
-    progress {
-      display: none;
-    }
-  } */
-
-  @supports (animation-timeline: --progress) {
-    figure {
-      display: none;
+      opacity: 1;
     }
   }
 
