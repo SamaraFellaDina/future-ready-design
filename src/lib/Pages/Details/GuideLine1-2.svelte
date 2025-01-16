@@ -10,7 +10,7 @@
     </section>
     <section>
         <details>
-            <summary>1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen)<input type="checkbox"><IconLibrary name ="warning" /></summary>
+            <summary>1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen)<input type="checkbox"><IconLibrary name ="fine" /></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>
@@ -33,7 +33,7 @@
             </section>
         </details>
         <details>
-            <summary>1.2.2 Ondertitels voor doven en slechthorenden (vooraf opgenomen)<input type="checkbox"><IconLibrary name ="warning" /></summary>
+            <summary>1.2.2 Ondertitels voor doven en slechthorenden (vooraf opgenomen)<input type="checkbox"><IconLibrary name ="fine" /></summary>
             <ul>
                 <li>
                     <svg></svg> <h3>impact op gebruiker</h3>
