@@ -1,7 +1,13 @@
-<!-- <script>
+<script>
   export let percentage;
-  $: donutAnimation = `${(percentage / 100) * 250} 250`;
-  $: donutColor = percentage < 50 ? 'var(--color-status-bad-border)' : percentage < 80 ? 'var(--color-status-fine-border)' : percentage < 99 ? 'var(--color-status-decent-border)' : 'var(--color-status-good-border)';
+
+  let donutColor;
+  let donutAnimation;
+
+  $:{ 
+    donutAnimation = `${(percentage / 100) * 250} 250`;
+    donutColor = percentage < 50 ? 'var(--color-status-bad-border)' : percentage < 80 ? 'var(--color-status-fine-border)' : percentage < 99 ? 'var(--color-status-decent-border)' : 'var(--color-status-good-border)';
+  }
 </script>
 
 <figure>
@@ -11,67 +17,6 @@
   </svg>
   <figcaption>{percentage}%</figcaption>
 </figure>
-  
-<style>
-  @keyframes donutanimation {
-    from {
-      stroke-dasharray: 0 250;
-    }
-    to {
-      stroke-dasharray: var(--donutanimation);
-    }
-  }
-  
-  figure {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    align-self: center;
-  }
-
-  figure svg {
-    transform: rotate(-90deg);
-  }
-
-  circle:nth-of-type(1) {
-    fill: none;
-    stroke: #ccc;
-    stroke-width: 10;
-  }
-
-  circle:nth-of-type(2) {
-    fill: none;
-    stroke: var(--donutcolor);
-    stroke-width: 10;
-    animation: donutanimation 0.8s forwards ease-out;
-  }
-
-  figcaption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: var(--font-size-large);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-regular-text);
-  }
-
-  @media screen and (max-width: 768px) {
-    figure {
-      align-self: center;
-    }
-  }
-</style> -->
-
-<script>
-  export let percentage;
-
-  let donutColor;
-
-  $:{ 
-    donutColor = percentage < 50 ? 'var(--color-status-bad-border)' : percentage < 80 ? 'var(--color-status-fine-border)' : percentage < 99 ? 'var(--color-status-decent-border)' : 'var(--color-status-good-border)';
-  }
-</script>
 
 <div>
   <progress max="100" value={percentage} style="--donutcolor: {donutColor}">{percentage}</progress>
@@ -97,6 +42,10 @@
     position: relative;
     animation: fill-progress 2s .5s both;
     timeline-scope: --progress;
+
+    @supports not (animation-timeline: --progress) {
+      display: none;
+    }
   }
   progress::-webkit-progress-bar {
     overflow: auto;
@@ -144,4 +93,68 @@
   @keyframes fill-progress{
     0% {--fill-progress: 0}
   }
+
+  @keyframes donutanimation {
+    from {
+      stroke-dasharray: 0 250;
+    }
+    to {
+      stroke-dasharray: var(--donutanimation);
+    }
+  }
+  
+  figure {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    align-self: center;
+
+    @media (max-width: 768px) {
+      align-self: center;
+    }
+
+    @supports (animation-timeline: --progress) {
+      display: none;
+    }
+  }
+
+  figure svg {
+    transform: rotate(-90deg);
+  }
+
+  circle:nth-of-type(1) {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 10;
+  }
+
+  circle:nth-of-type(2) {
+    fill: none;
+    stroke: var(--donutcolor);
+    stroke-width: 10;
+    animation: donutanimation 0.8s forwards ease-out;
+  }
+
+  figcaption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-regular-text);
+  }
+
+  /* @supports not (animation-timeline: --progress) {
+    progress {
+      display: none;
+    }
+  } */
+
+  @supports (animation-timeline: --progress) {
+    figure {
+      display: none;
+    }
+  }
+
 </style>

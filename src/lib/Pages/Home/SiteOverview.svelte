@@ -1,5 +1,5 @@
 <script>
-  import { IconLibrary, DonutChart } from '$lib';
+  import { IconLibrary, DonutChart, WarningSign } from '$lib';
   export let data = data;
 
   const filterUrlCheck = (url) => {
@@ -21,11 +21,9 @@
         <h2>{title}</h2>
         <p>{filterUrlCheck(url)}</p>
       </section>
-
-      <div>
-        <IconLibrary name='good' width=30 height=30 color='var(--color-status-good-border)'/>
-        <p>toegankelijk</p>
-      </div>
+        <WarningSign grade='fine'>
+          <p>toegankelijk</p>
+        </WarningSign>
     </div>
     <DonutChart percentage=80/>
   </li>
