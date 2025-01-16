@@ -67,17 +67,12 @@
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    padding: 0;
+    padding: 10px 0 10px 0;
     border: none;
   }
 
-  section > fieldset{
-    margin-bottom: 20px;
-    border-bottom: solid 1px var(--color-border);
-  }
-
   fieldset:last-child{
-    margin-top: 20px;
+    border-top: solid 1px var(--color-border);
   }
 
   fieldset label {

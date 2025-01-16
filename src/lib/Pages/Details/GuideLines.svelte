@@ -100,22 +100,27 @@
  article {
   --average-padding: 20px;
   --average-margin: 20px;
+  ---average-gap: 5px;
     border-radius: var(--section-border-radius);
     box-shadow: var(--box-shadow);
     padding: 40px;
     background-color: var(--color-background-section);
   }
 
- article > section {
+ article > section:first-child {
     display: flex;
     justify-content: space-between;
-    padding-bottom: var(--average-padding);
     border-bottom: solid 1px var(--color-border);
   }
 
  article > section:first-child div {
     display: flex;
-    gap: 5px;
+    padding-bottom: var(--average-padding);
+    gap: var(---average-gap);
+  }
+
+  :global(article > section:first-child div svg), :global(details summary svg){
+    transform: translateY(2px);
   }
 
  article > section meter {
@@ -178,7 +183,11 @@
 
   details div:first-child {
     display: flex;
-    gap: 5px;
+    gap: var(---average-gap);
+  }
+
+  details summary span{
+    font-weight: var(--font-weight-bold);
   }
 
   details summary input[type="checkbox"] {
@@ -237,7 +246,7 @@
 
   .extended-details ul li div {
     display: flex;
-    gap: 2px;
+    gap: var(---average-gap);
     margin-bottom: var(--average-margin);
   }
 
