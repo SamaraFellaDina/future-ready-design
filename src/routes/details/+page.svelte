@@ -1,5 +1,5 @@
 <script>
-  import { CurrentPageTitle, AccessibillityScore, ScanResult, GuideLine11, GuideLine12, Filter } from "$lib";
+  import { CurrentPageTitle, AccessibillityScore, ScanResult, GuideLine11, Filter } from "$lib";
   export let data = data;
   export let company = data.sites;
 
@@ -16,7 +16,6 @@
       <ScanResult />
     </div>
     <GuideLine11 />
-    <GuideLine12 />
   </article>
 
   <article>
@@ -70,9 +69,15 @@
     }
   }
 
-  @media only screen and (min-width: 700px) and (max-width: 1040px) {
+  @media only screen and (min-width: 0px) and (max-width: 1040px) {
     main {
       padding-left: 70px;
+    }
+
+    div{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
   }
 </style>

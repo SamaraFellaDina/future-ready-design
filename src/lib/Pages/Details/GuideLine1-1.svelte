@@ -1,72 +1,99 @@
 <script>
   import { IconLibrary } from "$lib";
+
+  let value = 0.5; 
+  let meterClass = ""; 
+
+  $: {
+    if (value <= 0.5) {
+      meterClass = "meter-red";
+    } else if (value <= 0.7) {
+      meterClass = "meter-orange";
+    } else if (value < 1) {
+      meterClass = "meter-blue";
+    } else {
+      meterClass = "meter-green";
+    }
+  }
 </script>
 
 <article class="content-wrapper">
   <section class="guideline-title">
     <div class="title-wrapper">
-        <h2>Tekstalternatieven</h2>
-        <p>richtlijn 1.1</p>
-    <IconLibrary name="eye" />
+      <h2>Tekstalternatieven</h2>
+      <p>richtlijn 1.1</p>
+      <IconLibrary name="eye" />
     </div>
-    <meter value=".5" max="1" high=".75" low=".25"></meter>
+    <meter class={meterClass} {value} max="1" high=".75" low=".25"></meter>
   </section>
   <section class="guideline-details">
     <details open>
       <summary class="summary-flex">
         <div class="summary-content">
           <span>1.1.1 Niet-tekstuele content</span>
+          <IconLibrary name="warning" />
         </div>
         <input type="checkbox" />
       </summary>
-      <a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html">
+      <a
+        href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html"
+      >
         https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html
       </a>
       <div class="extended-details">
-      <p>
-        Alle inhoud moet als tekst zijn beschreven. Tekst kan zoals visueel,
-        auditief en tactiel worden weergegeven. Informatie kan hierdoor
-        gepresenteerd worden in een vorm die het beste aansluit bij de behoeften
-        van gebruikers.
-      </p>
-      <ul>
-        <li>
-          <div>
-            <IconLibrary name="heart" />
-            <h3>impact op gebruiker</h3>
-          </div>
-          <p>
-            Mensen met visuele beperkingen kunnen moeite hebben met het
-            begrijpen van de inhoud, aangezien schermlezers de niet-tekstuele
-            inhoud niet kunnen interpreteren.
-          </p>
-        </li>
-        <li>
-          <div>
-            <IconLibrary name="beaker" />
-            <h3>hoe te testen</h3>
-          </div>
-          <ol>
-            <li><p>1 Open website in browser.</p></li>
-            <li><p>2 Rechtermuis klik, selecteer "Inspecteer" of "Bron bekijken".</p></li>
-            <li><p>3 Zoek naar img, video tags in de html code.</p></li>
-            <li><p>4 Controleer of alt of aria-label attributen aanwezig zijn.</p></li>
-          </ol>
-        </li>
-      </ul>
-      <section class="scan-solutions">
-        <h3>Hoe kun je dit oplossen</h3>
-        <p><b>Voeg alternatieve tekst toe</b> (criterium 1.1.1)</p>
         <p>
-          Zorg dat er alternatieve tekst beschikbaar is voor alle inhoud zonder
-          tekst. Dat zijn onder andere afbeeldingen, icoontjes en grafieken.
-          Beschrijf wat er te zien is. Mensen die blind zijn laten deze
-          beschrijving voorlezen via hun schermlezer. Alternatieve tekst kan ook
-          handig zijn voor iedereen die twijfelt over de betekenis van de
-          inhoud.
+          Alle inhoud moet als tekst zijn beschreven. Tekst kan zoals visueel,
+          auditief en tactiel worden weergegeven. Informatie kan hierdoor
+          gepresenteerd worden in een vorm die het beste aansluit bij de
+          behoeften van gebruikers.
         </p>
-      </section>
-    </div>
+        <ul>
+          <li>
+            <div>
+              <IconLibrary name="heart" />
+              <h3>impact op gebruiker</h3>
+            </div>
+            <p>
+              Mensen met visuele beperkingen kunnen moeite hebben met het
+              begrijpen van de inhoud, aangezien schermlezers de niet-tekstuele
+              inhoud niet kunnen interpreteren.
+            </p>
+          </li>
+          <li>
+            <div>
+              <IconLibrary name="beaker" />
+              <h3>hoe te testen</h3>
+            </div>
+            <ol>
+              <li><p>1. Open website in browser.</p></li>
+              <li>
+                <p>
+                  2. Rechtermuis klik, selecteer "Inspecteer" of "Bron
+                  bekijken".
+                </p>
+              </li>
+              <li><p>3. Zoek naar img, video tags in de html code.</p></li>
+              <li>
+                <p>
+                  4. Controleer of alt of aria-label attributen aanwezig zijn.
+                </p>
+              </li>
+            </ol>
+          </li>
+        </ul>
+        <section class="scan-solutions">
+          <h3>Hoe kun je dit oplossen</h3>
+          <p><b>Voeg alternatieve tekst toe</b> (criterium 1.1.1)</p>
+          <p>
+            Zorg dat er alternatieve tekst beschikbaar is voor alle inhoud
+            zonder tekst. Dat zijn onder andere afbeeldingen, icoontjes en
+            grafieken. Beschrijf wat er te zien is. Mensen die blind zijn laten
+            deze beschrijving voorlezen via hun schermlezer. Alternatieve tekst
+            kan ook handig zijn voor iedereen die twijfelt over de betekenis van
+            de inhoud.
+          </p>
+        </section>
+      </div>
     </details>
   </section>
 </article>
@@ -83,21 +110,53 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 20px;
-    border-bottom: solid  1px var(--color-border);
+    border-bottom: solid 1px var(--color-border);
   }
 
+  :global(.title-wrapper svg) {
+    transform: translateY(2px);
+  }
 
-  .title-wrapper{
+  .title-wrapper {
     display: flex;
+    gap: 5px;
   }
 
-  .guideline-details{
+  .guideline-details {
     padding-top: 20px;
   }
 
-  .guideline-title meter{
+  .guideline-title meter {
     height: 30px;
     width: 200px;
+  }
+
+  :global(.meter-red::-webkit-meter-bar) {
+    background: #ffdddd;
+  }
+  :global(.meter-red::-webkit-meter-optimum-value) {
+    background: var(--color-status-bad-border);
+  }
+
+  :global(.meter-orange::-webkit-meter-bar) {
+    background: #fff0cc;
+  }
+  :global(.meter-orange::-webkit-meter-optimum-value) {
+    background: var(--color-status-fine-border);
+  }
+
+  :global(.meter-blue::-webkit-meter-bar) {
+    background: #dbefff;
+  }
+  :global(.meter-blue::-webkit-meter-optimum-value) {
+    background: var(--color-primary);
+  }
+
+  :global(.meter-green::-webkit-meter-bar) {
+    background: #ddffdd;
+  }
+  :global(.meter-green::-webkit-meter-optimum-value) {
+    background: var(--color-status-good-border);
   }
 
   .summary-flex {
@@ -107,13 +166,13 @@
     gap: 10px;
     padding-left: var(--average-padding);
     cursor: pointer;
-    position: relative; 
+    position: relative;
   }
 
   .summary-flex::before {
-    content: "▶"; 
+    content: "▶";
     position: absolute;
-    left: 5px; 
+    left: 5px;
     transition: transform 0.3s ease;
     font-size: 14px;
   }
@@ -124,14 +183,19 @@
 
   .summary-content {
     display: flex;
-    flex-direction: column;
+    gap: 5px;
+  }
+
+  :global(.summary-content  svg){
+    transform: translateY(2px);
   }
 
   .summary-flex input[type="checkbox"] {
     height: 25px;
     width: 25px;
     border: solid 2px var(--color-primary);
-    appearance: none; 
+    position: relative;
+    appearance: none;
     border-radius: 5px;
   }
 
@@ -139,7 +203,18 @@
     background-color: var(--color-primary);
   }
 
-  details a{
+  .summary-flex input[type="checkbox"]:checked::before {
+    content: "✓";
+    color: var(--color-primary-highlight);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--font-size-regular);
+    font-weight: bold;
+  }
+
+  details a {
     padding-left: var(--average-padding);
     color: var(--color-regular-text);
     text-decoration: none;
@@ -147,29 +222,29 @@
     font-size: var(--font-size-small);
   }
 
-  details a:hover{
+  details a:hover {
     color: var(--color-primary);
   }
 
-  .extended-details{
+  .extended-details {
     padding: 0 110px 0 0;
   }
 
-  .extended-details > p{
+  .extended-details > p {
     margin-top: 10px;
     margin-bottom: 20px;
   }
 
-  .extended-details ul{
+  .extended-details ul {
     display: flex;
   }
 
-  .extended-details ul li{
+  .extended-details ul li {
     list-style: none;
     width: 50%;
   }
 
-  .guideline-details ul li div{
+  .guideline-details ul li div {
     display: flex;
     gap: 2px;
     margin-bottom: 20px;
@@ -181,6 +256,22 @@
     font-size: var(--font-size-regular);
   }
 
+  .extended-details ol {
+    padding-left: 20px;
+    width: 100%;
+  }
+
+  .extended-details ol li {
+    list-style-position: outside;
+    padding-bottom: 10px;
+    width: 100%;
+  }
+
+  .extended-details ol li p {
+    width: 100%;
+    line-height: var(--line-height);
+  }
+
   .scan-solutions {
     border-radius: var(--section-border-radius);
     border: var(--color-primary) 2px solid;
@@ -188,9 +279,8 @@
     padding: 20px 20px 40px 20px;
   }
 
-  .scan-solutions h3{
+  .scan-solutions h3 {
     color: var(--color-primary);
     margin-bottom: 20px;
   }
-
 </style>
