@@ -35,7 +35,7 @@
 
     /* colors for grading */
     --color-status-good:#00800070;
-    --color-status-decent:##0274ff97;
+    --color-status-decent:#0274ff5b;
     --color-status-fine:#ffa60053;
     --color-status-bad:#ff00004a;
     --color-status-good-border:green;
