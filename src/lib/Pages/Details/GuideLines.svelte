@@ -98,6 +98,8 @@
 
 <style>
  article {
+  --average-padding: 20px;
+  --average-margin: 20px;
     border-radius: var(--section-border-radius);
     box-shadow: var(--box-shadow);
     padding: 40px;
@@ -107,7 +109,7 @@
  article > section {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 20px;
+    padding-bottom: var(--average-padding);
     border-bottom: solid 1px var(--color-border);
   }
 
@@ -150,14 +152,13 @@
   }
 
  article section:last-child{
-    padding-top: 20px;
+    padding-top: var(--average-padding);
   }
 
   details summary {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
     padding-left: var(--average-padding);
     cursor: pointer;
     position: relative;
@@ -222,7 +223,7 @@
 
   .extended-details > p {
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: var(--average-margin);
   }
 
   .extended-details ul {
@@ -237,7 +238,7 @@
   .extended-details ul li div {
     display: flex;
     gap: 2px;
-    margin-bottom: 20px;
+    margin-bottom: var(--average-margin);
   }
 
   .extended-details ul li p,
@@ -247,7 +248,7 @@
   }
 
   .extended-details ol {
-    padding-left: 20px;
+    padding-left: var(--average-padding);
     width: 100%;
   }
 
@@ -261,11 +262,11 @@
     border-radius: var(--section-border-radius);
     border: var(--color-primary) 2px solid;
     background-color: var(--color-primary-highlight);
-    padding: 20px 20px 40px 20px;
+    padding: var(--average-padding) var(--average-padding) 40px var(--average-padding);
   }
 
   details div:last-child section h3 {
     color: var(--color-primary);
-    margin-bottom: 20px;
+    margin-bottom: var(--average-margin);
   }
 </style>
