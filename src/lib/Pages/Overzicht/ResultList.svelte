@@ -115,16 +115,6 @@
     width: 100%;
   }
 
-  p {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    padding: 15px;
-    border-radius: 30px;
-    justify-content: center;
-    font-size: var(--font-size-medium);
-  }
-
   a li {
     font-size: var(--font-size-regular);
     display: flex;
