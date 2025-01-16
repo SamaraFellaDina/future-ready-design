@@ -78,13 +78,6 @@
       font-size: var(--font-size-large);
     }
 
-    h3 {
-      border: 1px solid var(--bordercolor);
-      width: fit-content;
-      padding: 10px;
-      border-radius: 30px;
-    }
-
     ul {
       list-style: none;
       display: grid;

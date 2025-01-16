@@ -37,14 +37,13 @@
     padding: var(--message-padding);
 
     display: flex;
-    width: min-content;
+    width: fit-content;
     gap: var(--message-gap);
     align-items: center;
 
     font-size: var(--font-size-regular);
     font-weight: var(--font-weight-thin);
   }
-
 
   .good {
     background-color: var(--color-status-good);
