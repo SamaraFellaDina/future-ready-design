@@ -19,8 +19,8 @@
     /* font-sizes */
     --font-size-small: 14px;
     --font-size-regular: 16px;
-    --font-size-large: 28px;
     --font-size-medium: 20px;
+    --font-size-large: 28px;
     --font-size-xlarge: 32px;
 
     /* colors */
