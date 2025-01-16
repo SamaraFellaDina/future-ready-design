@@ -25,7 +25,7 @@
       <span>AAA (12)</span>
     </label>
   </fieldset>
-  <hr />
+
   <fieldset>
     <label>
       <input type="checkbox" name="voldoet" />
@@ -73,6 +73,7 @@
 
   section > fieldset{
     margin-bottom: 20px;
+    border-bottom: solid 1px var(--color-border);
   }
 
   fieldset:last-child{
@@ -96,12 +97,6 @@
   label:has(input[type="checkbox"]:checked) span {
     background-color: var(--color-primary);
     color: var(--color-primary-highlight);
-  }
-
-  legend {
-    font-size: var(--font-size-medium);
-    font-weight: var(--font-weight-bold);
-    padding-bottom: 20px;
   }
 
   input {
@@ -130,16 +125,4 @@
     font-weight: var(--font-weight-bold);
   }
 
-  button {
-    background-color: var(--color-primary);
-    color: white;
-    padding: 10px 30px;
-    border-radius: 20px;
-    border: none;
-    font-size: var(--font-size-regular);
-    font-weight: var(--font-weight-bold);
-    cursor: pointer;
-    height: fit-content;
-    align-self: flex-end;
-  }
 </style>

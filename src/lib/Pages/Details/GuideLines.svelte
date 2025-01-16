@@ -17,27 +17,25 @@
   }
 </script>
 
-<article class="content-wrapper">
-  <section class="guideline-title">
-    <div class="title-wrapper">
+<article>
+  <section>
+    <div>
       <h2>Tekstalternatieven</h2>
       <p>richtlijn 1.1</p>
       <IconLibrary name="eye" />
     </div>
     <meter class={meterClass} {value} max="1" high=".75" low=".25"></meter>
   </section>
-  <section class="guideline-details">
+  <section>
     <details open>
-      <summary class="summary-flex">
-        <div class="summary-content">
+      <summary>
+        <div>
           <span>1.1.1 Niet-tekstuele content</span>
           <IconLibrary name="warning" />
         </div>
         <input type="checkbox" />
       </summary>
-      <a
-        href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html"
-      >
+      <a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html">
         https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html
       </a>
       <div class="extended-details">
@@ -81,7 +79,7 @@
             </ol>
           </li>
         </ul>
-        <section class="scan-solutions">
+        <section>
           <h3>Hoe kun je dit oplossen</h3>
           <p><b>Voeg alternatieve tekst toe</b> (criterium 1.1.1)</p>
           <p>
@@ -99,67 +97,63 @@
 </article>
 
 <style>
-  .content-wrapper {
+ article {
     border-radius: var(--section-border-radius);
     box-shadow: var(--box-shadow);
     padding: 40px;
     background-color: var(--color-background-section);
   }
 
-  .guideline-title {
+ article > section {
     display: flex;
     justify-content: space-between;
     padding-bottom: 20px;
     border-bottom: solid 1px var(--color-border);
   }
 
-  :global(.title-wrapper svg) {
-    transform: translateY(2px);
-  }
-
-  .title-wrapper {
+ article > section:first-child div {
     display: flex;
     gap: 5px;
   }
 
-  .guideline-details {
-    padding-top: 20px;
-  }
-
-  .guideline-title meter {
+ article > section meter {
     height: 30px;
     width: 200px;
   }
 
-  :global(.meter-red::-webkit-meter-bar) {
+  .meter-red::-webkit-meter-bar {
     background: #ffdddd;
   }
-  :global(.meter-red::-webkit-meter-optimum-value) {
+  .meter-red::-webkit-meter-optimum-value {
     background: var(--color-status-bad-border);
   }
 
-  :global(.meter-orange::-webkit-meter-bar) {
+  .meter-orange::-webkit-meter-bar {
     background: #fff0cc;
   }
-  :global(.meter-orange::-webkit-meter-optimum-value) {
+  .meter-orange::-webkit-meter-optimum-value {
     background: var(--color-status-fine-border);
   }
 
-  :global(.meter-blue::-webkit-meter-bar) {
+  .meter-blue::-webkit-meter-bar {
     background: #dbefff;
   }
-  :global(.meter-blue::-webkit-meter-optimum-value) {
+  .meter-blue::-webkit-meter-optimum-value {
     background: var(--color-primary);
   }
 
-  :global(.meter-green::-webkit-meter-bar) {
+  .meter-green::-webkit-meter-bar {
     background: #ddffdd;
   }
-  :global(.meter-green::-webkit-meter-optimum-value) {
+  .meter-green::-webkit-meter-optimum-value {
     background: var(--color-status-good-border);
   }
 
-  .summary-flex {
+ article section:last-child{
+    padding-top: 20px;
+  }
+
+  details summary {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -169,7 +163,7 @@
     position: relative;
   }
 
-  .summary-flex::before {
+  details summary::before {
     content: "▶";
     position: absolute;
     left: 5px;
@@ -177,20 +171,16 @@
     font-size: 14px;
   }
 
-  details[open] > .summary-flex::before {
+  details[open] > summary::before {
     transform: rotate(90deg);
   }
 
-  .summary-content {
+  details div:first-child {
     display: flex;
     gap: 5px;
   }
 
-  :global(.summary-content  svg){
-    transform: translateY(2px);
-  }
-
-  .summary-flex input[type="checkbox"] {
+  details summary input[type="checkbox"] {
     height: 25px;
     width: 25px;
     border: solid 2px var(--color-primary);
@@ -199,11 +189,11 @@
     border-radius: 5px;
   }
 
-  .summary-flex input[type="checkbox"]:checked {
+  details summary input[type="checkbox"]:checked {
     background-color: var(--color-primary);
   }
 
-  .summary-flex input[type="checkbox"]:checked::before {
+  summary input[type="checkbox"]:checked::before {
     content: "✓";
     color: var(--color-primary-highlight);
     position: absolute;
@@ -226,7 +216,7 @@
     color: var(--color-primary);
   }
 
-  .extended-details {
+ article section:last-child details .extended-details {
     padding: 0 110px 0 0;
   }
 
@@ -244,7 +234,7 @@
     width: 50%;
   }
 
-  .guideline-details ul li div {
+  .extended-details ul li div {
     display: flex;
     gap: 2px;
     margin-bottom: 20px;
@@ -267,19 +257,14 @@
     width: 100%;
   }
 
-  .extended-details ol li p {
-    width: 100%;
-    line-height: var(--line-height);
-  }
-
-  .scan-solutions {
+  details div:last-child section {
     border-radius: var(--section-border-radius);
     border: var(--color-primary) 2px solid;
     background-color: var(--color-primary-highlight);
     padding: 20px 20px 40px 20px;
   }
 
-  .scan-solutions h3 {
+  details div:last-child section h3 {
     color: var(--color-primary);
     margin-bottom: 20px;
   }
