@@ -1,7 +1,7 @@
 <script>
   import { IconLibrary } from '$lib';
 
-  export let grade = 'decent';
+  export let grade = '' || 'decent';
 
   let iconName = 'good';
   let gradeClass = 'good';
@@ -40,7 +40,11 @@
     width: min-content;
     gap: var(--message-gap);
     align-items: center;
+
+    font-size: var(--font-size-regular);
+    font-weight: var(--font-weight-thin);
   }
+
 
   .good {
     background-color: var(--color-status-good);

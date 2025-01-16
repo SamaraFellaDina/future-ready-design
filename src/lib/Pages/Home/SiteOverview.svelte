@@ -22,7 +22,7 @@
         <h2>{title}</h2>
         <p>{filterUrlCheck(url)}</p>
       </section>
-        <WarningSign>
+        <WarningSign grade='fine'>
           <p>toegankelijk</p>
         </WarningSign>
     </div>
