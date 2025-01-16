@@ -120,7 +120,12 @@
     <title>vinkje</title>
     <path fill="var(--color-status-good-border)" d="M500,131c-203.8,0-369,165.2-369,369s165.2,369,369,369,369-165.21,369-369-165.21-369-369-369ZM437.92,707.75l-185.29-185.29,70.71-70.71,114.58,114.58,238.73-238.73,70.71,70.71-309.44,309.44Z"/>
   </svg>
-  
+
+  {:else if name == "decent"}
+  <svg class="top-icon" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+    <title>vinkje</title>
+    <path fill="var(--color-status-decent-border)" d="M500,131c-203.8,0-369,165.2-369,369s165.2,369,369,369,369-165.21,369-369-165.21-369-369-369ZM437.92,707.75l-185.29-185.29,70.71-70.71,114.58,114.58,238.73-238.73,70.71,70.71-309.44,309.44Z"/>
+  </svg>
   
   {:else if name == "fine"}
   <svg class="top-icon" width="20" height="20" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
