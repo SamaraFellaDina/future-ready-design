@@ -1,6 +1,5 @@
 <script>
-  import { IconLibrary, DonutChart } from '$lib';
-  import WarningSign from '../../ReusableComponents/WarningSign.svelte';
+  import { IconLibrary, DonutChart, WarningSign } from '$lib';
   export let data = data;
 
   const filterUrlCheck = (url) => {
