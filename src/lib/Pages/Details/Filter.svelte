@@ -6,42 +6,42 @@
   <fieldset>
     <label>
       <input type="checkbox" name="voldoet" />
-      <span>Voldoet niet (14)</span>
+      Voldoet niet (14)
     </label>
     <label>
       <input type="checkbox" name="voldoet-niet" />
-      <span>Voldoet (6)</span>
+      Voldoet (6)
     </label>
     <label>
       <input type="checkbox" name="a" />
-      <span>A (25)</span>
+      A (25)
     </label>
     <label>
       <input type="checkbox" name="aa" />
-      <span>AA (13)</span>
+      AA (13)
     </label>
     <label>
       <input type="checkbox" name="aaa" />
-      <span>AAA (12)</span>
+      AAA (12)
     </label>
   </fieldset>
 
   <fieldset>
     <label>
       <input type="checkbox" name="voldoet" />
-      <span>waarneembaar</span>
+      waarneembaar
     </label>
     <label>
       <input type="checkbox" name="voldoet-niet" />
-      <span>begrijpelijk</span>
+      begrijpelijk
     </label>
     <label>
       <input type="checkbox" name="a" />
-      <span>bedienbaar</span>
+      bedienbaar
     </label>
     <label>
       <input type="checkbox" name="aa" />
-      <span>robuust</span>
+      robuust
     </label>
   </fieldset>
 </section>
@@ -77,9 +77,6 @@
 
   fieldset label {
     cursor: pointer;
-  }
-
-  fieldset span {
     background-color: var(--color-primary-highlight);
     color: var(--color-primary);
     font-weight: var(--font-weight-bold);
@@ -89,7 +86,8 @@
     white-space: nowrap;
   }
 
-  label:has(input[type="checkbox"]:checked) span {
+
+  label:has(input[type="checkbox"]:checked) {
     background-color: var(--color-primary);
     color: var(--color-primary-highlight);
   }
@@ -115,9 +113,5 @@
     gap: var(--average-gap);
   }
 
-  section > label span {
-    font-size: var(--font-size-medium);
-    font-weight: var(--font-weight-bold);
-  }
 
 </style>
