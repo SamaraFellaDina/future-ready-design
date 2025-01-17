@@ -1,7 +1,6 @@
 <script>
   import { IconLibrary, DonutChart, WarningSign } from '$lib';
   export let data = data;
-  console.log(data.sites[0].title)
 
   const filterUrlCheck = (url) => {
     const filterUrl = ["https://", "www."];
@@ -76,7 +75,11 @@ ul {
 
   ul li div section h2 {
     line-height: 1em;
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-medium);
+
+    @media (min-width: 600px) {
+      font-size: var(--font-size-large);
+    }
 
     @media (min-width: 900px) {
       font-size: var(--font-size-medium);
