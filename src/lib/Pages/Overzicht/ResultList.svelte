@@ -132,7 +132,23 @@
   }
 
   meter {
+    appearance: none;
     width: 100%;
+    border-radius: 4px;
+    height: 10px;
+    background: #ccc;
+  }
+
+  meter::-webkit-meter-bar {
+    background: #ccc;
+    border-radius: 4px;
+    height: 10px;
+  }
+
+  meter::-webkit-meter-optimum-value,
+  meter::-webkit-meter-suboptimum-value,
+  meter::-webkit-meter-even-less-good-value {
+    border-radius: 4px;
   }
 
   meter::-webkit-meter-optimum-value {
@@ -140,23 +156,27 @@
   }
 
   meter::-webkit-meter-suboptimum-value {
-    background: var(--color-status-decent-border);
+    background: var(--color-status-fine-border);
   }
 
   meter::-webkit-meter-even-less-good-value {
-    background: var(--color-status-fine-border);
+    background: var(--color-status-bad-border);
   }
 
-  meter::-moz-meter-optimum-value {
+  meter::-moz-meter-bar {
+    border-radius: 4px;
+  }
+
+  meter:-moz-meter-optimum::-moz-meter-bar {
     background: var(--color-status-good-border);
   }
 
-  meter::-moz-meter-suboptimum-value {
-    background: var(--color-status-decent-border);
+  meter:-moz-meter-sub-optimum::-moz-meter-bar {
+    background: var(--color-status-fine-border);
   }
 
-  meter::-moz-meter-even-less-good-value {
-    background: var(--color-status-fine-border);
+  meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    background: var(--color-status-bad-border);
   }
 
   a ul {
