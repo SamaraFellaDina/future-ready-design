@@ -47,6 +47,7 @@
     --average-gap: 20px;
     --average-padding: 30px;
     --box-shadow: 0px 0px 9px -2px var(--color-shadow);
+    --box-shadow-hover: 0px 0px 9px 5px var(--color-shadow);
     --section-border-radius: 8px;  
   }
 </style>
