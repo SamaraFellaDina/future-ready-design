@@ -5,25 +5,25 @@
     {
       title: 'home',
       percentage: 54,
-      url: 'nieuwekijk/home',
+      url: 'nieuwekijk/home/details',
       grade: 'fine',
     },
     {
       title: 'over-ons',
       percentage: 48,
-      url: 'nieuwekijk/over-ons',
+      url: 'nieuwekijk/over-ons/details',
       grade: 'fine',
     },
     {
       title: 'contact',
       percentage: 100,
-      url: 'nieuwekijk/contact',
+      url: 'nieuwekijk/contact/details',
       grade: 'good',
     },
     {
       title: 'missie',
       percentage: 22,
-      url: 'nieuwekijk/missie',
+      url: 'nieuwekijk/missie/details',
       grade: 'bad',
     }
   ];
