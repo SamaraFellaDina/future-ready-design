@@ -8,18 +8,34 @@
   <div>
     <DonutChart {percentage} />
     <ul>
-      <li>
-        <IconLibrary name = "good" />
-        <p>Niveau A</p>
-      </li>
-      <li>
-        <IconLibrary name = "good" />
-        <p>Niveau AA</p>
-      </li>
-      <li>
-        <IconLibrary name = "good" />
-        <p>Niveau AAA</p>
-      </li>
+      {#if percentage < 50}
+        <li>
+          <IconLibrary name="good" />
+          <p>Niveau A</p>
+        </li>
+      {:else if percentage < 99}
+        <li>
+          <IconLibrary name="good" />
+          <p>Niveau A</p>
+        </li>
+        <li>
+          <IconLibrary name="good" />
+          <p>Niveau AA</p>
+        </li>
+      {:else if percentage == 100}
+        <li>
+          <IconLibrary name="good" />
+          <p>Niveau A</p>
+        </li>
+        <li>
+          <IconLibrary name="good" />
+          <p>Niveau AA</p>
+        </li>
+        <li>
+          <IconLibrary name="good" />
+          <p>Niveau AAA</p>
+        </li>
+      {/if}
     </ul>
   </div>
 </section>
@@ -34,6 +50,9 @@
     gap: var(--average-gap);
     box-shadow: var(--box-shadow);
     grid-column: 1 / 2;
+    @media (max-width: 1250px) {
+      grid-column: 1 / -1;
+    }
   }
 
   h2 {
@@ -52,9 +71,11 @@
     display: flex;
     flex-direction: column;
     gap: var(--average-gap);
+    align-self: baseline;
   }
   
   li {
     display: flex;
+    gap: 5px;
   }
 </style>

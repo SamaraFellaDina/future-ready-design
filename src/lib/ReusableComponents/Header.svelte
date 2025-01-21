@@ -54,7 +54,7 @@
     <div>
       <h2>
         <IconLibrary name="header-arrow" />
-        <a href = '/nieuwekijk/overzicht'><span>{name}</span></a>
+        <span>{name}</span>
       </h2>
       <ul>
         {#each secondaryLinks as links}
