@@ -236,7 +236,7 @@
  article > section:first-child {
     display: flex;
     justify-content: space-between;
-    border-bottom: solid 1px var(--color-border);
+    border-bottom: solid 1px var(--color-shadow);
   }
 
  article > section:first-child div {
@@ -286,8 +286,13 @@
     padding-top: var(--average-padding);
   }
 
+  details:nth-child(1){
+    padding-top: 0;
+  }
+
   details {
-    padding-bottom: var(--average-padding);
+    padding: var(--average-padding) 0;
+    border-bottom: solid 1px var(--color-shadow);
   }
 
   details summary {
