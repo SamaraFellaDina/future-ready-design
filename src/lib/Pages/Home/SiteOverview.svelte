@@ -54,7 +54,7 @@
     <div>
       <section>
         <h2>{title}</h2>
-        <p>{filterUrlCheck(url)}</p>
+        <p aria-label="gecontroleerde pagina van:{url}">{filterUrlCheck(url)}</p>
       </section>
         <WarningSign grade={grade}>
           <p>{status}</p>
