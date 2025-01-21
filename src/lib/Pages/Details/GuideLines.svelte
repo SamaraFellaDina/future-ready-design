@@ -16,12 +16,12 @@
     }
   
 
-  const GuideLines = [
+    const GuideLines = [
   {
-    "title": "Op tijd gebaseerde media",
-    "indicator-nummer": "1.2",
-    "value": 0.1,
-    "indicator-guidelines": [
+    title: "Op tijd gebaseerde media",
+    indicatorNummer: "1.2",
+    value: 0.1,
+    indicatorGuidelines: [
       "1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen)",
       "1.2.2 Ondertitels voor doven en slechthorenden (vooraf opgenomen)",
       "1.2.3 Audiodescriptie of media-alternatief (vooraf opgenomen)",
@@ -33,10 +33,10 @@
     ]
   },
   {
-    "title": "Aanpasbaar",
-    "indicator-nummer": "1.3",
-    "value": 0.45,
-    "indicator-guidelines": [
+    title: "Aanpasbaar",
+    indicatorNummer: "1.3",
+    value: 0.45,
+    indicatorGuidelines: [
       "1.3.1 Info en relaties",
       "1.3.2 Betekenisvolle volgorde",
       "1.3.3 Zintuiglijke eigenschappen",
@@ -46,10 +46,10 @@
     ]
   },
   {
-    "title": "Aanpasbaar",
-    "indicator-nummer": "1.4",
-    "value": 0.45,
-    "indicator-guidelines": [
+    title: "Aanpasbaar",
+    indicatorNummer: "1.4",
+    value: 0.45,
+    indicatorGuidelines: [
       "1.4.1 Info en relaties",
       "1.4.2 Betekenisvolle volgorde",
       "1.4.3 Zintuiglijke eigenschappen",
@@ -61,10 +61,10 @@
     ]
   },
   {
-    "title": "Aanpasbaar",
-    "indicator-nummer": "2.1",
-    "value": 0.45,
-    "indicator-guidelines": [
+    title: "Aanpasbaar",
+    indicatorNummer: "2.1",
+    value: 0.45,
+    indicatorGuidelines: [
       "2.1.1 Info en relaties",
       "2.1.2 Betekenisvolle volgorde",
       "2.1.3 Zintuiglijke eigenschappen",
@@ -75,10 +75,10 @@
     ]
   },
   {
-    "title": "Aanpasbaar",
-    "indicator-nummer": "3.1",
-    "value": 0.45,
-    "indicator-guidelines": [
+    title: "Aanpasbaar",
+    indicatorNummer: "3.1",
+    value: 0.45,
+    indicatorGuidelines: [
       "3.1.1 Info en relaties",
       "3.1.2 Betekenisvolle volgorde",
       "3.1.3 Zintuiglijke eigenschappen",
@@ -89,10 +89,10 @@
     ]
   },
   {
-    "title": "Aanpasbaar",
-    "indicator-nummer": "3.2",
-    "value": 0.45,
-    "indicator-guidelines": [
+    title: "Aanpasbaar",
+    indicatorNummer: "3.2",
+    value: 0.45,
+    indicatorGuidelines: [
       "3.2.1 Info en relaties",
       "3.2.2 Betekenisvolle volgorde",
       "3.2.3 Zintuiglijke eigenschappen",
@@ -103,10 +103,10 @@
     ]
   },
   {
-    "title": "Aanpasbaar",
-    "indicator-nummer": "4.1",
-    "value": 0.45,
-    "indicator-guidelines": [
+    title: "Aanpasbaar",
+    indicatorNummer: "4.1",
+    value: 0.45,
+    indicatorGuidelines: [
       "4.1.1 Info en relaties",
       "4.1.2 Betekenisvolle volgorde",
       "4.1.3 Zintuiglijke eigenschappen",
@@ -114,16 +114,17 @@
     ]
   },
   {
-    "title": "Aanpasbaar",
-    "indicator-nummer": "4.2",
-    "value": 0.45,
-    "indicator-guidelines": [
+    title: "Aanpasbaar",
+    indicatorNummer: "4.2",
+    value: 0.45,
+    indicatorGuidelines: [
       "4.2.1 Info en relaties",
       "4.2.2 Betekenisvolle volgorde",
       "4.2.3 Zintuiglijke eigenschappen"
     ]
   }
 ];
+
 
 </script>
 
@@ -132,13 +133,14 @@
   <section>
     <div>
       <h2>{guide.title}</h2>
-      <p>{guide["indicator-nummer"]}</p>
+      <p>{guide.indicatorNummer}</p>
       <IconLibrary name="eye" />
     </div>
-    <meter class={meterClass} value={parseFloat(guide.value)} max="1" high=".75" low=".25"></meter>
+    <meter class={meterClass} value={guide.value} max="1" high=".75" low=".25"></meter> <!-- Gebruik guide.value hier -->
   </section>
+
   <section>
-    {#each guide["indicator-guidelines"] as guideline}
+    {#each guide.indicatorGuidelines as guideline}
     <details>
       <summary>
         <div>
@@ -151,8 +153,7 @@
         https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html
       </a>
       <div class="extended-details">
-        <p>
-          Alle inhoud moet als tekst zijn beschreven. Tekst kan zoals visueel,
+        <p>Alle inhoud moet als tekst zijn beschreven. Tekst kan zoals visueel,
           auditief en tactiel worden weergegeven. Informatie kan hierdoor
           gepresenteerd worden in een vorm die het beste aansluit bij de
           behoeften van gebruikers.
@@ -175,14 +176,22 @@
               <h3>hoe te testen</h3>
             </div>
             <ol>
-              <li><p>1. Open website in browser.</p></li>
+              <li>
+                <p>
+                  1. Open website in browser.
+                </p>
+              </li>
               <li>
                 <p>
                   2. Rechtermuis klik, selecteer "Inspecteer" of "Bron
                   bekijken".
                 </p>
               </li>
-              <li><p>3. Zoek naar img, video tags in de html code.</p></li>
+              <li>
+                <p>
+                  3. Zoek naar img, video tags in de html code.
+                </p>
+              </li>
               <li>
                 <p>
                   4. Controleer of alt of aria-label attributen aanwezig zijn.
@@ -191,9 +200,12 @@
             </ol>
           </li>
         </ul>
+
         <section>
           <h3>Hoe kun je dit oplossen</h3>
-          <p><b>Voeg alternatieve tekst toe</b> (criterium 1.1.1)</p>
+          <p>
+            <b>Voeg alternatieve tekst toe</b> (criterium 1.1.1)
+          </p>
           <p>
             Zorg dat er alternatieve tekst beschikbaar is voor alle inhoud
             zonder tekst. Dat zijn onder andere afbeeldingen, icoontjes en
@@ -219,16 +231,12 @@
     padding: 40px;
     background-color: var(--color-background-section);
     margin-bottom: var(--average-margin);
-
-    @media (max-width: 700px) {
-      position: static;
-    }
   }
 
  article > section:first-child {
     display: flex;
     justify-content: space-between;
-    border-bottom: solid 1px var(--color-shadow);
+    border-bottom: solid 1px var(--color-border);
   }
 
  article > section:first-child div {
@@ -249,64 +257,28 @@
   .meter-red::-webkit-meter-bar {
     background: #ffdddd;
   }
-
   .meter-red::-webkit-meter-optimum-value {
-    background: var(--color-status-bad-border);
-  }
-
-  .meter-red::-moz-meter-bar {
-    background: #ffdddd;
-  }
-
-  .meter-red::-moz-meter-optimum-value {
     background: var(--color-status-bad-border);
   }
 
   .meter-orange::-webkit-meter-bar {
     background: #fff0cc;
   }
-
   .meter-orange::-webkit-meter-optimum-value {
-    background: var(--color-status-fine-border);
-  }
-
-  .meter-orange::-moz-meter-bar {
-    background: #fff0cc;
-  }
-
-  .meter-orange::-moz-meter-optimum-value {
     background: var(--color-status-fine-border);
   }
 
   .meter-blue::-webkit-meter-bar {
     background: #dbefff;
   }
-
   .meter-blue::-webkit-meter-optimum-value {
-    background: var(--color-primary);
-  }
-
-  .meter-blue::-moz-meter-bar {
-    background: #dbefff;
-  }
-
-  .meter-blue::-moz-meter-optimum-value {
     background: var(--color-primary);
   }
 
   .meter-green::-webkit-meter-bar {
     background: #ddffdd;
   }
-
   .meter-green::-webkit-meter-optimum-value {
-    background: var(--color-status-good-border);
-  }
-
-  .meter-green::-moz-meter-bar {
-    background: #ddffdd;
-  }
-
-  .meter-green::-moz-meter-optimum-value {
     background: var(--color-status-good-border);
   }
 
@@ -314,13 +286,8 @@
     padding-top: var(--average-padding);
   }
 
-  article section details:nth-child(1) {
-    padding-top: 0;
-  }
-
   details {
-    padding: var(--average-padding) 0;
-    border-bottom: 1px solid var(--color-shadow);
+    padding-bottom: var(--average-padding);
   }
 
   details summary {

@@ -10,15 +10,16 @@
 <section>
   {#if currentPage === "/nieuwekijk/home/details"}
     <div>
-    <a href="/nieuwekijk/home">  
       <h2>Automatische Scan
-        <IconLibrary name="arrow-link" class="testing" />
       </h2>
-    </a>
       <p>
         <span>Laatste scan</span>
         <time datetime="2024-04-23">23/4/2024</time>
       </p>
+      <a href="/nieuwekijk/home"><WarningSign>
+        <p>Bekijk scandetails</p>
+        </WarningSign>
+      </a>
     </div>
 {:else}
   <div>
@@ -34,7 +35,7 @@
     <DonutChart {percentage} />
     <div>
       <WarningSign grade="bad">
-        <h3> nieuwe fouten ontdekt</h3>
+        <h3> nieuwe fouten ontdekt </h3>
       </WarningSign>
       <p>
         *Dit is een schatting gegenereerd door een automatische scan. Test altijd handmatig voor een volledig beeld.
@@ -70,6 +71,7 @@
 
 <style>
   section {
+    position: relative;
     padding: var(--average-padding);
     background-color: var(--color-background-section);
     border-radius: var(--section-border-radius);
@@ -94,22 +96,17 @@
     transform: translateY(2px);
   }
 
-  :global(section > div:first-of-type a:hover) {
+  section > div:first-of-type a{
+    
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  section > div:first-of-type a:hover {
     text-decoration: none;
   }
 
-  :global(section > div:first-of-type a:hover svg) {
-    animation: goto 0.4s ease-in-out forwards;
-  }
-
-  :global(section > div:first-of-type a:hover h2) {
-    color: var(--color-primary);
-  }
-
-  :global(section > div:first-of-type a:hover svg path){
-    fill: var(--color-primary);
-  }
-  
   section > div:nth-of-type(2) {
     display: flex;
     gap: var(--average-gap);
@@ -175,25 +172,4 @@
   time {
     text-align: end;
   }
-
-  @keyframes goto {
-  0% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(5px);
-  }
-  40% {
-    transform: translateX(-5px);
-  }
-  60% {
-    transform: translateX(3px);
-  }
-  80% {
-    transform: translateX(-3px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
 </style>

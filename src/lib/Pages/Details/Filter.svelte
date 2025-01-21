@@ -1,11 +1,12 @@
 <script>
+  import { IconLibrary } from "$lib";
+
   let isActive = false;
 
-  function toggleActive() {
-    isActive = !isActive;
-  }
+function toggleActive() {
+  isActive = !isActive;
+}
 
-  import { IconLibrary } from "$lib";
 </script>
 
 <section>
