@@ -219,12 +219,16 @@
     padding: 40px;
     background-color: var(--color-background-section);
     margin-bottom: var(--average-margin);
+
+    @media (max-width: 700px) {
+      position: static;
+    }
   }
 
  article > section:first-child {
     display: flex;
     justify-content: space-between;
-    border-bottom: solid 1px var(--color-border);
+    border-bottom: solid 1px var(--color-shadow);
   }
 
  article > section:first-child div {
@@ -245,28 +249,64 @@
   .meter-red::-webkit-meter-bar {
     background: #ffdddd;
   }
+
   .meter-red::-webkit-meter-optimum-value {
+    background: var(--color-status-bad-border);
+  }
+
+  .meter-red::-moz-meter-bar {
+    background: #ffdddd;
+  }
+
+  .meter-red::-moz-meter-optimum-value {
     background: var(--color-status-bad-border);
   }
 
   .meter-orange::-webkit-meter-bar {
     background: #fff0cc;
   }
+
   .meter-orange::-webkit-meter-optimum-value {
+    background: var(--color-status-fine-border);
+  }
+
+  .meter-orange::-moz-meter-bar {
+    background: #fff0cc;
+  }
+
+  .meter-orange::-moz-meter-optimum-value {
     background: var(--color-status-fine-border);
   }
 
   .meter-blue::-webkit-meter-bar {
     background: #dbefff;
   }
+
   .meter-blue::-webkit-meter-optimum-value {
+    background: var(--color-primary);
+  }
+
+  .meter-blue::-moz-meter-bar {
+    background: #dbefff;
+  }
+
+  .meter-blue::-moz-meter-optimum-value {
     background: var(--color-primary);
   }
 
   .meter-green::-webkit-meter-bar {
     background: #ddffdd;
   }
+
   .meter-green::-webkit-meter-optimum-value {
+    background: var(--color-status-good-border);
+  }
+
+  .meter-green::-moz-meter-bar {
+    background: #ddffdd;
+  }
+
+  .meter-green::-moz-meter-optimum-value {
     background: var(--color-status-good-border);
   }
 
@@ -274,8 +314,13 @@
     padding-top: var(--average-padding);
   }
 
+  article section details:nth-child(1) {
+    padding-top: 0;
+  }
+
   details {
-    padding-bottom: var(--average-padding);
+    padding: var(--average-padding) 0;
+    border-bottom: 1px solid var(--color-shadow);
   }
 
   details summary {

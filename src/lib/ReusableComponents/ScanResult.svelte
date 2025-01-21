@@ -8,6 +8,19 @@
 </script>
   
 <section>
+  {#if currentPage === "/nieuwekijk/home/details"}
+    <div>
+    <a href="/nieuwekijk/home">  
+      <h2>Automatische Scan
+        <IconLibrary name="arrow-link" class="testing" />
+      </h2>
+    </a>
+      <p>
+        <span>Laatste scan</span>
+        <time datetime="2024-04-23">23/4/2024</time>
+      </p>
+    </div>
+{:else}
   <div>
     <h2>Automatische Scan</h2>
     <p>
@@ -15,6 +28,7 @@
       <time datetime="2024-04-23">23/4/2024</time>
     </p>
   </div>
+{/if}
 
   <div>
     <DonutChart {percentage} />
@@ -74,6 +88,26 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
+  }
+
+  :global(section > div:first-of-type svg){
+    transform: translateY(2px);
+  }
+
+  :global(section > div:first-of-type a:hover) {
+    text-decoration: none;
+  }
+
+  :global(section > div:first-of-type a:hover svg) {
+    animation: goto 0.4s ease-in-out forwards;
+  }
+
+  :global(section > div:first-of-type a:hover h2) {
+    color: var(--color-primary);
+  }
+
+  :global(section > div:first-of-type a:hover svg path){
+    fill: var(--color-primary);
   }
   
   section > div:nth-of-type(2) {
@@ -141,4 +175,25 @@
   time {
     text-align: end;
   }
+
+  @keyframes goto {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(5px);
+  }
+  40% {
+    transform: translateX(-5px);
+  }
+  60% {
+    transform: translateX(3px);
+  }
+  80% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 </style>

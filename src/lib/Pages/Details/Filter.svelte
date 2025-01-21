@@ -1,7 +1,25 @@
 <script>
+  let isActive = false;
+
+  function toggleActive() {
+    isActive = !isActive;
+  }
+
+  import { IconLibrary } from "$lib";
 </script>
 
 <section>
+  <button
+    type="button"
+    aria-label={isActive
+      ? "Navigatiemenu is geopend"
+      : "Navigatiemenu is gesloten"}
+    class:active={isActive}
+    on:click={toggleActive}
+  >
+    <IconLibrary name="sidebar" />
+    <span>Menu</span>
+  </button>
   <h2>Filter op categorie</h2>
   <fieldset>
     <label>
@@ -56,10 +74,60 @@
     top: 20px;
     height: 800px;
     width: 100%;
+
+    @media (max-width: 1600px) {
+      width: 300px;
+      height: fit-content;
+      position: fixed;
+    }
   }
 
   h2 {
     margin-bottom: 20px;
+    display: block;
+
+    @media (max-width: 1600px) {
+      display: none;
+    }
+  }
+
+  button {
+    display: none;
+
+    @media (max-width: 1600px) {
+      display: block;
+    }
+  }
+
+  button span {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  button.active {
+    transform: translateX(-80%);
+
+    @media (max-width: 1700px) {
+      transform: translateX(0);
+    }
+  }
+
+  button.active {
+    transform: translateX(-225px) scaleX(-1);
+
+    @media (max-width: 1700px) {
+      transform: translateX(0);
+    }
+  }
+
+  button.active ~ h2 {
+    opacity: 1;
+    display: grid;
+  }
+
+  button.active ~ fieldset {
+    opacity: 1;
+    display: grid;
   }
 
   fieldset {
@@ -69,10 +137,15 @@
     gap: 10px;
     padding: 10px 0 10px 0;
     border: none;
+
+    @media (max-width: 1600px) {
+      opacity: 0;
+      display: none;
+    }
   }
 
-  fieldset:last-child{
-    border-top: solid 1px var(--color-border);
+  fieldset:last-child {
+    border-top: solid 1px var(--color-shadow);
   }
 
   fieldset label {
@@ -119,5 +192,4 @@
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-bold);
   }
-
 </style>
