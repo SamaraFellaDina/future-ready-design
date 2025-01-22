@@ -12,7 +12,7 @@
   main {
     margin: 0 auto;
     padding: var(--average-padding);
-    max-width: 1100px;
+    max-width: 1300px;
 
     @media (max-width: 1600px) {
       display: flex;
@@ -20,10 +20,8 @@
     
     }
 
-    @media (min-width: 700px) and (max-width: 1040px) {
-    
-        padding-left: 70px;
-      
+    @media (min-width: 700px) and (max-width: 1440px) {
+      padding-left: 70px;
     }
   }
 

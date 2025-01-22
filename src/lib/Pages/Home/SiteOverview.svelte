@@ -39,9 +39,9 @@
       cleanedUrl = cleanedUrl.replace(part, "");
     });
 
-    if (cleanedUrl.length > 10) {
-      return cleanedUrl.substring(0, 15) + '...'
-    }
+    // if (cleanedUrl.length > 10) {
+    //   return cleanedUrl.substring(0, 15) + '...'
+    // }
     return cleanedUrl;
   }; 
 </script>
@@ -77,7 +77,7 @@ ul {
     gap: var(--average-gap);
     list-style: none;
     
-    @media (min-width: 900px) {
+    @media (min-width: 1200px) {
       grid-template-columns: 50% 50%;
     }
   }
@@ -93,6 +93,12 @@ ul {
 
 
     @media (min-width: 900px) {
+    }
+
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
   }
   ul li a:visited,
@@ -115,14 +121,14 @@ ul {
   }
 
   ul li a div div section p {
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-regular);
   }
 
   ul li a div div section h2 {
     line-height: 1em;
-    font-size: var(--font-size-medium);
+    font-size: var(--font-size-large);
 
-    @media (min-width: 600px) {
+    /* @media (min-width: 600px) {
       font-size: var(--font-size-large);
     }
 
@@ -132,7 +138,7 @@ ul {
 
     @media (min-width: 1000px) {
       font-size: var(--font-size-large);
-    }
+    } */
   }
 
 </style>
