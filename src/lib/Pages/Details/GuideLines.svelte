@@ -124,10 +124,9 @@
     ]
   }
 ];
-
-
 </script>
 
+<section class="guideline-wrapper">
 {#each GuideLines as guide}
 <article>
   <section>
@@ -221,11 +220,17 @@
   </section>
 </article>
 {/each}
+</section>
 <style>
- article {
-  --average-padding: 20px;
-  --average-margin: 20px;
-  ---average-gap: 5px;
+  .guideline-wrapper {
+    display: block;
+    grid-area: 3 / 1 / 4 / 3;
+  }
+  
+  article {
+    --average-padding: 20px;
+    --average-margin: 20px;
+    ---average-gap: 5px;
     border-radius: var(--section-border-radius);
     box-shadow: var(--box-shadow);
     padding: 40px;
@@ -233,23 +238,24 @@
     margin-bottom: var(--average-margin);
   }
 
- article > section:first-child {
+  article > section:first-child {
     display: flex;
     justify-content: space-between;
     border-bottom: solid 1px var(--color-shadow);
   }
 
- article > section:first-child div {
+  article > section:first-child div {
     display: flex;
     padding-bottom: var(--average-padding);
     gap: var(---average-gap);
   }
 
-  :global(article > section:first-child div svg), :global(details summary svg){
+  :global(article > section:first-child div svg),
+  :global(details summary svg) {
     transform: translateY(2px);
   }
 
- article > section meter {
+  article > section meter {
     height: 30px;
     width: 200px;
   }
@@ -282,11 +288,11 @@
     background: var(--color-status-good-border);
   }
 
- article section:last-child{
+  article section:last-child {
     padding-top: var(--average-padding);
   }
 
-  details:nth-child(1){
+  details:nth-child(1) {
     padding-top: 0;
   }
 
@@ -321,7 +327,7 @@
     gap: var(---average-gap);
   }
 
-  details summary span{
+  details summary span {
     font-weight: var(--font-weight-bold);
   }
 
@@ -361,7 +367,7 @@
     color: var(--color-primary);
   }
 
- article section:last-child details .extended-details {
+  article section:last-child details .extended-details {
     padding: 0 110px 0 0;
   }
 
@@ -406,7 +412,8 @@
     border-radius: var(--section-border-radius);
     border: var(--color-primary) 2px solid;
     background-color: var(--color-primary-highlight);
-    padding: var(--average-padding) var(--average-padding) 40px var(--average-padding);
+    padding: var(--average-padding) var(--average-padding) 40px
+      var(--average-padding);
   }
 
   details div:last-child section h3 {

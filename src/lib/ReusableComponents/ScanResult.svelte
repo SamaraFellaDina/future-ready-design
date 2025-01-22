@@ -16,10 +16,6 @@
         <span>Laatste scan</span>
         <time datetime="2024-04-23">23/4/2024</time>
       </p>
-      <a href="/nieuwekijk/home"><WarningSign>
-        <p>Bekijk scandetails</p>
-        </WarningSign>
-      </a>
     </div>
 {:else}
   <div>
@@ -67,6 +63,12 @@
     </div>
     {/if}
   </div>
+  {#if currentPage === "/nieuwekijk/home/details"}
+    <a href="/nieuwekijk/home"><WarningSign>
+      <p>Bekijk scandetails</p>
+      </WarningSign>
+    </a>
+    {/if}
 </section>
 
 <style>
@@ -96,14 +98,11 @@
     transform: translateY(2px);
   }
 
-  section > div:first-of-type a{
-    
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+  section  a{
+    justify-content: end;
   }
 
-  section > div:first-of-type a:hover {
+  section a:hover {
     text-decoration: none;
   }
 

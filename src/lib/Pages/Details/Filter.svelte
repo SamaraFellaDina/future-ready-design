@@ -1,26 +1,8 @@
 <script>
-  import { IconLibrary } from "$lib";
-
-  let isActive = false;
-
-function toggleActive() {
-  isActive = !isActive;
-}
 
 </script>
 
 <section>
-  <button
-    type="button"
-    aria-label={isActive
-      ? "Navigatiemenu is geopend"
-      : "Navigatiemenu is gesloten"}
-    class:active={isActive}
-    on:click={toggleActive}
-  >
-    <IconLibrary name="sidebar" />
-    <span>Menu</span>
-  </button>
   <h2>Filter op categorie</h2>
   <fieldset>
     <label>
@@ -67,6 +49,10 @@ function toggleActive() {
 
 <style>
   section {
+    grid-area: 2 / 3 / 4 / 4;
+    display: flex;
+    flex-direction: column;
+    position: relative;
     background-color: var(--color-background-section);
     border-radius: var(--section-border-radius);
     box-shadow: var(--box-shadow);
@@ -77,58 +63,15 @@ function toggleActive() {
     width: 100%;
 
     @media (max-width: 1600px) {
-      width: 300px;
       height: fit-content;
-      position: fixed;
+      background-color: transparent;
+      box-shadow: unset;
     }
   }
 
   h2 {
     margin-bottom: 20px;
     display: block;
-
-    @media (max-width: 1600px) {
-      display: none;
-    }
-  }
-
-  button {
-    display: none;
-
-    @media (max-width: 1600px) {
-      display: block;
-    }
-  }
-
-  button span {
-    visibility: hidden;
-    position: absolute;
-  }
-
-  button.active {
-    transform: translateX(-80%);
-
-    @media (max-width: 1700px) {
-      transform: translateX(0);
-    }
-  }
-
-  button.active {
-    transform: translateX(-225px) scaleX(-1);
-
-    @media (max-width: 1700px) {
-      transform: translateX(0);
-    }
-  }
-
-  button.active ~ h2 {
-    opacity: 1;
-    display: grid;
-  }
-
-  button.active ~ fieldset {
-    opacity: 1;
-    display: grid;
   }
 
   fieldset {
@@ -140,8 +83,8 @@ function toggleActive() {
     border: none;
 
     @media (max-width: 1600px) {
-      opacity: 0;
-      display: none;
+      display: flex;
+      flex-wrap: wrap;
     }
   }
 
