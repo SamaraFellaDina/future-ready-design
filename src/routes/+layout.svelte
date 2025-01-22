@@ -13,7 +13,7 @@
   :global(:root) {
     /* fonts */
     --font-family: 'Outfit', arial, sans-serif;
-    --font-weight-thin: 100;
+    --font-weight-thin: 400;
     --font-weight-bold: 700;
 
     /* font-sizes */
@@ -24,7 +24,7 @@
     --font-size-xlarge: 32px;
 
     /* colors */
-    --color-primary: #0275FF;
+    --color-primary: #4A4FF2;
     --color-primary-highlight: #D5E8FF;
 
     --color-regular-text: #5D666A;
@@ -49,5 +49,6 @@
     --box-shadow: 0px 0px 9px -2px var(--color-shadow);
     --box-shadow-hover: 0px 0px 9px 5px var(--color-shadow);
     --section-border-radius: 8px;  
+    --main-width: 1300px;
   }
 </style>

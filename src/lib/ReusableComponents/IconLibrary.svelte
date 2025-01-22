@@ -109,7 +109,6 @@
     </linearGradient>
     <linearGradient id="paint2_linear_20_45" x1="17.6992" y1="26.3964" x2="26.8066" y2="22.4074" gradientUnits="userSpaceOnUse">
     <stop offset="0"stop-color="#17ACFF"/>
-    <stop offset="1" stop-color="#4DD78A"/>
     </linearGradient>
     </defs>
   </svg>
