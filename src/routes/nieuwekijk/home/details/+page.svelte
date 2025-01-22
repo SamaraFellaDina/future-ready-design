@@ -32,7 +32,7 @@
     gap: 20px;
     margin: 0 auto;
     padding: 30px 10px;
-    max-width: 1300px;
+    max-width: var(--main-width);
   }
 
   article:first-child {

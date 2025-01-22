@@ -2,7 +2,8 @@
   font-family: 'Outfit';
   src: url('/fonts/outfit-v11-latin-regular.woff2') format('woff2');
   font-weight: 400; 
-  font-style: normal; 
+  font-style: normal;
+  font-display: swap; 
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   src: url('/fonts/outfit-v11-latin-700.woff2') format('woff2');
   font-weight: 700; 
   font-style: normal; 
+  font-display: swap;
 }
 
 @media screen and (max-width: 500px) {
