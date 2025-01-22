@@ -1,4 +1,5 @@
 <script>
+
 </script>
 
 <section>
@@ -48,6 +49,10 @@
 
 <style>
   section {
+    grid-area: 2 / 3 / 4 / 4;
+    display: flex;
+    flex-direction: column;
+    position: relative;
     background-color: var(--color-background-section);
     border-radius: var(--section-border-radius);
     box-shadow: var(--box-shadow);
@@ -56,10 +61,18 @@
     top: 20px;
     height: 800px;
     width: 100%;
+
+    @media (max-width: 1600px) {
+      height: fit-content;
+      background-color: var(--color-background-section);
+      box-shadow: var(--box-shadow);
+      z-index: 1;
+    }
   }
 
   h2 {
     margin-bottom: 20px;
+    display: block;
   }
 
   fieldset {
@@ -69,10 +82,15 @@
     gap: 10px;
     padding: 10px 0 10px 0;
     border: none;
+
+    @media (max-width: 1600px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 
-  fieldset:last-child{
-    border-top: solid 1px var(--color-border);
+  fieldset:last-child {
+    border-top: solid 1px var(--color-shadow);
   }
 
   fieldset label {
@@ -119,5 +137,4 @@
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-bold);
   }
-
 </style>

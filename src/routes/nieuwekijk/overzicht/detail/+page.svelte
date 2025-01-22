@@ -15,7 +15,7 @@
     max-width: 1100px;
   }
 
-  @media only screen and (max-width: 1600px) {
+  @media (max-width: 1700px) {
     main {
       max-width: 900px;
       }
@@ -26,9 +26,4 @@
     }
   }
 
-  @media only screen and (min-width: 700px) and (max-width: 1040px) {
-    main {
-      padding-left: 70px;
-    }
-  }
 </style>
