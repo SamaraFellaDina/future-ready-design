@@ -1,62 +1,79 @@
 <script>
   import { DonutChart, IconLibrary, WarningSign } from '$lib'
   import { page } from "$app/stores";
+  
   let percentage = 40;
-  let borderColor = percentage < 50 ? 'var(--color-status-bad-border)' : percentage < 80 ? 'var(--color-status-fine-border)' : 'var(--color-status-good-border)';
-
   let currentPage = $page.url.pathname;
 </script>
   
 <section>
-  <div>
-    <h2>Automatische Scan</h2>
-    <p>
-      <span>Laatste scan</span>
-      <time datetime="2024-04-23">23/4/2024</time>
-    </p>
-  </div>
+  {#if currentPage === "/nieuwekijk/home/details"}
+    <div>
+      <h2>Automatische Scan
+      </h2>
+      <p>
+        <span>Laatste scan</span>
+        <time datetime="2024-04-23">23/4/2024</time>
+      </p>
+    </div>
+  {:else}
+    <div>
+      <h2>Automatische Scan</h2>
+      <p>
+        <span>Laatste scan</span>
+        <time datetime="2024-04-23">23/4/2024</time>
+      </p>
+    </div>
+  {/if}
 
   <div>
     <DonutChart {percentage} />
     <div>
       <WarningSign grade="bad">
-        <h3> nieuwe fouten ontdekt</h3>
+        <h3> nieuwe fouten ontdekt </h3>
       </WarningSign>
       <p>
         *Dit is een schatting gegenereerd door een automatische scan. Test altijd handmatig voor een volledig beeld.
       </p>
     </div>
     {#if currentPage === "/nieuwekijk/overzicht"}
-    <div>
-      <h3>Aandacht vereist</h3>
-      <ul>
-        <li>
-          <a href="/nieuwekijk/home">
-            <IconLibrary name = "arrow-right" />
-            /home
-          </a>
-        </li>
-        <li>
-          <a href="/nieuwekijk/over-ons">
-            <IconLibrary name = "arrow-right" />
-            /over-ons
-          </a>
-        </li>
-        <li>
-          <a href="/nieuwekijk/contact">
-            <IconLibrary name = "arrow-right" />
-            /contact
-          </a>
-        </li> 
-      </ul>
-    </div>
+      <div>
+        <h3>Aandacht vereist</h3>
+        <ul>
+          <li>
+            <a href="/nieuwekijk/home">
+              <IconLibrary name = "arrow-right" />
+              /home
+            </a>
+          </li>
+          <li>
+            <a href="/nieuwekijk/over-ons">
+              <IconLibrary name = "arrow-right" />
+              /over-ons
+            </a>
+          </li>
+          <li>
+            <a href="/nieuwekijk/contact">
+              <IconLibrary name = "arrow-right" />
+              /contact
+            </a>
+          </li> 
+        </ul>
+      </div>
     {/if}
     if current page === details
   </div>
+  {#if currentPage === "/nieuwekijk/home/details"}
+    <a href="/nieuwekijk/home"><WarningSign>
+      <p>Bekijk scandetails</p>
+      </WarningSign>
+    </a>
+  {/if}
 </section>
 
 <style>
   section {
+    position: relative;
     padding: var(--average-padding);
     background-color: var(--color-background-section);
     border-radius: var(--section-border-radius);
@@ -76,7 +93,15 @@
     flex-wrap: wrap;
     gap: 10px;
   }
-  
+
+  section  a{
+    justify-content: end;
+  }
+
+  section a:hover {
+    text-decoration: none;
+  }
+
   section > div:nth-of-type(2) {
     display: flex;
     gap: var(--average-gap);

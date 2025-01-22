@@ -96,7 +96,7 @@
     gap: 50px;
     box-shadow: var(--box-shadow);
     transition: 0.5s;
-    z-index: 1;
+    z-index: 2;
     width: 280px;
     overflow-y: auto;
     
@@ -150,7 +150,7 @@
     position: fixed;
     top: 20px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
     left: 240px;
     transition: 0.5s;
     width: min-content;

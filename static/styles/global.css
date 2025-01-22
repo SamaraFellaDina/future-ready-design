@@ -29,6 +29,11 @@
   box-sizing: border-box;
 }
 
+*:focus-visible {
+  outline: 5px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 body {
   background-color: var(--color-background);
 }
@@ -78,3 +83,4 @@ button {
   border: none;
   cursor: pointer;
 }
+

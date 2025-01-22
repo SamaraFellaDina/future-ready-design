@@ -34,10 +34,10 @@
     --color-border:#5D666A;
 
     /* colors for grading */
-    --color-status-good:#00800070;
-    --color-status-decent:#0274ff5b;
-    --color-status-fine:#ffa60053;
-    --color-status-bad:#ff00004a;
+    --color-status-good:#0080002a;
+    --color-status-decent:#0274ff39;
+    --color-status-fine:#ffa60032;
+    --color-status-bad:#ff000025;
     --color-status-good-border:green;
     --color-status-decent-border:var(--color-primary);
     --color-status-fine-border:orange;
