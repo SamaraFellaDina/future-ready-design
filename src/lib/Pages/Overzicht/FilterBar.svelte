@@ -1,33 +1,7 @@
 <script>
-  // import { onMount } from "svelte";
-  // import { createEventDispatcher } from "svelte";
-
-  // let searchValue = "";
-  // let filters = [
-  //   { id: "filter1", label: "Voldoet niet" },
-  //   { id: "filter2", label: "Voldoet" },
-  //   { id: "filter3", label: "A" },
-  //   { id: "filter4", label: "AA" },
-  //   { id: "filter5", label: "AAA" },
-  // ];
-
-  // const dispatch = createEventDispatcher();
-
-  // onMount(() => {
-  //   const searchInput = document.querySelector("input[type=search]");
-  //   searchInput.addEventListener("input", (event) => {
-  //     searchValue = event.target.value;
-  //     dispatch("search", searchValue);
-  //   });
-  // });
-
-  // function handleFilterChange(event) {
-  //   const filter = event.target.id;
-  //   dispatch("filter", filter);
-  // }
 </script>
 
-<section>
+<search>
   <label>
     <span>Pagina zoeken</span>
     <input type="search" placeholder="Zoeken..." />
@@ -56,10 +30,10 @@
     </label>
   </fieldset>
   <button type="button">+ Pagina toevoegen</button>
-</section>
+</search>
 
 <style>
-  section {
+  search {
     grid-column: 1 / -1;
     padding: var(--average-padding) 0;
     display: flex;
@@ -125,7 +99,7 @@
     gap: var(--average-gap);
   }
 
-  section > label span {
+  search > label span {
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-bold);
   }

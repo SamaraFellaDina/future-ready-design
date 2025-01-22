@@ -5,24 +5,28 @@
     {
       title: 'home',
       percentage: 54,
+      urlLabel: 'nieuwekijk.nl/home/',
       url: 'nieuwekijk/home/details',
       grade: 'fine',
     },
     {
       title: 'over-ons',
       percentage: 48,
+      urlLabel: 'nieuwekijk.nl/over-ons/',
       url: 'nieuwekijk/over-ons/details',
       grade: 'fine',
     },
     {
       title: 'contact',
       percentage: 100,
+      urlLabel: 'nieuwekijk.nl/contact/',
       url: 'nieuwekijk/contact/details',
       grade: 'good',
     },
     {
       title: 'missie',
       percentage: 22,
+      urlLabel: 'nieuwekijk.nl/missie/',
       url: 'nieuwekijk/missie/details',
       grade: 'bad',
     }
@@ -37,10 +41,10 @@
           <span>{page.title}</span>
           <span>{page.percentage}%</span>
         </h2>
-        <label>
-          <span>{page.url}</span>
+        <div>
+          <span>{page.urlLabel}</span>
           <meter value="{page.percentage}" low="50" high="99" optimum="100" max="100">{page.percentage}%</meter>
-        </label>
+        </div>
         <WarningSign grade="{page.grade}" >
         {#if page.grade === 'bad'}
           <p>Mogelijk ernstige fouten ontdekt</p>
@@ -123,7 +127,7 @@
     justify-content: space-between;
   }
 
-  label {
+  div {
     display: flex;
     flex-direction: column;
     gap: 10px;
