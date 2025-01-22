@@ -78,7 +78,7 @@
     padding-bottom: 20px;
   }
 
-  input {
+  input[type="search"] {
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'><path fill='%23838D99' d='M13.22 14.63a8 8 0 1 1 1.41-1.41l4.29 4.29a1 1 0 1 1-1.41 1.41l-4.29-4.29zm-.66-2.07a6 6 0 1 0-8.49-8.49 6 6 0 0 0 8.49 8.49z'></path></svg>");
     background-repeat: no-repeat;
     background-position: 10px 10px;
@@ -90,7 +90,14 @@
   }
 
   input[type="checkbox"] {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    left: -9999px;
+  }
+
+  label:has(input[type="checkbox"]:focus) span {
+    outline: 5px solid var(--color-primary);
+    outline-offset: 2px;
   }
 
   label {

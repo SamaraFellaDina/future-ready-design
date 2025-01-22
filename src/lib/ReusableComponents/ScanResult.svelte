@@ -51,6 +51,7 @@
       </ul>
     </div>
     {/if}
+    if current page === details
   </div>
 </section>
 
