@@ -61,7 +61,6 @@
         </ul>
       </div>
     {/if}
-    if current page === details
   </div>
   {#if currentPage === "/nieuwekijk/home/details"}
     <a href="/nieuwekijk/home"><WarningSign>
