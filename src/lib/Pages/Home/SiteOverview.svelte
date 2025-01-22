@@ -50,15 +50,18 @@
   {#each resultList as {url, title, percentage, grade, status}}
   <li>
     <a href="nieuwekijk/overzicht">
-    <IconLibrary name='home-icon' width=30 height=30/>
     <div>
-      <section>
-        <h2>{title}</h2>
-        <p>{filterUrlCheck(url)}</p>
-      </section>
-        <WarningSign grade={grade}>
-          <p>{status}</p>
-        </WarningSign>
+      <IconLibrary name='home-icon' width=30 height=30/>
+      <div>
+        <section>
+          <h2>{title}</h2>
+          <p>{filterUrlCheck(url)}</p>
+        </section>
+          <WarningSign grade={grade}>
+            <p>{status}</p>
+          </WarningSign>
+      </div>
+
     </div>
     <DonutChart percentage={percentage}/>
     </a>
@@ -84,14 +87,12 @@ ul {
     padding: var(--average-padding);
     box-shadow: var(--box-shadow);
     display: grid;
-    grid-template-columns: 0.2fr 0.5fr 0.3fr;
+    grid-template-columns: .8fr .2fr;
     justify-content: space-between;
-    gap: var(--average-gap);
     transition: 0.3s;
 
 
     @media (min-width: 900px) {
-      grid-template-columns: 0.2fr 1fr 0.3fr;
     }
   }
   ul li a:visited,
@@ -105,15 +106,19 @@ ul {
 
   ul li a div {
     display: flex;
+    gap: var(--average-gap);
+  }
+  ul li a div div{
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  ul li a div section p {
+  ul li a div div section p {
     font-size: var(--font-size-small);
   }
 
-  ul li a div section h2 {
+  ul li a div div section h2 {
     line-height: 1em;
     font-size: var(--font-size-medium);
 
