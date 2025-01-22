@@ -2,9 +2,6 @@
   import { CurrentPageTitle, AccessibillityScore, ScanResult, GuideLines, Filter } from "$lib";
   export let data = data;
   export let company = data.sites;
-
-  let index = 0;
-  let result = data.scans[index];
 </script>
 
 <main>
@@ -49,7 +46,4 @@
     }
   }
   
-  :global(.content-wrapper) {
-    margin-bottom: 20px;
-  }
 </style>

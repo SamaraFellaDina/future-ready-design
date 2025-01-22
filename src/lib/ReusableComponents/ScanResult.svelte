@@ -1,9 +1,8 @@
 <script>
   import { DonutChart, IconLibrary, WarningSign } from '$lib'
   import { page } from "$app/stores";
+  
   let percentage = 40;
-  let borderColor = percentage < 50 ? 'var(--color-status-bad-border)' : percentage < 80 ? 'var(--color-status-fine-border)' : 'var(--color-status-good-border)';
-
   let currentPage = $page.url.pathname;
 </script>
   
@@ -17,15 +16,15 @@
         <time datetime="2024-04-23">23/4/2024</time>
       </p>
     </div>
-{:else}
-  <div>
-    <h2>Automatische Scan</h2>
-    <p>
-      <span>Laatste scan</span>
-      <time datetime="2024-04-23">23/4/2024</time>
-    </p>
-  </div>
-{/if}
+  {:else}
+    <div>
+      <h2>Automatische Scan</h2>
+      <p>
+        <span>Laatste scan</span>
+        <time datetime="2024-04-23">23/4/2024</time>
+      </p>
+    </div>
+  {/if}
 
   <div>
     <DonutChart {percentage} />
@@ -38,29 +37,29 @@
       </p>
     </div>
     {#if currentPage === "/nieuwekijk/overzicht"}
-    <div>
-      <h3>Aandacht vereist</h3>
-      <ul>
-        <li>
-          <a href="/nieuwekijk/home">
-            <IconLibrary name = "arrow-right" />
-            /home
-          </a>
-        </li>
-        <li>
-          <a href="/nieuwekijk/over-ons">
-            <IconLibrary name = "arrow-right" />
-            /over-ons
-          </a>
-        </li>
-        <li>
-          <a href="/nieuwekijk/contact">
-            <IconLibrary name = "arrow-right" />
-            /contact
-          </a>
-        </li> 
-      </ul>
-    </div>
+      <div>
+        <h3>Aandacht vereist</h3>
+        <ul>
+          <li>
+            <a href="/nieuwekijk/home">
+              <IconLibrary name = "arrow-right" />
+              /home
+            </a>
+          </li>
+          <li>
+            <a href="/nieuwekijk/over-ons">
+              <IconLibrary name = "arrow-right" />
+              /over-ons
+            </a>
+          </li>
+          <li>
+            <a href="/nieuwekijk/contact">
+              <IconLibrary name = "arrow-right" />
+              /contact
+            </a>
+          </li> 
+        </ul>
+      </div>
     {/if}
   </div>
   {#if currentPage === "/nieuwekijk/home/details"}
@@ -68,7 +67,7 @@
       <p>Bekijk scandetails</p>
       </WarningSign>
     </a>
-    {/if}
+  {/if}
 </section>
 
 <style>
@@ -92,10 +91,6 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
-  }
-
-  :global(section > div:first-of-type svg){
-    transform: translateY(2px);
   }
 
   section  a{

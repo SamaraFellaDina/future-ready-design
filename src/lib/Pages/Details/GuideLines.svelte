@@ -4,7 +4,6 @@
   let value = ""; 
   let meterClass = ""; 
 
- 
     if (value <= 0.5) {
       meterClass = "meter-red";
     } else if (value <= 0.7) {
@@ -15,128 +14,128 @@
       meterClass = "meter-green";
     }
   
-
-    const GuideLines = [
-  {
-    title: "Op tijd gebaseerde media",
-    indicatorNummer: "1.2",
-    value: 0.1,
-    indicatorGuidelines: [
-      "1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen)",
-      "1.2.2 Ondertitels voor doven en slechthorenden (vooraf opgenomen)",
-      "1.2.3 Audiodescriptie of media-alternatief (vooraf opgenomen)",
-      "1.2.4 Ondertitels voor doven en slechthorenden (live)",
-      "1.2.5 Audiodescriptie (vooraf opgenomen)",
-      "1.2.6 Gebarentaal (vooraf opgenomen)",
-      "1.2.7 Verlengde audiodescriptie (vooraf opgenomen)",
-      "1.2.8 Media-alternatief (vooraf opgenomen)"
-    ]
-  },
-  {
-    title: "Aanpasbaar",
-    indicatorNummer: "1.3",
-    value: 0.45,
-    indicatorGuidelines: [
-      "1.3.1 Info en relaties",
-      "1.3.2 Betekenisvolle volgorde",
-      "1.3.3 Zintuiglijke eigenschappen",
-      "1.3.4 Weergavestand",
-      "1.3.5 Identificeer het doel van de input",
-      "1.3.6 Identificeer het doel"
-    ]
-  },
-  {
-    title: "Aanpasbaar",
-    indicatorNummer: "1.4",
-    value: 0.45,
-    indicatorGuidelines: [
-      "1.4.1 Info en relaties",
-      "1.4.2 Betekenisvolle volgorde",
-      "1.4.3 Zintuiglijke eigenschappen",
-      "1.4.4 Weergavestand",
-      "1.4.5 Identificeer het doel van de input",
-      "1.4.6 Identificeer het doel",
-      "1.4.7 Identificeer het doel",
-      "1.4.8 Identificeer het doel"
-    ]
-  },
-  {
-    title: "Aanpasbaar",
-    indicatorNummer: "2.1",
-    value: 0.45,
-    indicatorGuidelines: [
-      "2.1.1 Info en relaties",
-      "2.1.2 Betekenisvolle volgorde",
-      "2.1.3 Zintuiglijke eigenschappen",
-      "2.1.4 Weergavestand",
-      "2.1.5 Identificeer het doel van de input",
-      "2.1.6 Identificeer het doel",
-      "2.1.7 Identificeer het doel"
-    ]
-  },
-  {
-    title: "Aanpasbaar",
-    indicatorNummer: "3.1",
-    value: 0.45,
-    indicatorGuidelines: [
-      "3.1.1 Info en relaties",
-      "3.1.2 Betekenisvolle volgorde",
-      "3.1.3 Zintuiglijke eigenschappen",
-      "3.1.4 Weergavestand",
-      "3.1.5 Identificeer het doel van de input",
-      "3.1.6 Identificeer het doel",
-      "3.1.7 Identificeer het doel"
-    ]
-  },
-  {
-    title: "Aanpasbaar",
-    indicatorNummer: "3.2",
-    value: 0.45,
-    indicatorGuidelines: [
-      "3.2.1 Info en relaties",
-      "3.2.2 Betekenisvolle volgorde",
-      "3.2.3 Zintuiglijke eigenschappen",
-      "3.2.4 Weergavestand",
-      "3.2.5 Identificeer het doel van de input",
-      "3.2.6 Identificeer het doel",
-      "3.2.7 Identificeer het doel"
-    ]
-  },
-  {
-    title: "Aanpasbaar",
-    indicatorNummer: "4.1",
-    value: 0.45,
-    indicatorGuidelines: [
-      "4.1.1 Info en relaties",
-      "4.1.2 Betekenisvolle volgorde",
-      "4.1.3 Zintuiglijke eigenschappen",
-      "4.1.4 Weergavestand"
-    ]
-  },
-  {
-    title: "Aanpasbaar",
-    indicatorNummer: "4.2",
-    value: 0.45,
-    indicatorGuidelines: [
-      "4.2.1 Info en relaties",
-      "4.2.2 Betekenisvolle volgorde",
-      "4.2.3 Zintuiglijke eigenschappen"
-    ]
-  }
-];
+  const GuideLines = 
+  [
+    {
+      title: "Op tijd gebaseerde media",
+      indicatorNummer: "1.2",
+      value: 0.1,
+      indicatorGuidelines: [
+        "1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen)",
+        "1.2.2 Ondertitels voor doven en slechthorenden (vooraf opgenomen)",
+        "1.2.3 Audiodescriptie of media-alternatief (vooraf opgenomen)",
+        "1.2.4 Ondertitels voor doven en slechthorenden (live)",
+        "1.2.5 Audiodescriptie (vooraf opgenomen)",
+        "1.2.6 Gebarentaal (vooraf opgenomen)",
+        "1.2.7 Verlengde audiodescriptie (vooraf opgenomen)",
+        "1.2.8 Media-alternatief (vooraf opgenomen)"
+      ]
+    },
+    {
+      title: "Aanpasbaar",
+      indicatorNummer: "1.3",
+      value: 0.45,
+      indicatorGuidelines: [
+        "1.3.1 Info en relaties",
+        "1.3.2 Betekenisvolle volgorde",
+        "1.3.3 Zintuiglijke eigenschappen",
+        "1.3.4 Weergavestand",
+        "1.3.5 Identificeer het doel van de input",
+        "1.3.6 Identificeer het doel"
+      ]
+    },
+    {
+      title: "Aanpasbaar",
+      indicatorNummer: "1.4",
+      value: 0.45,
+      indicatorGuidelines: [
+        "1.4.1 Info en relaties",
+        "1.4.2 Betekenisvolle volgorde",
+        "1.4.3 Zintuiglijke eigenschappen",
+        "1.4.4 Weergavestand",
+        "1.4.5 Identificeer het doel van de input",
+        "1.4.6 Identificeer het doel",
+        "1.4.7 Identificeer het doel",
+        "1.4.8 Identificeer het doel"
+      ]
+    },
+    {
+      title: "Aanpasbaar",
+      indicatorNummer: "2.1",
+      value: 0.45,
+      indicatorGuidelines: [
+        "2.1.1 Info en relaties",
+        "2.1.2 Betekenisvolle volgorde",
+        "2.1.3 Zintuiglijke eigenschappen",
+        "2.1.4 Weergavestand",
+        "2.1.5 Identificeer het doel van de input",
+        "2.1.6 Identificeer het doel",
+        "2.1.7 Identificeer het doel"
+      ]
+    },
+    {
+      title: "Aanpasbaar",
+      indicatorNummer: "3.1",
+      value: 0.45,
+      indicatorGuidelines: [
+        "3.1.1 Info en relaties",
+        "3.1.2 Betekenisvolle volgorde",
+        "3.1.3 Zintuiglijke eigenschappen",
+        "3.1.4 Weergavestand",
+        "3.1.5 Identificeer het doel van de input",
+        "3.1.6 Identificeer het doel",
+        "3.1.7 Identificeer het doel"
+      ]
+    },
+    {
+      title: "Aanpasbaar",
+      indicatorNummer: "3.2",
+      value: 0.45,
+      indicatorGuidelines: [
+        "3.2.1 Info en relaties",
+        "3.2.2 Betekenisvolle volgorde",
+        "3.2.3 Zintuiglijke eigenschappen",
+        "3.2.4 Weergavestand",
+        "3.2.5 Identificeer het doel van de input",
+        "3.2.6 Identificeer het doel",
+        "3.2.7 Identificeer het doel"
+      ]
+    },
+    {
+      title: "Aanpasbaar",
+      indicatorNummer: "4.1",
+      value: 0.45,
+      indicatorGuidelines: [
+        "4.1.1 Info en relaties",
+        "4.1.2 Betekenisvolle volgorde",
+        "4.1.3 Zintuiglijke eigenschappen",
+        "4.1.4 Weergavestand"
+      ]
+    },
+    {
+      title: "Aanpasbaar",
+      indicatorNummer: "4.2",
+      value: 0.45,
+      indicatorGuidelines: [
+        "4.2.1 Info en relaties",
+        "4.2.2 Betekenisvolle volgorde",
+        "4.2.3 Zintuiglijke eigenschappen"
+      ]
+    }
+  ];
 </script>
 
 <section class="guideline-wrapper">
-{#each GuideLines as guide}
-<article>
-  <section>
-    <div>
-      <h2>{guide.title}</h2>
-      <p>{guide.indicatorNummer}</p>
-      <IconLibrary name="eye" />
-    </div>
-    <meter class={meterClass} value={guide.value} max="1" high=".75" low=".25"></meter> <!-- Gebruik guide.value hier -->
-  </section>
+  {#each GuideLines as guide}
+    <article>
+      <section>
+        <div>
+          <h2>{guide.title}</h2>
+          <p>{guide.indicatorNummer}</p>
+          <IconLibrary name="eye" />
+        </div>
+        <meter class={meterClass} value={guide.value} max="1" high=".75" low=".25"></meter> <!-- Gebruik guide.value hier -->
+      </section>
 
   <section>
     {#each guide.indicatorGuidelines as guideline}
@@ -221,6 +220,7 @@
 </article>
 {/each}
 </section>
+
 <style>
   .guideline-wrapper {
     display: block;

@@ -64,8 +64,9 @@
 
     @media (max-width: 1600px) {
       height: fit-content;
-      background-color: transparent;
-      box-shadow: unset;
+      background-color: var(--color-background-section);
+      box-shadow: var(--box-shadow);
+      z-index: 1;
     }
   }
 
