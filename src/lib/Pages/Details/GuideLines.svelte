@@ -242,6 +242,10 @@
     display: flex;
     justify-content: space-between;
     border-bottom: solid 1px var(--color-shadow);
+    @media (max-width: 700px){
+      flex-direction: column;
+      border-bottom: none;
+    }
   }
 
   article > section:first-child > div {
@@ -366,6 +370,11 @@
     text-decoration: none;
     cursor: pointer;
     font-size: var(--font-size-small);
+    white-space: nowrap;       
+    overflow: hidden;          
+    text-overflow: ellipsis;    
+    display: block;             
+    max-width: 100%;     
   }
 
   details a:hover {
@@ -374,6 +383,10 @@
 
   article section:last-child details .extended-details {
     padding: 0 110px 0 0;
+
+    @media (max-width: 700px) {
+      padding: unset;
+    }
   }
 
   .extended-details > p {
@@ -383,11 +396,22 @@
 
   .extended-details ul {
     display: flex;
+
+    @media (max-width: 700px) {
+      flex-direction: column;
+    }
   }
 
   .extended-details ul li {
     list-style: none;
     width: 50%;
+    @media (max-width: 700px) {
+      width: 100%;
+    }
+  }
+
+  .extended-details ul > li{
+    margin-bottom: var(--average-padding);
   }
 
   .extended-details ul li div {
@@ -405,6 +429,9 @@
   .extended-details ol {
     padding-left: var(--average-padding);
     width: 100%;
+    @media (max-width: 700px){
+      padding-left: unset;
+    }
   }
 
   .extended-details ol li {
