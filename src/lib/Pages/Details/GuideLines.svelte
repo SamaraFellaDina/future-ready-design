@@ -127,22 +127,22 @@
   {#each GuideLines as guide}
     <article>
       <section>
-        <span>
+        <div>
           <h2>{guide.title}</h2>
           <p>{guide.indicatorNummer}</p>
           <IconLibrary name="eye" />
-        </span>
-        <meter class={meterClass} value={guide.value} low="50" high="99" optimum="100" max="100" name={guide.value}></meter>
+        </div>
+        <meter class={meterClass} value={guide.value} low="50" high="99" optimum="100" max="100"></meter>
       </section>
 
   <section>
     {#each guide.indicatorGuidelines as guideline}
     <details>
       <summary>
-        <div>
+        <span>
           <span>{guideline}</span>
           <IconLibrary name="warning" />
-        </div>
+        </span>
         <label>
           <input type="checkbox" aria-label="fixed indicator" />
         </label>
@@ -244,13 +244,13 @@
     border-bottom: solid 1px var(--color-shadow);
   }
 
-  article > section:first-child > span {
+  article > section:first-child > div {
     display: flex;
     padding-bottom: var(--average-padding);
     gap: var(--average-gap);
   }
 
-  :global(article > section:first-child > span svg),
+  :global(article > section:first-child > div svg),
   :global(details summary svg) {
     transform: translateY(2px);
   }
