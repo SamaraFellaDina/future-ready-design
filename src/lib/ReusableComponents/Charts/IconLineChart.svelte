@@ -98,6 +98,10 @@
     animation: growHeight 1s ease-out forwards;
     height: 0;
     --final-height: 100%;
+    @media (prefers-reduced-motion) {
+      animation: none;
+      height: var(--final-height);
+    }
   }
   
   li > div:nth-of-type(1) {
