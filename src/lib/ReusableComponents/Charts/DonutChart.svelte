@@ -14,7 +14,6 @@
 
 <style>
   .meter {
-    /* You can overwrite these properties with your own values or defaults */
     --_v: var(--value, 0);
     --_w: var(--width, 150px);
     --_b: var(--bar, 15px);
@@ -46,15 +45,10 @@
   }
 
   .meter meter {
-    /* Make sure meter and number are positioned on top of each other */
     grid-area: 1 / 1;
-
-    /* Make a circle */
     width: var(--_w);
     height: var(--_w);
     border-radius: 50%;
-
-    /* Some background stuff */
     background-image:
       radial-gradient(var(--_b) circle
         at 50% calc(var(--_b) / 2),
@@ -64,8 +58,6 @@
         calc(50% - ((50% - var(--_b) / 2) * cos(var(--_v) * 3.6deg))),
         var(--_fg) 50%, transparent 0),
       conic-gradient(var(--_fg) calc(var(--_v) * 3.6deg), var(--_bg) 0);
-
-    /* Cut a hole in the center, so you don't see the entire conic gradient */
     mask-image: radial-gradient(closest-side, transparent calc((var(--_w) / 2) - var(--_b)), red 0);
     @starting-style {
       --_v: 0;
@@ -93,25 +85,18 @@
     --_cv: var(--_v);
     counter-set: v var(--_cv);
     content: counter(v) '%';
-
-    /* Make sure meter and number are positioned on top of each other */
     grid-area: 1 / 1;
-
-    /* Make the font scale a bit */
     font-size: var(--font-size-large);
     font-weight: var(--font-weight-bold);
-    /* Use the donut color */
     color: var(--regular-text-color);
   }
 
-  /* Used to transition the donut chart */
   @property --_v {
     syntax: '<integer>';
     inherits: true;
     initial-value: 0;
   }
 
-  /* Used to animate the generated content */
   @property --_cv {
     syntax: '<integer>';
     inherits: false;

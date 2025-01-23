@@ -12,8 +12,8 @@
 
   main {
     margin: 0 auto;
-    padding: var(--average-padding);
     max-width: var(--page-width);
+    padding: 30px 10px;
     gap: var(--average-gap);
     display: flex;
     flex-direction: column;
