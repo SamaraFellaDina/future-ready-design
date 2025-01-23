@@ -39,9 +39,6 @@
       cleanedUrl = cleanedUrl.replace(part, "");
     });
 
-    if (cleanedUrl.length > 10) {
-      return cleanedUrl.substring(0, 15) + '...'
-    }
     return cleanedUrl;
   }; 
 </script>
@@ -50,17 +47,19 @@
   {#each resultList as {url, title, percentage, grade, status}}
   <li>
     <a href="nieuwekijk/overzicht">
-    <IconLibrary name='home-icon' width=30 height=30/>
     <div>
-      <section>
-        <h2>{title}</h2>
-        <p aria-label="gecontroleerde pagina van:{url}">{filterUrlCheck(url)}</p>
-      </section>
-        <WarningSign grade={grade}>
-          <p>{status}</p>
-        </WarningSign>
+      <IconLibrary name='home-icon' width=30 height=30/>
+      <div>
+        <section>
+          <h2>{title}</h2>
+          <p>{filterUrlCheck(url)}</p>
+        </section>
+          <WarningSign grade={grade}>
+            <p>{status}</p>
+          </WarningSign>
+      </div>
     </div>
-    <DonutChart percentage={percentage}/>
+      <DonutChart percentage={percentage}/>
     </a>
   </li>
   {/each}
@@ -74,7 +73,7 @@ ul {
     gap: var(--average-gap);
     list-style: none;
     
-    @media (min-width: 900px) {
+    @media (min-width: 1200px) {
       grid-template-columns: 50% 50%;
     }
   }
@@ -84,14 +83,18 @@ ul {
     padding: var(--average-padding);
     box-shadow: var(--box-shadow);
     display: grid;
-    grid-template-columns: 0.2fr 0.5fr 0.3fr;
+    grid-template-columns: .8fr .2fr;
     justify-content: space-between;
-    gap: var(--average-gap);
     transition: 0.3s;
 
 
     @media (min-width: 900px) {
-      grid-template-columns: 0.2fr 1fr 0.3fr;
+    }
+
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
   }
   ul li a:visited,
@@ -105,17 +108,21 @@ ul {
 
   ul li a div {
     display: flex;
+    gap: var(--average-gap);
+  }
+  ul li a div div{
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  ul li a div section p {
-    font-size: var(--font-size-small);
+  ul li a div div section p {
+    font-size: var(--font-size-regular);
   }
 
-  ul li a div section h2 {
+  ul li a div div section h2 {
     line-height: 1em;
-    font-size: var(--font-size-medium);
+    font-size: var(--font-size-large);
 
     @media (min-width: 600px) {
       font-size: var(--font-size-large);
@@ -128,6 +135,6 @@ ul {
     @media (min-width: 1000px) {
       font-size: var(--font-size-large);
     }
-  }
+  } 
 
 </style>
