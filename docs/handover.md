@@ -1,13 +1,12 @@
 # handover
 
 ## inhoud
-- intro
-- Q&A
-  - Wat is de huidige status van dit project?
-  - Wat zijn de belangrijkste features die al werken?
-  - Wat zijn de grootste aandachtspunten of uitdagingen?
-  - Wat wordt aangeraden als eerste stap voor het volgende team?
-- Relevante bronnen 
+- [intro](https://github.com/SamaraFellaDina/future-ready-design/blob/sammy-release-candidate/docs/handover.md#intro)
+- [Q&A](https://github.com/SamaraFellaDina/future-ready-design/blob/sammy-release-candidate/docs/handover.md#qa)
+  - [Wat is de huidige status van dit project?](https://github.com/SamaraFellaDina/future-ready-design/blob/sammy-release-candidate/docs/handover.md#wat-is-de-huidige-status-van-dit-project)
+  - [Wat zijn de belangrijkste features die al werken?](https://github.com/SamaraFellaDina/future-ready-design/blob/sammy-release-candidate/docs/handover.md#wat-zijn-de-belangrijkste-features-die-al-werken)
+  - [Wat zijn de grootste aandachtspunten of uitdagingen?](https://github.com/SamaraFellaDina/future-ready-design/blob/sammy-release-candidate/docs/handover.md#wat-zijn-de-grootste-aandachtspunten-of-uitdagingen)
+  - [Wat wordt aangeraden als eerste stap voor het volgende team?](https://github.com/SamaraFellaDina/future-ready-design/blob/sammy-release-candidate/docs/handover.md#wat-wordt-aangeraden-als-eerste-stap-voor-het-volgende-team)
 
 ## Intro
 Hi! leuk dat je mee wilt werken aan dit project! Wij (@SamaraFellaDina , @J3SS3HVA , @Khdulkadir ) hebben voormalig aan dit project gewerkt. In dit document gaan wij langs de verschillende onderwerpen die relevant zijn voor dit project. 
