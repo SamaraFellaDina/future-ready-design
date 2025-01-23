@@ -135,90 +135,90 @@
         <meter class={meterClass} value={guide.value} low="50" high="99" optimum="100" max="100"></meter>
       </section>
 
-  <section>
-    {#each guide.indicatorGuidelines as guideline}
-    <details>
-      <summary>
-        <span>
-          <span>{guideline}</span>
-          <IconLibrary name="warning" />
-        </span>
-        <label>
-          <input type="checkbox" aria-label="fixed indicator" />
-        </label>
-      </summary>
-      <a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html">
-        https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html
-      </a>
-      <div class="extended-details">
-        <p>Alle inhoud moet als tekst zijn beschreven. Tekst kan zoals visueel,
-          auditief en tactiel worden weergegeven. Informatie kan hierdoor
-          gepresenteerd worden in een vorm die het beste aansluit bij de
-          behoeften van gebruikers.
-        </p>
-        <ul>
-          <li>
-            <div>
-              <IconLibrary name="heart" />
-              <h3>impact op gebruiker</h3>
-            </div>
-            <p>
-              Mensen met visuele beperkingen kunnen moeite hebben met het
-              begrijpen van de inhoud, aangezien schermlezers de niet-tekstuele
-              inhoud niet kunnen interpreteren.
+      <section>
+        {#each guide.indicatorGuidelines as guideline}
+        <details>
+          <summary>
+            <span>
+              <span>{guideline}</span>
+              <IconLibrary name="warning" />
+            </span>
+            <label>
+              <input type="checkbox" aria-label="fixed indicator" />
+            </label>
+          </summary>
+          <a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html">
+            https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html
+          </a>
+          <div class="extended-details">
+            <p>Alle inhoud moet als tekst zijn beschreven. Tekst kan zoals visueel,
+              auditief en tactiel worden weergegeven. Informatie kan hierdoor
+              gepresenteerd worden in een vorm die het beste aansluit bij de
+              behoeften van gebruikers.
             </p>
-          </li>
-          <li>
-            <div>
-              <IconLibrary name="beaker" />
-              <h3>hoe te testen</h3>
-            </div>
-            <ol>
+            <ul>
               <li>
+                <div>
+                  <IconLibrary name="heart" />
+                  <h3>impact op gebruiker</h3>
+                </div>
                 <p>
-                  1. Open website in browser.
+                  Mensen met visuele beperkingen kunnen moeite hebben met het
+                  begrijpen van de inhoud, aangezien schermlezers de niet-tekstuele
+                  inhoud niet kunnen interpreteren.
                 </p>
               </li>
               <li>
-                <p>
-                  2. Rechtermuis klik, selecteer "Inspecteer" of "Bron
-                  bekijken".
-                </p>
+                <div>
+                  <IconLibrary name="beaker" />
+                  <h3>hoe te testen</h3>
+                </div>
+                <ol>
+                  <li>
+                    <p>
+                      1. Open website in browser.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      2. Rechtermuis klik, selecteer "Inspecteer" of "Bron
+                      bekijken".
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      3. Zoek naar img, video tags in de html code.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      4. Controleer of alt of aria-label attributen aanwezig zijn.
+                    </p>
+                  </li>
+                </ol>
               </li>
-              <li>
-                <p>
-                  3. Zoek naar img, video tags in de html code.
-                </p>
-              </li>
-              <li>
-                <p>
-                  4. Controleer of alt of aria-label attributen aanwezig zijn.
-                </p>
-              </li>
-            </ol>
-          </li>
-        </ul>
+            </ul>
 
-        <section>
-          <h3>Hoe kun je dit oplossen</h3>
-          <p>
-            <b>Voeg alternatieve tekst toe</b> (criterium 1.1.1)
-          </p>
-          <p>
-            Zorg dat er alternatieve tekst beschikbaar is voor alle inhoud
-            zonder tekst. Dat zijn onder andere afbeeldingen, icoontjes en
-            grafieken. Beschrijf wat er te zien is. Mensen die blind zijn laten
-            deze beschrijving voorlezen via hun schermlezer. Alternatieve tekst
-            kan ook handig zijn voor iedereen die twijfelt over de betekenis van
-            de inhoud.
-          </p>
-        </section>
-      </div>
-    </details>
-    {/each}
-  </section>
-</article>
-{/each}
+            <section>
+              <h3>Hoe kun je dit oplossen</h3>
+              <p>
+                <b>Voeg alternatieve tekst toe</b> (criterium 1.1.1)
+              </p>
+              <p>
+                Zorg dat er alternatieve tekst beschikbaar is voor alle inhoud
+                zonder tekst. Dat zijn onder andere afbeeldingen, icoontjes en
+                grafieken. Beschrijf wat er te zien is. Mensen die blind zijn laten
+                deze beschrijving voorlezen via hun schermlezer. Alternatieve tekst
+                kan ook handig zijn voor iedereen die twijfelt over de betekenis van
+                de inhoud.
+              </p>
+            </section>
+          </div>
+        </details>
+        {/each}
+      </section>
+    </article>
+  {/each}
 </section>
 
 <style>
