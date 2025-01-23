@@ -24,10 +24,8 @@
     margin-left: 300px;
     max-width: var(--page-width);
     margin: 0 auto;
-  }
 
-  @media only screen and (min-width: 700px) and (max-width: 1440px) {
-    main {
+    @media (min-width: 700px) and (max-width: 1440px) {
       padding-left: 70px;
     }
   }
