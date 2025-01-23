@@ -39,9 +39,6 @@
       cleanedUrl = cleanedUrl.replace(part, "");
     });
 
-    // if (cleanedUrl.length > 10) {
-    //   return cleanedUrl.substring(0, 15) + '...'
-    // }
     return cleanedUrl;
   }; 
 </script>
@@ -61,9 +58,8 @@
             <p>{status}</p>
           </WarningSign>
       </div>
-
     </div>
-    <DonutChart percentage={percentage}/>
+      <DonutChart percentage={percentage}/>
     </a>
   </li>
   {/each}
@@ -128,7 +124,7 @@ ul {
     line-height: 1em;
     font-size: var(--font-size-large);
 
-    /* @media (min-width: 600px) {
+    @media (min-width: 600px) {
       font-size: var(--font-size-large);
     }
 
@@ -138,7 +134,7 @@ ul {
 
     @media (min-width: 1000px) {
       font-size: var(--font-size-large);
-    } */
-  }
+    }
+  } 
 
 </style>
