@@ -124,37 +124,30 @@
     align-self: flex-end;
   }
 
-  /* Show when both #voldoet and #voldoet-niet are checked */
   :global(main:has(#voldoet:checked):has(#voldoet-niet:checked) li.filter-results) {
     display: initial;
   }
 
-  /* Show when #voldoet is checked, and it's not hidden by .voldoet */
   :global(main:has(#voldoet:checked):not(:has(#voldoet-niet:checked)) li.filter-results:not(.voldoet)) {
     display: none;
   }
 
-  /* Show when #voldoet-niet is checked, and it's not hidden by .voldoet-niet */
   :global(main:has(#voldoet-niet:checked):not(:has(#voldoet:checked)) li.filter-results:not(.voldoet-niet)) {
     display: none;
   }
 
-  /* Show when #a is checked and not hidden by .a */
   :global(main:has(#a:checked) li.filter-results:not(.a)) {
     display: none;
   }
 
-  /* Show when #aa is checked and not hidden by .aa */
   :global(main:has(#aa:checked) li.filter-results:not(.aa)) {
     display: none;
   }
 
-  /* Show when #aaa is checked and not hidden by .aaa */
   :global(main:has(#aaa:checked) li.filter-results:not(.aaa)) {
     display: none;
   }
 
-  /* Show when any of the checkboxes is checked */
   :global(main:has(#voldoet:checked) li.filter-results.voldoet,
           main:has(#voldoet-niet:checked) li.filter-results.voldoet-niet,
           main:has(#a:checked) li.filter-results.a,

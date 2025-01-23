@@ -5,7 +5,7 @@
   let percentage;
 
   $:{
-    percentage = result.score; // Reactief maken
+    percentage = result.score;
   } 
 </script>
 
