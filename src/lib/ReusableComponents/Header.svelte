@@ -70,21 +70,22 @@
 </header>
 
 <style>
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  z-index: 999;
-  padding: 1em;
-  background-color: black;
-  color: white;
-  opacity: 0;
-}
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: black;
+    color: white;
+    opacity: 0;
+  }
 
-.skip-link:focus {
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 1;
-}
+  .skip-link:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+
   nav {
     position: fixed;
     background-color: var(--color-background-section);
@@ -95,7 +96,7 @@
     gap: 50px;
     box-shadow: var(--box-shadow);
     transition: 0.5s;
-    z-index: 1;
+    z-index: 2;
     width: 280px;
     overflow-y: auto;
     
@@ -149,7 +150,7 @@
     position: fixed;
     top: 20px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
     left: 240px;
     transition: 0.5s;
     width: min-content;

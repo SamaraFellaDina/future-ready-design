@@ -1,10 +1,9 @@
 <script>
   import { IconLibrary } from "$lib";
 
-  let value = 0.5; 
+  let value = ""; 
   let meterClass = ""; 
 
-  $: {
     if (value <= 0.5) {
       meterClass = "meter-red";
     } else if (value <= 0.7) {
@@ -14,23 +13,136 @@
     } else {
       meterClass = "meter-green";
     }
-  }
+  
+  const GuideLines = 
+  [
+    {
+      title: "Op tijd gebaseerde media",
+      indicatorNummer: "1.2",
+      value: 0.1,
+      indicatorGuidelines: [
+        "1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen)",
+        "1.2.2 Ondertitels voor doven en slechthorenden (vooraf opgenomen)",
+        "1.2.3 Audiodescriptie of media-alternatief (vooraf opgenomen)",
+        "1.2.4 Ondertitels voor doven en slechthorenden (live)",
+        "1.2.5 Audiodescriptie (vooraf opgenomen)",
+        "1.2.6 Gebarentaal (vooraf opgenomen)",
+        "1.2.7 Verlengde audiodescriptie (vooraf opgenomen)",
+        "1.2.8 Media-alternatief (vooraf opgenomen)"
+      ]
+    },
+    {
+      title: "Aanpasbaar",
+      indicatorNummer: "1.3",
+      value: 0.45,
+      indicatorGuidelines: [
+        "1.3.1 Info en relaties",
+        "1.3.2 Betekenisvolle volgorde",
+        "1.3.3 Zintuiglijke eigenschappen",
+        "1.3.4 Weergavestand",
+        "1.3.5 Identificeer het doel van de input",
+        "1.3.6 Identificeer het doel"
+      ]
+    },
+    {
+      title: "Aanpasbaar",
+      indicatorNummer: "1.4",
+      value: 0.45,
+      indicatorGuidelines: [
+        "1.4.1 Info en relaties",
+        "1.4.2 Betekenisvolle volgorde",
+        "1.4.3 Zintuiglijke eigenschappen",
+        "1.4.4 Weergavestand",
+        "1.4.5 Identificeer het doel van de input",
+        "1.4.6 Identificeer het doel",
+        "1.4.7 Identificeer het doel",
+        "1.4.8 Identificeer het doel"
+      ]
+    },
+    {
+      title: "Aanpasbaar",
+      indicatorNummer: "2.1",
+      value: 0.45,
+      indicatorGuidelines: [
+        "2.1.1 Info en relaties",
+        "2.1.2 Betekenisvolle volgorde",
+        "2.1.3 Zintuiglijke eigenschappen",
+        "2.1.4 Weergavestand",
+        "2.1.5 Identificeer het doel van de input",
+        "2.1.6 Identificeer het doel",
+        "2.1.7 Identificeer het doel"
+      ]
+    },
+    {
+      title: "Aanpasbaar",
+      indicatorNummer: "3.1",
+      value: 0.45,
+      indicatorGuidelines: [
+        "3.1.1 Info en relaties",
+        "3.1.2 Betekenisvolle volgorde",
+        "3.1.3 Zintuiglijke eigenschappen",
+        "3.1.4 Weergavestand",
+        "3.1.5 Identificeer het doel van de input",
+        "3.1.6 Identificeer het doel",
+        "3.1.7 Identificeer het doel"
+      ]
+    },
+    {
+      title: "Aanpasbaar",
+      indicatorNummer: "3.2",
+      value: 0.45,
+      indicatorGuidelines: [
+        "3.2.1 Info en relaties",
+        "3.2.2 Betekenisvolle volgorde",
+        "3.2.3 Zintuiglijke eigenschappen",
+        "3.2.4 Weergavestand",
+        "3.2.5 Identificeer het doel van de input",
+        "3.2.6 Identificeer het doel",
+        "3.2.7 Identificeer het doel"
+      ]
+    },
+    {
+      title: "Aanpasbaar",
+      indicatorNummer: "4.1",
+      value: 0.45,
+      indicatorGuidelines: [
+        "4.1.1 Info en relaties",
+        "4.1.2 Betekenisvolle volgorde",
+        "4.1.3 Zintuiglijke eigenschappen",
+        "4.1.4 Weergavestand"
+      ]
+    },
+    {
+      title: "Aanpasbaar",
+      indicatorNummer: "4.2",
+      value: 0.45,
+      indicatorGuidelines: [
+        "4.2.1 Info en relaties",
+        "4.2.2 Betekenisvolle volgorde",
+        "4.2.3 Zintuiglijke eigenschappen"
+      ]
+    }
+  ];
 </script>
 
-<article>
+<section class="guideline-wrapper">
+  {#each GuideLines as guide}
+    <article>
+      <section>
+        <div>
+          <h2>{guide.title}</h2>
+          <p>{guide.indicatorNummer}</p>
+          <IconLibrary name="eye" />
+        </div>
+        <meter class={meterClass} value={guide.value} max="1" high=".75" low=".25"></meter> <!-- Gebruik guide.value hier -->
+      </section>
+
   <section>
-    <div>
-      <h2>Tekstalternatieven</h2>
-      <p>richtlijn 1.1</p>
-      <IconLibrary name="eye" />
-    </div>
-    <meter class={meterClass} {value} max="1" high=".75" low=".25"></meter>
-  </section>
-  <section>
-    <details open>
+    {#each guide.indicatorGuidelines as guideline}
+    <details>
       <summary>
         <div>
-          <span>1.1.1 Niet-tekstuele content</span>
+          <span>{guideline}</span>
           <IconLibrary name="warning" />
         </div>
         <input type="checkbox" />
@@ -39,8 +151,7 @@
         https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html
       </a>
       <div class="extended-details">
-        <p>
-          Alle inhoud moet als tekst zijn beschreven. Tekst kan zoals visueel,
+        <p>Alle inhoud moet als tekst zijn beschreven. Tekst kan zoals visueel,
           auditief en tactiel worden weergegeven. Informatie kan hierdoor
           gepresenteerd worden in een vorm die het beste aansluit bij de
           behoeften van gebruikers.
@@ -63,14 +174,22 @@
               <h3>hoe te testen</h3>
             </div>
             <ol>
-              <li><p>1. Open website in browser.</p></li>
+              <li>
+                <p>
+                  1. Open website in browser.
+                </p>
+              </li>
               <li>
                 <p>
                   2. Rechtermuis klik, selecteer "Inspecteer" of "Bron
                   bekijken".
                 </p>
               </li>
-              <li><p>3. Zoek naar img, video tags in de html code.</p></li>
+              <li>
+                <p>
+                  3. Zoek naar img, video tags in de html code.
+                </p>
+              </li>
               <li>
                 <p>
                   4. Controleer of alt of aria-label attributen aanwezig zijn.
@@ -79,9 +198,12 @@
             </ol>
           </li>
         </ul>
+
         <section>
           <h3>Hoe kun je dit oplossen</h3>
-          <p><b>Voeg alternatieve tekst toe</b> (criterium 1.1.1)</p>
+          <p>
+            <b>Voeg alternatieve tekst toe</b> (criterium 1.1.1)
+          </p>
           <p>
             Zorg dat er alternatieve tekst beschikbaar is voor alle inhoud
             zonder tekst. Dat zijn onder andere afbeeldingen, icoontjes en
@@ -93,37 +215,47 @@
         </section>
       </div>
     </details>
+    {/each}
   </section>
 </article>
+{/each}
+</section>
 
 <style>
- article {
-  --average-padding: 20px;
-  --average-margin: 20px;
-  ---average-gap: 5px;
+  .guideline-wrapper {
+    display: block;
+    grid-area: 3 / 1 / 4 / 3;
+  }
+  
+  article {
+    --average-padding: 20px;
+    --average-margin: 20px;
+    ---average-gap: 5px;
     border-radius: var(--section-border-radius);
     box-shadow: var(--box-shadow);
     padding: 40px;
     background-color: var(--color-background-section);
+    margin-bottom: var(--average-margin);
   }
 
- article > section:first-child {
+  article > section:first-child {
     display: flex;
     justify-content: space-between;
-    border-bottom: solid 1px var(--color-border);
+    border-bottom: solid 1px var(--color-shadow);
   }
 
- article > section:first-child div {
+  article > section:first-child div {
     display: flex;
     padding-bottom: var(--average-padding);
     gap: var(---average-gap);
   }
 
-  :global(article > section:first-child div svg), :global(details summary svg){
+  :global(article > section:first-child div svg),
+  :global(details summary svg) {
     transform: translateY(2px);
   }
 
- article > section meter {
+  article > section meter {
     height: 30px;
     width: 200px;
   }
@@ -156,8 +288,17 @@
     background: var(--color-status-good-border);
   }
 
- article section:last-child{
+  article section:last-child {
     padding-top: var(--average-padding);
+  }
+
+  details:nth-child(1) {
+    padding-top: 0;
+  }
+
+  details {
+    padding: var(--average-padding) 0;
+    border-bottom: solid 1px var(--color-shadow);
   }
 
   details summary {
@@ -186,7 +327,7 @@
     gap: var(---average-gap);
   }
 
-  details summary span{
+  details summary span {
     font-weight: var(--font-weight-bold);
   }
 
@@ -226,7 +367,7 @@
     color: var(--color-primary);
   }
 
- article section:last-child details .extended-details {
+  article section:last-child details .extended-details {
     padding: 0 110px 0 0;
   }
 
@@ -271,7 +412,8 @@
     border-radius: var(--section-border-radius);
     border: var(--color-primary) 2px solid;
     background-color: var(--color-primary-highlight);
-    padding: var(--average-padding) var(--average-padding) 40px var(--average-padding);
+    padding: var(--average-padding) var(--average-padding) 40px
+      var(--average-padding);
   }
 
   details div:last-child section h3 {

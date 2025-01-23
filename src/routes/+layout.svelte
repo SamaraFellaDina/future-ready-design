@@ -13,7 +13,7 @@
   :global(:root) {
     /* fonts */
     --font-family: 'Outfit', arial, sans-serif;
-    --font-weight-thin: 100;
+    --font-weight-thin: 400;
     --font-weight-bold: 700;
 
     /* font-sizes */
@@ -24,7 +24,7 @@
     --font-size-xlarge: 32px;
 
     /* colors */
-    --color-primary: #0275FF;
+    --color-primary: #4A4FF2;
     --color-primary-highlight: #D5E8FF;
 
     --color-regular-text: #5D666A;
@@ -34,10 +34,10 @@
     --color-border:#5D666A;
 
     /* colors for grading */
-    --color-status-good:#00800070;
-    --color-status-decent:#0274ff5b;
-    --color-status-fine:#ffa60053;
-    --color-status-bad:#ff00004a;
+    --color-status-good:#0080002a;
+    --color-status-decent:#0274ff39;
+    --color-status-fine:#ffa60032;
+    --color-status-bad:#ff000025;
     --color-status-good-border:green;
     --color-status-decent-border:var(--color-primary);
     --color-status-fine-border:orange;
@@ -49,5 +49,6 @@
     --box-shadow: 0px 0px 9px -2px var(--color-shadow);
     --box-shadow-hover: 0px 0px 9px 5px var(--color-shadow);
     --section-border-radius: 8px;  
+    --main-width: 1300px;
   }
 </style>
