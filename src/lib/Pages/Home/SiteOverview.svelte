@@ -87,7 +87,6 @@ ul {
     justify-content: space-between;
     transition: 0.3s;
 
-
     @media (min-width: 900px) {
     }
 
