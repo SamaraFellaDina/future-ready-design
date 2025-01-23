@@ -53,9 +53,9 @@ Dit zijn een aantal testen die wij vooraf hebben gedaan om het zo optimaal mogel
   * beveilig deze data met een `.env`
   * maak een duidelijke flow in data. 
 * Nadat wij verschillende testen hadden gedaan, kwamen wij erachter dat de ui niet helemaal fijn mee te werken valt. Wij hebben met de opdrachtgever al besproken hoe dit unieker gemaakt kan worden. Maar denk na over een manier hoe dit meer eigen kan worden
-  * zie de #196 
+  * zie de [sprint review](https://github.com/SamaraFellaDina/future-ready-design/issues/196)
   * ook hebben we met een aantal mensen die bekend zijn in het veld, besproken over wat de website nodig heeft
-    *  https://github.com/SamaraFellaDina/future-ready-design/issues/195
-    * https://github.com/SamaraFellaDina/future-ready-design/issues/194
-    * https://github.com/SamaraFellaDina/future-ready-design/issues/193
-    * https://github.com/SamaraFellaDina/future-ready-design/issues/192
+  * [feedback van Charley](https://github.com/SamaraFellaDina/future-ready-design/issues/195)
+  * [Feedback from Susan](https://github.com/SamaraFellaDina/future-ready-design/issues/194)
+  * [Feedback from Julia](https://github.com/SamaraFellaDina/future-ready-design/issues/193)
+  * [feedback from Cyd](https://github.com/SamaraFellaDina/future-ready-design/issues/192)
