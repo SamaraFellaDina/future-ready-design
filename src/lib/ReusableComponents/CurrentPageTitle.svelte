@@ -21,7 +21,7 @@
 <style>
   section {
     padding-top: var(--average-padding);
-    grid-area: 1 / 1 / 2 / 3;
+    grid-area: 1 / 1 / 2 / -1;
     display: flex;
     justify-content: space-between;
     
