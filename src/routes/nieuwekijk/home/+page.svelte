@@ -38,15 +38,12 @@
     gap: 20px;  
     margin: 0 auto;
     padding: 30px 10px;
-    max-width: 1100px;
+    max-width: var(--page-width);
   }
 
   @media only screen and (max-width: 1600px) {
     main {
       max-width: 900px;
-      }
-
-    main {
       display: flex;
       flex-direction: column;
     }

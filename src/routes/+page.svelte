@@ -12,7 +12,7 @@
   main {
     margin: 0 auto;
     padding: var(--average-padding);
-    max-width: 1300px;
+    max-width: var(--page-width);
 
     @media (max-width: 1600px) {
       display: flex;

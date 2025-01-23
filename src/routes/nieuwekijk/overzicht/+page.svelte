@@ -24,7 +24,7 @@
     gap: var(--average-gap);
     padding: 30px 10px;
     margin-left: 300px;
-    max-width: 1300px;
+    max-width: var(--page-width);
     margin: 0 auto;
   }
 
