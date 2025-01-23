@@ -64,6 +64,7 @@
     display: flex;
     gap: var(--average-gap);
     align-items: center;
+    flex-wrap: wrap;
   }
 
   ul {

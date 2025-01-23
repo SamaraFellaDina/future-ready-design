@@ -63,7 +63,7 @@
     {/if}
   </div>
   {#if currentPage === "/nieuwekijk/home/details"}
-    <a href="/nieuwekijk/home"><WarningSign>
+    <a class="more-details-link" href="/nieuwekijk/home"><WarningSign>
       <p>Bekijk scandetails</p>
       </WarningSign>
     </a>
@@ -93,11 +93,11 @@
     gap: 10px;
   }
 
-  section  a{
+  section a.more-details-link{
     justify-content: end;
   }
 
-  section a:hover {
+  section a.more-details-link:hover {
     text-decoration: none;
   }
 

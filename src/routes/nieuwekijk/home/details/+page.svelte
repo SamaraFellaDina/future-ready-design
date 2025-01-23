@@ -1,11 +1,10 @@
 <script>
   import { CurrentPageTitle, AccessibillityScore, ScanResult, GuideLines, Filter } from "$lib";
   export let data = data;
-  export let company = data.sites;
 </script>
 
 <main id="main-content">
-  <CurrentPageTitle {company} />
+  <CurrentPageTitle />
   <div>
     <AccessibillityScore />
     <ScanResult />
@@ -20,7 +19,7 @@
     gap: 20px;
     margin: 0 auto;
     padding: 30px 10px;
-    max-width: var(--main-width);
+    max-width: var(--page-width);
 
     @media (max-width: 1600px) {
       max-width: 900px;
