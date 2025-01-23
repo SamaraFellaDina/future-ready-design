@@ -1,11 +1,10 @@
 <script>
   import { CurrentPageTitle, AccessibillityScore, ScanResult, GuideLines, Filter } from "$lib";
   export let data = data;
-  export let company = data.sites;
 </script>
 
 <main id="main-content">
-  <CurrentPageTitle {company} />
+  <CurrentPageTitle />
   <div>
     <AccessibillityScore />
     <ScanResult />

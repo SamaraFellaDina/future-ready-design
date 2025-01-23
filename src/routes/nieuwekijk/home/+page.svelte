@@ -1,7 +1,6 @@
 <script>
   import { CurrentPageTitle, YearlyResultLineChart, ScanResultPage, ErrorList, TypeChart } from '$lib';
   export let data = data;
-  export let company = data.sites;
   export let resultsheet = data.scans;
 
   let index = 0;
@@ -23,7 +22,7 @@
 </script>
 
 <main id="main-content">
-  <CurrentPageTitle {company} {nextMonth} {previousMonth} />
+  <CurrentPageTitle {nextMonth} {previousMonth} />
   <ScanResultPage {result} />
   <ErrorList {result} />
   <TypeChart {result} />
