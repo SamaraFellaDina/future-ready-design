@@ -46,16 +46,20 @@
     flex-direction: column;
     row-gap: var(--average-gap);
 
-    @media (max-width: 700px) {
-      grid-template-columns: 1fr 1fr;
-    };
-
     @media (max-width: 1600px) {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr;
       gap: 20px;
     }
+
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr 1fr;
+    };
+
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr;
+    };
   }
 
   li {

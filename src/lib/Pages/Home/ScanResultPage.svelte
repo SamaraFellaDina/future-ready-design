@@ -25,11 +25,10 @@
     padding: var(--average-padding);
     grid-area: 2 / 1 / 3 / 2;
     display: flex;
-    gap: 1em;
+    gap: var(--average-gap);
     
     @media (max-width: 700px) {
       flex-direction: column;
-      gap: 0;
     }
   }
 
