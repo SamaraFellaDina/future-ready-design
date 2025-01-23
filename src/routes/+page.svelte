@@ -3,7 +3,7 @@
   export let data = data;
 </script>
 
-<main>
+<main id="main-content">
   <SiteOverview {data}/>
 </main>
 

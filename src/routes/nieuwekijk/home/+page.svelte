@@ -22,7 +22,7 @@
   }
 </script>
 
-<main>
+<main id="main-content">
   <CurrentPageTitle {company} {nextMonth} {previousMonth} />
   <ScanResultPage {result} />
   <ErrorList {result} />

@@ -4,7 +4,7 @@
   export let company = data.sites;
 </script>
 
-<main>
+<main id="main-content">
   <CurrentPageTitle {company} />
   <div>
     <AccessibillityScore />

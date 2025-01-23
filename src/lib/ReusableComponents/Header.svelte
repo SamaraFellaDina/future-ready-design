@@ -28,7 +28,7 @@
   }
 </script>
 
-<a class="skip-link" href="#main-content">Skip naar main content</a>
+<a class="skip-link" href="#main-content">Ga naar hoofdinhoud</a>
 <header>
   <button type="button" aria-label={isActive ? "Navigatiemenu is geopend" : "Navigatiemenu is gesloten"} class:active={isActive} on:click={toggleActive}>
     <IconLibrary name = "sidebar" />
