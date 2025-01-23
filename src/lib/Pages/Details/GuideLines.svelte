@@ -8,8 +8,6 @@
       meterClass = "meter-red";
     } else if (value <= 0.7) {
       meterClass = "meter-orange";
-    } else if (value < 1) {
-      meterClass = "meter-blue";
     } else {
       meterClass = "meter-green";
     }
@@ -19,7 +17,7 @@
     {
       title: "Op tijd gebaseerde media",
       indicatorNummer: "1.2",
-      value: 0.1,
+      value: 10,
       indicatorGuidelines: [
         "1.2.1 Louter-geluid & louter-videobeeld (vooraf opgenomen)",
         "1.2.2 Ondertitels voor doven en slechthorenden (vooraf opgenomen)",
@@ -34,7 +32,7 @@
     {
       title: "Aanpasbaar",
       indicatorNummer: "1.3",
-      value: 0.45,
+      value: 45,
       indicatorGuidelines: [
         "1.3.1 Info en relaties",
         "1.3.2 Betekenisvolle volgorde",
@@ -47,7 +45,7 @@
     {
       title: "Aanpasbaar",
       indicatorNummer: "1.4",
-      value: 0.45,
+      value: 45,
       indicatorGuidelines: [
         "1.4.1 Info en relaties",
         "1.4.2 Betekenisvolle volgorde",
@@ -62,7 +60,7 @@
     {
       title: "Aanpasbaar",
       indicatorNummer: "2.1",
-      value: 0.45,
+      value: 45,
       indicatorGuidelines: [
         "2.1.1 Info en relaties",
         "2.1.2 Betekenisvolle volgorde",
@@ -76,7 +74,7 @@
     {
       title: "Aanpasbaar",
       indicatorNummer: "3.1",
-      value: 0.45,
+      value: 45,
       indicatorGuidelines: [
         "3.1.1 Info en relaties",
         "3.1.2 Betekenisvolle volgorde",
@@ -90,7 +88,7 @@
     {
       title: "Aanpasbaar",
       indicatorNummer: "3.2",
-      value: 0.45,
+      value: 45,
       indicatorGuidelines: [
         "3.2.1 Info en relaties",
         "3.2.2 Betekenisvolle volgorde",
@@ -104,7 +102,7 @@
     {
       title: "Aanpasbaar",
       indicatorNummer: "4.1",
-      value: 0.45,
+      value: 45,
       indicatorGuidelines: [
         "4.1.1 Info en relaties",
         "4.1.2 Betekenisvolle volgorde",
@@ -115,7 +113,7 @@
     {
       title: "Aanpasbaar",
       indicatorNummer: "4.2",
-      value: 0.45,
+      value: 45,
       indicatorGuidelines: [
         "4.2.1 Info en relaties",
         "4.2.2 Betekenisvolle volgorde",
@@ -129,12 +127,12 @@
   {#each GuideLines as guide}
     <article>
       <section>
-        <div>
+        <span>
           <h2>{guide.title}</h2>
           <p>{guide.indicatorNummer}</p>
           <IconLibrary name="eye" />
-        </div>
-        <meter class={meterClass} value={guide.value} max="1" high=".75" low=".25"></meter> <!-- Gebruik guide.value hier -->
+        </span>
+        <meter class={meterClass} value={guide.value} low="50" high="99" optimum="100" max="100" name={guide.value}></meter>
       </section>
 
   <section>
@@ -145,7 +143,9 @@
           <span>{guideline}</span>
           <IconLibrary name="warning" />
         </div>
-        <input type="checkbox" />
+        <label>
+          <input type="checkbox" aria-label="fixed indicator" />
+        </label>
       </summary>
       <a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html">
         https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html
@@ -230,7 +230,7 @@
   article {
     --average-padding: 20px;
     --average-margin: 20px;
-    ---average-gap: 5px;
+    --average-gap: 5px;
     border-radius: var(--section-border-radius);
     box-shadow: var(--box-shadow);
     padding: 40px;
@@ -244,48 +244,53 @@
     border-bottom: solid 1px var(--color-shadow);
   }
 
-  article > section:first-child div {
+  article > section:first-child > span {
     display: flex;
     padding-bottom: var(--average-padding);
-    gap: var(---average-gap);
+    gap: var(--average-gap);
   }
 
-  :global(article > section:first-child div svg),
+  :global(article > section:first-child > span svg),
   :global(details summary svg) {
     transform: translateY(2px);
   }
 
   article > section meter {
-    height: 30px;
+    appearance: none;
+    border-radius: 4px;
+    background: #ccc;
     width: 200px;
+    height: 10px;
   }
 
-  .meter-red::-webkit-meter-bar {
-    background: #ffdddd;
-  }
-  .meter-red::-webkit-meter-optimum-value {
-    background: var(--color-status-bad-border);
+  article > section meter::-webkit-meter-bar {
+    background: #ccc;
+    border-radius: 4px;
+    height: 10px;
   }
 
-  .meter-orange::-webkit-meter-bar {
-    background: #fff0cc;
+  .meter-green::-webkit-meter-optimum-value {
+    background: var(--color-status-good-border);
   }
-  .meter-orange::-webkit-meter-optimum-value {
+
+  .meter-orange::-webkit-meter-suboptimum-value {
     background: var(--color-status-fine-border);
   }
 
-  .meter-blue::-webkit-meter-bar {
-    background: #dbefff;
-  }
-  .meter-blue::-webkit-meter-optimum-value {
-    background: var(--color-primary);
+  .meter-red::-webkit-meter-even-less-good-value {
+    background: var(--color-status-bad-border);
   }
 
-  .meter-green::-webkit-meter-bar {
-    background: #ddffdd;
-  }
-  .meter-green::-webkit-meter-optimum-value {
+  .meter-green:-moz-meter-optimum::-moz-meter-bar {
     background: var(--color-status-good-border);
+  }
+
+  .meter-orange:-moz-meter-sub-optimum::-moz-meter-bar {
+    background: var(--color-status-fine-border);
+  }
+
+  .meter-red:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    background: var(--color-status-bad-border);
   }
 
   article section:last-child {
@@ -311,7 +316,7 @@
   }
 
   details summary::before {
-    content: "▶";
+    content: ">";
     position: absolute;
     left: 5px;
     transition: transform 0.3s ease;
@@ -324,7 +329,7 @@
 
   details div:first-child {
     display: flex;
-    gap: var(---average-gap);
+    gap: var(--average-gap);
   }
 
   details summary span {
@@ -332,8 +337,8 @@
   }
 
   details summary input[type="checkbox"] {
-    height: 25px;
-    width: 25px;
+    min-height: 25px;
+    min-width: 25px;
     border: solid 2px var(--color-primary);
     position: relative;
     appearance: none;
@@ -387,7 +392,7 @@
 
   .extended-details ul li div {
     display: flex;
-    gap: var(---average-gap);
+    gap: var(--average-gap);
     margin-bottom: var(--average-margin);
   }
 

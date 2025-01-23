@@ -6,23 +6,23 @@
   <h2>Filter op categorie</h2>
   <fieldset>
     <label>
-      <input type="checkbox" name="voldoet" />
+      <input type="checkbox" name="voldoet" id="voldoet">
       <span>Voldoet niet (14)</span>
     </label>
     <label>
-      <input type="checkbox" name="voldoet-niet" />
+      <input type="checkbox" name="voldoet-niet" id="voldoet-niet">
       <span>Voldoet (6)</span>
     </label>
     <label>
-      <input type="checkbox" name="a" />
+      <input type="checkbox" name="a" id="a">
       <span>A (25)</span>
     </label>
     <label>
-      <input type="checkbox" name="aa" />
+      <input type="checkbox" name="aa" id="aa">
       <span>AA (13)</span>
     </label>
     <label>
-      <input type="checkbox" name="aaa" />
+      <input type="checkbox" name="aaa" id="aaa">
       <span>AAA (12)</span>
     </label>
   </fieldset>
