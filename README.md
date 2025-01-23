@@ -5,7 +5,20 @@ Welkom bij Access Dash, een website gebouwd met `SvelteKit`
 
 
 ## inhoud
+- [Wat is Accesdash?](https://github.com/SamaraFellaDina/future-ready-design/blob/main/README.md#wat-is-accesdash)
+  - [Productomschrijving](https://github.com/SamaraFellaDina/future-ready-design/blob/main/README.md#productomschrijving)
+- [Gebruikersaanwijzing](https://github.com/SamaraFellaDina/future-ready-design/blob/main/README.md#gebruikersaanwijzing)
+- [belangrijke scripts](https://github.com/SamaraFellaDina/future-ready-design/blob/main/README.md#belangrijke-scripts)
+- [Huisstijl](https://github.com/SamaraFellaDina/future-ready-design/blob/main/README.md#huisstijl)
+  - [tekst kleuren](https://github.com/SamaraFellaDina/future-ready-design/blob/main/README.md#text-kleuren)
+  - [background kleuren](https://github.com/SamaraFellaDina/future-ready-design/blob/main/README.md#background-en-andere-kleuren)
+  - [fonts](https://github.com/SamaraFellaDina/future-ready-design/blob/main/README.md#font)
+- [Installatie](https://github.com/SamaraFellaDina/future-ready-design/blob/main/README.md#installatie-1)
+- [bronnen](https://github.com/SamaraFellaDina/future-ready-design/blob/main/README.md#bronnen)
+- [licentie](https://github.com/SamaraFellaDina/future-ready-design/blob/main/README.md#licentie)
 
+
+     
 ## Wat is Accesdash?
 AccessDash is een nieuwe tool die bedrijven moet gaan helpen in het digitaal toegankelijk maken van hun website. Het moet daarnaast bedrijven gaan helpen om deze toegankelijkheid te bewaken middels automatische scans.
 
